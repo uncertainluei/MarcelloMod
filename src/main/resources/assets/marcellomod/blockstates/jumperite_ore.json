@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "marcellomod:block/nether_marcello_ore"
+			"model": "marcellomod:block/jumperite_ore"
 		}
 	}
 }
