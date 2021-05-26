@@ -14,7 +14,10 @@ public class MarcelloModOreBlock extends OreBlock {
     }
 
     protected int xpOnDrop(Random rand) {
-        return this == MarcelloModBlocks.NETHER_MARCELLO_ORE.get() ? MathHelper.nextInt(rand, 0, 3) : 0;
+        if (MarcelloModBlocks.JUMPERITE_ORE.get().equals(this)) {
+            return MathHelper.nextInt(rand, 4, 7);
+        }
+        return this == MarcelloModBlocks.NETHER_MARCELLO_ORE.get() || this == MarcelloModBlocks.MARCELLO_ORE.get() ? MathHelper.nextInt(rand, 0, 3) : 0;
     }
 
     @Override

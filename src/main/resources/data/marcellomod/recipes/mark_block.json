@@ -6,10 +6,10 @@
     "###"
   ],
   "key": {
-    "#": {
+    "X": {
       "tag": "forge:storage_blocks/redstone"
     },
-    "X": {
+    "#": {
       "tag": "forge:storage_blocks/marcello"
     }
   },
