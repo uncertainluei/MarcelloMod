@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "marcellomod:block/mark_block_bottom",
+    "top": "marcellomod:block/mark_block_top",
+    "side": "marcellomod:block/mark_block"
+  }
+}

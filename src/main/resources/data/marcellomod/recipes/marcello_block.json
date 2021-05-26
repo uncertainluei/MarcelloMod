@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "marcellomod:marcello_fruit"
+    }
+  },
+  "result": {
+    "item": "marcellomod:marcello_block"
+  }
+}

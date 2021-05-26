@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X X",
+    "# #"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:ingots/jumperite"
+    },
+    "#": {
+      "tag": "forge:storage_blocks/mark"
+    }
+  },
+  "result": {
+    "item": "marcellomod:jumperite_leggings"
+  }
+}

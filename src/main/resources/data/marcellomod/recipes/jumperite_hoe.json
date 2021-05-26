@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    " #",
+    " #"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:ingots/jumperite"
+    },
+    "#": {
+      "tag": "forge:rods/jumperite"
+    }
+  },
+  "result": {
+    "item": "marcellomod:jumperite_hoe"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "X#",
+    " #"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:storage_blocks/marcello"
+    },
+    "#": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "marcellomod:marcello_axe"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:storage_blocks/redstone"
+    },
+    "X": {
+      "tag": "forge:storage_blocks/marcello"
+    }
+  },
+  "result": {
+    "item": "marcellomod:mark_block",
+    "count": 4
+  }
+}

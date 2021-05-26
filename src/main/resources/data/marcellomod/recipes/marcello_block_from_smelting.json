@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "marcellomod:marcello_ores"
+  },
+  "result": "marcellomod:marcello_block",
+  "experience": 1.0,
+  "cookingtime": 200
+}

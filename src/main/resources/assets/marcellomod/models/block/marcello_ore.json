@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "marcellomod:block/marcello_ore"
+	}
+}
