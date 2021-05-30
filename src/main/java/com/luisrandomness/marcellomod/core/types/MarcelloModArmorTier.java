@@ -1,10 +1,9 @@
-package com.luisrandomness.marcellomod.core.enums;
+package com.luisrandomness.marcellomod.core.types;
 
 import com.luisrandomness.marcellomod.MarcelloMod;
 import com.luisrandomness.marcellomod.core.registry.MarcelloModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;

@@ -1,10 +1,8 @@
-package com.luisrandomness.marcellomod.core.enums;
+package com.luisrandomness.marcellomod.core.types;
 
 import com.luisrandomness.marcellomod.core.registry.MarcelloModItems;
 import net.minecraft.item.IItemTier;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;

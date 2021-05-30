@@ -1,8 +1,8 @@
 package com.luisrandomness.marcellomod.core.registry;
 
 import com.luisrandomness.marcellomod.MarcelloMod;
-import com.luisrandomness.marcellomod.core.enums.MarcelloModArmorTier;
-import com.luisrandomness.marcellomod.core.enums.MarcelloModToolTier;
+import com.luisrandomness.marcellomod.core.types.MarcelloModArmorTier;
+import com.luisrandomness.marcellomod.core.types.MarcelloModToolTier;
 import com.luisrandomness.marcellomod.core.items.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -14,12 +14,16 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.function.Supplier;
-
 @Mod.EventBusSubscriber(modid = MarcelloMod.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MarcelloModItems {
-    public static final Food FOOD_MARCELLO_FRUIT = new Food.Builder().nutrition(3).saturationMod(0.2F).effect(new EffectInstance(Effects.HUNGER,480,0), 0.75F).effect(new EffectInstance(Effects.POISON,480,0),0.5F).build();
-    public static final Food FOOD_MOLDY_FRUIT = new Food.Builder().nutrition(6).saturationMod(0.4F).effect(new EffectInstance(Effects.REGENERATION,120,0), 0.5F).effect(new EffectInstance(Effects.DAMAGE_BOOST,480,0),0.25F).build();
+    public static final Food FOOD_MARCELLO_FRUIT = new Food.Builder().nutrition(3).saturationMod(0.2F)
+            .effect(new EffectInstance(Effects.HUNGER,480,0), 0.75F)
+            .effect(new EffectInstance(Effects.POISON,480,0),0.5F)
+            .build();
+    public static final Food FOOD_MOLDY_FRUIT = new Food.Builder().nutrition(6).saturationMod(0.4F)
+            .effect(new EffectInstance(Effects.REGENERATION,120,0), 0.5F)
+            .effect(new EffectInstance(Effects.DAMAGE_BOOST,480,0),0.25F)
+            .build();
 
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MarcelloMod.ID);
 
@@ -33,9 +37,9 @@ public class MarcelloModItems {
     public static final RegistryObject<Item> MARCELLO_FRUIT = REGISTRY.register("marcello_fruit",() -> new Item(new Item.Properties().stacksTo(64).food(FOOD_MARCELLO_FRUIT).tab(MarcelloModItemGroups.MAIN)));
     public static final RegistryObject<Item> MOLDY_FRUIT = REGISTRY.register("moldy_fruit",() -> new Item(new Item.Properties().stacksTo(64).food(FOOD_MOLDY_FRUIT).tab(MarcelloModItemGroups.MAIN)));
 
-    public static final RegistryObject<Item> JUMPERITE_SHARD = REGISTRY.register("jumperite_shard",() -> new Item(new Item.Properties().stacksTo(64).tab(ItemGroup.TAB_MATERIALS)));
-    public static final RegistryObject<Item> JUMPERITE_INGOT = REGISTRY.register("jumperite_ingot",() -> new Item(new Item.Properties().stacksTo(64).tab(ItemGroup.TAB_MATERIALS)));
-    public static final RegistryObject<Item> JUMPERITE_ROD = REGISTRY.register("jumperite_rod",() -> new Item(new Item.Properties().stacksTo(64).tab(ItemGroup.TAB_MATERIALS)));
+    public static final RegistryObject<Item> JUMPERITE_SHARD = REGISTRY.register("jumperite_shard",() -> new Item(new Item.Properties().stacksTo(64).tab(MarcelloModItemGroups.MAIN)));
+    public static final RegistryObject<Item> JUMPERITE_INGOT = REGISTRY.register("jumperite_ingot",() -> new Item(new Item.Properties().stacksTo(64).tab(MarcelloModItemGroups.MAIN)));
+    public static final RegistryObject<Item> JUMPERITE_ROD = REGISTRY.register("jumperite_rod",() -> new Item(new Item.Properties().stacksTo(64).tab(MarcelloModItemGroups.MAIN)));
 
     public static final RegistryObject<PhoneItem> PHONE = REGISTRY.register("phone",() -> new PhoneItem(EntityType.ZOMBIE, new Item.Properties().stacksTo(1).defaultDurability(16).durability(16).tab(MarcelloModItemGroups.MAIN)));
 
@@ -55,4 +59,6 @@ public class MarcelloModItems {
     public static final RegistryObject<ArmorItem> JUMPERITE_CHESTPLATE = REGISTRY.register("jumperite_chestplate",() -> new ArmorItem(MarcelloModArmorTier.JUMPERITE, EquipmentSlotType.CHEST, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
     public static final RegistryObject<ArmorItem> JUMPERITE_LEGGINGS = REGISTRY.register("jumperite_leggings",() -> new ArmorItem(MarcelloModArmorTier.JUMPERITE, EquipmentSlotType.LEGS, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
     public static final RegistryObject<ArmorItem> JUMPERITE_BOOTS = REGISTRY.register("jumperite_boots",() -> new ArmorItem(MarcelloModArmorTier.JUMPERITE, EquipmentSlotType.FEET, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
+
+    public static final RegistryObject<SpawnEggItem> MARCELLO_SPAWN_EGG = REGISTRY.register("marcello_spawn_egg",() -> new SpawnEggItem(MarcelloModEntityTypes.MARCELLO.get(), -1037769, -12183001, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
 }

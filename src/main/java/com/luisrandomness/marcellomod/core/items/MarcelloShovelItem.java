@@ -13,7 +13,7 @@ public class MarcelloShovelItem extends ShovelItem {
 
     @Override
     public float getDestroySpeed(ItemStack p_150893_1_, BlockState p_150893_2_) {
-        float multiplier = p_150893_2_.getBlock() instanceof MarcelloTypeBlock ? 2F : 1F;
+        float multiplier = p_150893_2_.getBlock() instanceof MarcelloTypeBlock ? 2.5F : 1F;
         return super.getDestroySpeed(p_150893_1_, p_150893_2_) * multiplier;
     }
 }

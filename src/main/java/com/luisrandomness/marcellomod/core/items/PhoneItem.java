@@ -21,12 +21,13 @@ public class PhoneItem extends Item {
 
     public PhoneItem(EntityType<?> summoningEntity, Properties properties) {
         super(properties);
+        this.summoningEntity = summoningEntity;
     }
 
     @Override
     public ActionResult<ItemStack> use(World p_77659_1_, PlayerEntity p_77659_2_, Hand p_77659_3_) {
+        ItemStack phone = p_77659_2_.getItemInHand(p_77659_3_);
         if (!p_77659_1_.isClientSide && summoningEntity != null) {
-            ItemStack phone = p_77659_2_.getItemInHand(p_77659_3_);
             ServerWorld serverWorld = (ServerWorld) p_77659_1_;
             summoningEntity.spawn(serverWorld, new ItemStack(Items.AIR), p_77659_2_, new BlockPos(p_77659_2_.getX(),p_77659_2_.getY(),p_77659_2_.getZ()), SpawnReason.REINFORCEMENT, false, false);
             p_77659_2_.displayClientMessage(callMessage,false);

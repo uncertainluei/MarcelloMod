@@ -31,6 +31,12 @@
   "item.marcellomod.jumperite_leggings": "Jumperite Leggings",
   "item.marcellomod.jumperite_boots": "Jumperite Boots",
 
+  "entity.marcellomod.marcello": "Marcello",
+
+  "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
+
   "item.marcellomod.phone": "Marcello's Phone",
-  "item.marcellomod.phone.call": "Don't call me, or else I call cops!!"
+  "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
+
+  "enchantment.marcellomod.mark": "Mark"
 }

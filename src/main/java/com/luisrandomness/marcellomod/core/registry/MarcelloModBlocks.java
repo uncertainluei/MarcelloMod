@@ -1,8 +1,7 @@
 package com.luisrandomness.marcellomod.core.registry;
 
 import com.luisrandomness.marcellomod.MarcelloMod;
-import com.luisrandomness.marcellomod.core.blocks.MarcelloModOreBlock;
-import com.luisrandomness.marcellomod.core.blocks.MarcelloTypeBlock;
+import com.luisrandomness.marcellomod.core.blocks.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.*;
 import net.minecraftforge.common.ToolType;
