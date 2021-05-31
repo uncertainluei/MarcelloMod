@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class MarcelloRenderer extends BipedRenderer<MarcelloEntity,MarcelloModel<MarcelloEntity>> {
 
-    private static final ResourceLocation MARCELLO_TEXTURE = new ResourceLocation(MarcelloMod.ID + "textures/entity/marcello/marcello0.png");
+    private static final ResourceLocation MARCELLO_TEXTURE = new ResourceLocation(MarcelloMod.ID + ":textures/entity/marcello/marcello0.png");
 
     public MarcelloRenderer(EntityRendererManager p_i46168_1_, MarcelloModel<MarcelloEntity> p_i46168_2_, float p_i46168_3_) {
         super(p_i46168_1_, p_i46168_2_, p_i46168_3_);

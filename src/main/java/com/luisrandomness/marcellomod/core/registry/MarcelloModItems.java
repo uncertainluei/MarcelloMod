@@ -1,6 +1,7 @@
 package com.luisrandomness.marcellomod.core.registry;
 
 import com.luisrandomness.marcellomod.MarcelloMod;
+import com.luisrandomness.marcellomod.core.entities.MarcelloEntity;
 import com.luisrandomness.marcellomod.core.types.MarcelloModArmorTier;
 import com.luisrandomness.marcellomod.core.types.MarcelloModToolTier;
 import com.luisrandomness.marcellomod.core.items.*;
@@ -60,5 +61,5 @@ public class MarcelloModItems {
     public static final RegistryObject<ArmorItem> JUMPERITE_LEGGINGS = REGISTRY.register("jumperite_leggings",() -> new ArmorItem(MarcelloModArmorTier.JUMPERITE, EquipmentSlotType.LEGS, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
     public static final RegistryObject<ArmorItem> JUMPERITE_BOOTS = REGISTRY.register("jumperite_boots",() -> new ArmorItem(MarcelloModArmorTier.JUMPERITE, EquipmentSlotType.FEET, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
 
-    public static final RegistryObject<SpawnEggItem> MARCELLO_SPAWN_EGG = REGISTRY.register("marcello_spawn_egg",() -> new SpawnEggItem(MarcelloModEntityTypes.MARCELLO.get(), -1037769, -12183001, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
+    // public static final RegistryObject<SpawnEggItem> MARCELLO_SPAWN_EGG = REGISTRY.register("marcello_spawn_egg",() -> new SpawnEggItem(MarcelloModEntityTypes.MARCELLO.get(), -1037769, -12183001, new Item.Properties().tab(MarcelloModItemGroups.MAIN)));
 }

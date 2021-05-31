@@ -23,6 +23,5 @@ public class MarcelloModEntityTypes {
 
     public static final RegistryObject<EntityType<MarcelloEntity>> MARCELLO = REGISTRY.register("marcello", () -> EntityType.Builder.of(MarcelloEntity::new, EntityClassification.MONSTER)
             .sized(0.6F, 1.8F)
-            .build(new ResourceLocation(MarcelloMod.ID,"marcello").toString()));
-    // Simply makes this whole thing easier when I want to use it to grab spawn eggs)
+            .build(new ResourceLocation(MarcelloMod.ID,":marcello").toString()));
 }
