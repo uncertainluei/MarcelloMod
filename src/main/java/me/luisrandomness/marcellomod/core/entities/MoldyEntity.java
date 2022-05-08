@@ -23,7 +23,7 @@ public class MoldyEntity extends MonsterEntity {
         return MobEntity.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
                 .add(Attributes.ARMOR, 2)
-                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0D)
                 .add(Attributes.ATTACK_SPEED, 4.0D)
                 .add(Attributes.ATTACK_DAMAGE, 4.0D)

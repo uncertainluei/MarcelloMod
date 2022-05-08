@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class MoldyRenderer extends BipedRenderer<MoldyEntity, NPCModel<MoldyEntity>> {
 
-    private static final ResourceLocation MOLDY_TEXTURE = new ResourceLocation(MarcelloMod.ID + ":textures/entity/moldy.png");
+    private static final ResourceLocation MOLDY_TEXTURE = new ResourceLocation(MarcelloMod.MOD_ID + ":textures/entity/moldy.png");
 
     public MoldyRenderer(EntityRendererManager p_i46168_1_, NPCModel<MoldyEntity> p_i46168_2_, float p_i46168_3_) {
         super(p_i46168_1_, p_i46168_2_, p_i46168_3_);

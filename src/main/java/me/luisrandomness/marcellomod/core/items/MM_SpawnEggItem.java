@@ -1,6 +1,6 @@
 package me.luisrandomness.marcellomod.core.items;
 
-import me.luisrandomness.marcellomod.core.registry.MarcelloModItemGroups;
+import me.luisrandomness.marcellomod.core.registry.MM_ItemGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
@@ -67,9 +67,7 @@ public class MM_SpawnEggItem extends SpawnEggItem {
 
     @Override
     protected boolean allowdedIn(ItemGroup p_194125_1_) {
-        if (getCreativeTabs().stream().anyMatch(tab -> tab == p_194125_1_)) return true;
-        ItemGroup itemgroup = this.getItemCategory();
-        return itemgroup != null && (p_194125_1_ == ItemGroup.TAB_SEARCH || p_194125_1_ == itemgroup || p_194125_1_ == MarcelloModItemGroups.MAIN);
+        return super.allowdedIn(p_194125_1_) || p_194125_1_ == MM_ItemGroup.TAB;
     }
 }
 

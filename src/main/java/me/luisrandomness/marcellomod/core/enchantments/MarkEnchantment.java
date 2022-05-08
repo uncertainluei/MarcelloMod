@@ -1,6 +1,6 @@
 package me.luisrandomness.marcellomod.core.enchantments;
 
-import me.luisrandomness.marcellomod.core.types.MarcelloModCreatureTypes;
+import me.luisrandomness.marcellomod.core.types.MM_CreatureTypes;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
@@ -14,7 +14,7 @@ public class MarkEnchantment extends Enchantment {
 
     @Override
     public float getDamageBonus(int p_152376_1_, CreatureAttribute p_152376_2_) {
-        return p_152376_2_ == MarcelloModCreatureTypes.MARCELLO ? (float)p_152376_1_ * 2.5F : 0.0F;
+        return p_152376_2_ == MM_CreatureTypes.MARCELLO ? (float)p_152376_1_ * 2.5F : 0.0F;
     }
 
     public int getMinCost(int p_77321_1_) {

@@ -9,9 +9,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = MarcelloMod.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class MarcelloModPotionEffects {
-    public static final DeferredRegister<Effect> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MarcelloMod.ID);
+@Mod.EventBusSubscriber(modid = MarcelloMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class MM_PotionEffects {
+    public static final DeferredRegister<Effect> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MarcelloMod.MOD_ID);
 
     public static final RegistryObject<BlockedEffect> BLOCKED = REGISTRY.register("blocked", () -> new BlockedEffect(EffectType.HARMFUL,15866412));
 }

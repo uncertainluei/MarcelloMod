@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "tag": "forge:ingots/jumperite"
+      "item": "marcellomod:jumperite_ingot"
     },
     "#": {
-      "tag": "forge:rods/jumperite"
+      "item": "marcellomod:jumperite_rod"
     }
   },
   "result": {

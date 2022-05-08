@@ -1,10 +1,12 @@
 package me.luisrandomness.marcellomod.core.items;
 
 import me.luisrandomness.marcellomod.MarcelloMod;
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -18,9 +20,9 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class PhoneItem extends MM_Item {
+public class PhoneItem extends Item implements IVanishable {
     private final Supplier<? extends EntityType<?>> summoningEntity;
-    private final TranslationTextComponent callMessage = new TranslationTextComponent("item." + MarcelloMod.ID + ".phone.call");
+    private final TranslationTextComponent callMessage = new TranslationTextComponent("item." + MarcelloMod.MOD_ID + ".phone.call");
 
     public PhoneItem(final Supplier<? extends EntityType<?>> summoningEntity, Properties properties) {
         super(properties);

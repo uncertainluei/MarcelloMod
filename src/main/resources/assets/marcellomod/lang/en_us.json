@@ -3,6 +3,7 @@
 
   "block.marcellomod.marcello_block": "Block of Marcello",
   "block.marcellomod.mark_block": "Block of Mark",
+  "block.marcellomod.jumperite_block": "Block of Jumperite",
 
   "block.marcellomod.marcello_ore": "Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
@@ -32,11 +33,21 @@
   "item.marcellomod.jumperite_boots": "Jumperite Boots",
 
   "entity.marcellomod.marcello": "Marcello",
+  "entity.marcellomod.modly": "Moldy",
+  "entity.marcellomod.mark": "Mark",
 
   "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
+  "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
+  "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
+  "item.marcellomod.special_phone": "Marcello's Special Phone",
+  "item.marcellomod.block_button": "Block Button",
 
-  "enchantment.marcellomod.mark": "Mark"
+
+  "enchantment.marcellomod.mark": "Mark",
+
+  "effect.marcellomod.blocked" : "Blocked",
+  "misc.marcellomod.blocked_chat" : "Your message could not be delivered. This is usually because you don't share a server with the recipient or the recipient is only accepting direct messages from friends. You can see the full list of reasons here: https://support.discord.com/hc/en-us/articles/360060145013"
 }

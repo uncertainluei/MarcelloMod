@@ -1,18 +1,18 @@
 package me.luisrandomness.marcellomod.core.types;
 
-import me.luisrandomness.marcellomod.core.registry.MarcelloModItems;
+import me.luisrandomness.marcellomod.core.registry.MM_Items;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
-public enum MarcelloModToolTier implements IItemTier {
+public enum MM_ToolTier implements IItemTier {
    MARCELLO(2, 384, 6.0F, 2.0F, 8, () -> {
-      return Ingredient.of(MarcelloModItems.MARCELLO_BLOCK.get());
+      return Ingredient.of(MM_Items.MARCELLO_BLOCK.get());
    }),
    JUMPERITE(4, 1999, 9.5F, 5.0F, 12, () -> {
-      return Ingredient.of(MarcelloModItems.JUMPERITE_INGOT.get());
+      return Ingredient.of(MM_Items.JUMPERITE_INGOT.get());
    });
 
    private final int level;
@@ -22,7 +22,7 @@ public enum MarcelloModToolTier implements IItemTier {
    private final int enchantmentValue;
    private final LazyValue<Ingredient> repairIngredient;
 
-   private MarcelloModToolTier(int p_i48458_3_, int p_i48458_4_, float p_i48458_5_, float p_i48458_6_, int p_i48458_7_, Supplier<Ingredient> p_i48458_8_) {
+   private MM_ToolTier(int p_i48458_3_, int p_i48458_4_, float p_i48458_5_, float p_i48458_6_, int p_i48458_7_, Supplier<Ingredient> p_i48458_8_) {
       this.level = p_i48458_3_;
       this.uses = p_i48458_4_;
       this.speed = p_i48458_5_;

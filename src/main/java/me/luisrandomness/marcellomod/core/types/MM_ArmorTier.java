@@ -1,7 +1,7 @@
 package me.luisrandomness.marcellomod.core.types;
 
 import me.luisrandomness.marcellomod.MarcelloMod;
-import me.luisrandomness.marcellomod.core.registry.MarcelloModItems;
+import me.luisrandomness.marcellomod.core.registry.MM_Items;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -13,9 +13,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public enum MarcelloModArmorTier implements IArmorMaterial {
+public enum MM_ArmorTier implements IArmorMaterial {
    JUMPERITE("jumperite", 37, new int[]{3, 7, 9, 4}, 12, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5F, 0.1F, () -> {
-      return Ingredient.of(MarcelloModItems.JUMPERITE_INGOT.get());
+      return Ingredient.of(MM_Items.JUMPERITE_INGOT.get());
    });
 
    private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -28,8 +28,8 @@ public enum MarcelloModArmorTier implements IArmorMaterial {
    private final float knockbackResistance;
    private final LazyValue<Ingredient> repairIngredient;
 
-   private MarcelloModArmorTier(String p_i231593_3_, int p_i231593_4_, int[] p_i231593_5_, int p_i231593_6_, SoundEvent p_i231593_7_, float p_i231593_8_, float p_i231593_9_, Supplier<Ingredient> p_i231593_10_) {
-      this.name = MarcelloMod.ID + ":" + p_i231593_3_;
+   private MM_ArmorTier(String p_i231593_3_, int p_i231593_4_, int[] p_i231593_5_, int p_i231593_6_, SoundEvent p_i231593_7_, float p_i231593_8_, float p_i231593_9_, Supplier<Ingredient> p_i231593_10_) {
+      this.name = MarcelloMod.MOD_ID + ":" + p_i231593_3_;
       this.durabilityMultiplier = p_i231593_4_;
       this.slotProtections = p_i231593_5_;
       this.enchantmentValue = p_i231593_6_;

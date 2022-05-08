@@ -1,31 +1,37 @@
 package me.luisrandomness.marcellomod.core.entities;
 
-import me.luisrandomness.marcellomod.core.registry.MarcelloModItems;
-import me.luisrandomness.marcellomod.core.types.MarcelloModCreatureTypes;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.MobEntity;
+import me.luisrandomness.marcellomod.core.registry.MM_Items;
+import me.luisrandomness.marcellomod.core.types.MM_CreatureTypes;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
+
+import javax.annotation.Nullable;
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 
 public class MarcelloEntity extends MonsterEntity {
 
     public MarcelloEntity(EntityType<? extends MonsterEntity> p_i48553_1_, World p_i48553_2_) {
         super(p_i48553_1_, p_i48553_2_);
-        this.setItemSlot(EquipmentSlotType.MAINHAND, new ItemStack(MarcelloModItems.PHONE.get(), 1));
+        this.setItemSlot(EquipmentSlotType.MAINHAND, new ItemStack(MM_Items.PHONE.get(), 1));
     }
 
     public static AttributeModifierMap.MutableAttribute setAttributes() {
         return MobEntity.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
-                .add(Attributes.ARMOR, 4)
+                .add(Attributes.ARMOR, 3)
                 .add(Attributes.MOVEMENT_SPEED, 0.225D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0D)
                 .add(Attributes.ATTACK_SPEED, 2.0D)
@@ -46,7 +52,7 @@ public class MarcelloEntity extends MonsterEntity {
 
     @Override
     public CreatureAttribute getMobType() {
-        return MarcelloModCreatureTypes.MARCELLO;
+        return MM_CreatureTypes.MARCELLO;
     }
 
     @Override

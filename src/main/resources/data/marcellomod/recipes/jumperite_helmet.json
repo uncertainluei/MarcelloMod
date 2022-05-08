@@ -6,10 +6,10 @@
   ],
   "key": {
     "X": {
-      "tag": "forge:ingots/jumperite"
+      "item": "marcellomod:jumperite_ingot"
     },
     "#": {
-      "tag": "forge:storage_blocks/mark"
+      "item": "marcellomod:mark_block"
     }
   },
   "result": {
