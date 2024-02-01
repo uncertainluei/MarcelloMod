@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "tag": "forge:storage_blocks/marcello"
+      "item": "marcellomod:marcello_block"
     },
     "#": {
-      "tag": "forge:rods/wooden"
+      "item": "minecraft:stick"
     }
   },
   "result": {

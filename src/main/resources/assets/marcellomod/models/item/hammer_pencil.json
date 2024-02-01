@@ -1,0 +1,106 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "marcellomod:item/hammer_pencil_model",
+		"particle": "marcellomod:item/hammer_pencil"
+	},
+	"elements": [
+		{
+			"name": "handle",
+			"from": [6, 0, 6],
+			"to": [10, 20, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 10, 8]},
+			"faces": {
+				"north": {"uv": [0, 2, 2, 12], "texture": "#0"},
+				"east": {"uv": [0, 2, 2, 12], "texture": "#0"},
+				"south": {"uv": [0, 2, 2, 12], "texture": "#0"},
+				"west": {"uv": [0, 2, 2, 12], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 12, 2, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "hammer_head",
+			"from": [4, 20, 0],
+			"to": [12, 28, 16],
+			"faces": {
+				"north": {"uv": [10, 0, 14, 4], "texture": "#0"},
+				"east": {"uv": [2, 0, 10, 4], "texture": "#0"},
+				"south": {"uv": [10, 0, 14, 4], "texture": "#0"},
+				"west": {"uv": [2, 0, 10, 4], "texture": "#0"},
+				"up": {"uv": [10, 4, 14, 12], "texture": "#0"},
+				"down": {"uv": [10, 4, 14, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "point_a",
+			"from": [8, 28, 6],
+			"to": [8, 32, 10],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 30, 8]},
+			"faces": {
+				"east": {"uv": [2, 4, 4, 6], "texture": "#0"},
+				"west": {"uv": [4, 4, 2, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "point_b",
+			"from": [8, 28, 6],
+			"to": [8, 32, 10],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 30, 8]},
+			"faces": {
+				"east": {"uv": [2, 4, 4, 6], "texture": "#0"},
+				"west": {"uv": [4, 4, 2, 6], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -0.5, 2],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0.5, 2],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [10.5, 25, -20],
+			"translation": [2, 3.25, 0],
+			"scale": [0.66, 0.66, 0.66]
+		},
+		"firstperson_lefthand": {
+			"rotation": [10.5, 25, -20],
+			"translation": [2, 3.25, 0],
+			"scale": [0.66, 0.66, 0.66]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"translation": [0, -3, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 12, 12],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [0, -3, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		0,
+		1,
+		{
+			"name": "pencil_point",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [2, 3]
+		}
+	]
+}

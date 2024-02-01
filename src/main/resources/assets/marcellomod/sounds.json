@@ -1,0 +1,207 @@
+{
+  "dick": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "marcellomod:dick",
+        "stream": false
+      }
+    ]
+  },
+  "stopfrickingcallungme": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "marcellomod:stopfrickingcallingme",
+        "stream": false
+      }
+    ]
+  },
+  "marcellorandom": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "marcellomod:shutup",
+        "stream": false
+      }
+    ]
+  },
+  "howohmy": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "marcellomod:how_oh_my",
+        "stream": false
+      }
+    ]
+  },
+  "marchello": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:marchello",
+        "stream": true
+      }
+    ]
+  },
+  "block_button_used": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "marcellomod:item_block_button_used",
+        "stream": false
+      }
+    ]
+  },
+  "mark_block": {
+    "category": "hostile",
+    "subtitle": "subtitles.mark_block",
+    "sounds": [
+      {
+        "name": "marcellomod:mark_block",
+        "stream": false
+      }
+    ]
+  },
+  "entity_modernmarcello_hurt": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity_modernmarcello_hurt",
+    "sounds": [
+      {
+        "name": "marcellomod:entity_modernmarcello_hurt_0",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_hurt_1",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_hurt_2",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_hurt_3",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_hurt_4",
+        "stream": false
+      }
+    ]
+  },
+  "entity_modernmarcello_death": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity_modernmarcello_death",
+    "sounds": [
+      {
+        "name": "marcellomod:entity_modernmarcello_death",
+        "stream": false
+      }
+    ]
+  },
+  "entity_modernmarcello_ambient": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity_modernmarcello_ambient",
+    "sounds": [
+      {
+        "name": "marcellomod:entity_modernmarcello_ambient_0",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_ambient_1",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_ambient_2",
+        "stream": false
+      },
+      {
+        "name": "marcellomod:entity_modernmarcello_ambient_3",
+        "stream": false
+      }
+    ]
+  },
+  "entity_gotta_sweep_intro": {
+    "category": "neutral",
+    "subtitle": "subtitles.entity_gotta_sweep_intro",
+    "sounds": [
+      {
+        "name": "marcellomod:enity_gotta_sweep_st",
+        "stream": false
+      }
+    ]
+  },
+  "entity_gotta_sweep_sweep": {
+    "category": "neutral",
+    "subtitle": "subtitles.entity_gotta_sweep_sweep",
+    "sounds": [
+      {
+        "name": "marcellomod:entity_gotta_sweep_gs",
+        "stream": false
+      }
+    ]
+  },
+  "record_call_cops": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_call_cops",
+        "stream": true
+      }
+    ]
+  },
+  "record_jumpman12": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_jumpman12",
+        "stream": true
+      }
+    ]
+  },
+  "record_losky": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_losky",
+        "stream": true
+      }
+    ]
+  },
+  "record_remotic": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_remotic",
+        "stream": true
+      }
+    ]
+  },
+  "record_stopcallme": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_stopcallme",
+        "stream": true
+      }
+    ]
+  },
+  "record_t5_face": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_t5_face",
+        "stream": true
+      }
+    ]
+  },
+  "record_distruption": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "marcellomod:record_disruption",
+        "stream": true
+      }
+    ]
+  }
+}

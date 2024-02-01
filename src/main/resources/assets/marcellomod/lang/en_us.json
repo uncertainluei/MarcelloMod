@@ -1,16 +1,19 @@
 {
-  "itemGroup.marcellomod.items": "MarcelloMod",
+  "itemGroup.marcellomod.items": "MarcelloMod Items",
+  "itemGroup.marcellomod.blocks": "MarcelloMod Blocks",
 
   "block.marcellomod.marcello_block": "Block of Marcello",
   "block.marcellomod.mark_block": "Block of Mark",
   "block.marcellomod.jumperite_block": "Block of Jumperite",
 
   "block.marcellomod.marcello_ore": "Marcello Ore",
+  "block.marcellomod.deepslate_marcello_ore": "Deepslate Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
   "block.marcellomod.jumperite_ore": "Jumperite Ore",
 
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
+  "item.marcellomod.jumpman_ball": "Jumpman25 Ball",
   "item.marcellomod.jumperite_shard": "Jumperite Shard",
   "item.marcellomod.jumperite_ingot": "Jumperite Ingot",
   "item.marcellomod.jumperite_rod": "Jumperite Rod",
@@ -33,18 +36,21 @@
   "item.marcellomod.jumperite_boots": "Jumperite Boots",
 
   "entity.marcellomod.marcello": "Marcello",
-  "entity.marcellomod.modly": "Moldy",
+  "entity.marcellomod.moldy": "Moldy",
+  "entity.marcellomod.jumpman": "Jumpman25",
   "entity.marcellomod.mark": "Mark",
+  "entity.marcellomod.gotta_sweep": "Gotta Sweep",
 
   "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
   "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
+  "item.marcellomod.jumpman_spawn_egg": "Jumpman25 Spawn Egg",
   "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
+  "item.marcellomod.gotta_sweep_spawn_egg": "Gotta Sweep Spawn Egg",
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
   "item.marcellomod.special_phone": "Marcello's Special Phone",
   "item.marcellomod.block_button": "Block Button",
-
 
   "enchantment.marcellomod.mark": "Mark",
 

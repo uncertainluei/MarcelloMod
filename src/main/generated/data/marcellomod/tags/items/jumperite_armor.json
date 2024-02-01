@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "marcellomod:jumperite_helmet",
+    "marcellomod:jumperite_chestplate",
+    "marcellomod:jumperite_leggings",
+    "marcellomod:jumperite_boots"
+  ]
+}
