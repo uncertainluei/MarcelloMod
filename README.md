@@ -1,5 +1,5 @@
 # MarcelloMod
-(Currently for version 1.16.5, and the Forge modloader. **FABRIC 1.20.X PORT MAY HAPPEN**, it's just mostly that I am too busy with other things)
+(Version 1.16.5, Forge. **FABRIC 1.20.4 PORT UNDERWAY.**)
 
 Pseudo-remake of a Minecraft mod created by MoldyGH with MCreator, being simply a parody mod on a YouTube user by the name of *Marcello_TIMEnice30*, and the *Vs. Dave and Bambi* mod for *Friday Night Funkin'* (probs).
 
