@@ -24,7 +24,9 @@ public class MM_Paintings {
 
     public static final PaintingVariant MARSELO = registerPainting("marselo", 1,1);
     public static final PaintingVariant LETS_PLAY_MINECRAFT = registerPainting("lets_play_minecraft", 2,1);
-    public static final PaintingVariant MARCELLO_PFP = registerPainting("marcello_pfp", 2,2);
+    public static final PaintingVariant SPOOKY_MONTH = registerPainting("spooky_month", 2,1);
+    public static final PaintingVariant XMAS = registerPainting("xmas", 2,2);
+    public static final PaintingVariant PFP = registerPainting("pfp", 2,2);
     public static final PaintingVariant RACIST = registerPainting("racist", 2,2);
     public static final PaintingVariant THE_WHAT = registerPainting("the_what", 2,2);
     public static final PaintingVariant MICHAEL_SONIC = registerPainting("michael_sonic", 1,2);

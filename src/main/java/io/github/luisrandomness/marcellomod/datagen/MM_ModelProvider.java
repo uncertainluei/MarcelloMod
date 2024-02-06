@@ -1,11 +1,14 @@
 package io.github.luisrandomness.marcellomod.datagen;
 
+import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.data.client.TexturedModel;
 
 public class MM_ModelProvider extends FabricModelProvider {
     public MM_ModelProvider(FabricDataOutput output) {
@@ -13,8 +16,14 @@ public class MM_ModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+    public void generateBlockStateModels(BlockStateModelGenerator gen) {
+        gen.registerSingleton(MM_Blocks.MARCELLO_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
+        gen.registerSingleton(MM_Blocks.MARK_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
+        gen.registerSimpleCubeAll(MM_Blocks.MARCELLO_ORE);
+        gen.registerSimpleCubeAll(MM_Blocks.DEEPSLATE_MARCELLO_ORE);
+        gen.registerSimpleCubeAll(MM_Blocks.NETHER_MARCELLO_ORE);
+        gen.registerSingleton(MM_Blocks.JUMPERITE_ORE, TexturedModel.CUBE_BOTTOM_TOP);
+        gen.registerSimpleCubeAll(MM_Blocks.JUMPERITE_BLOCK);
     }
 
     @Override

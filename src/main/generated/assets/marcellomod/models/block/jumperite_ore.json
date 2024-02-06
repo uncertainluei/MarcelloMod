@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "marcellomod:block/jumperite_ore_bottom",
+    "side": "marcellomod:block/jumperite_ore_side",
+    "top": "marcellomod:block/jumperite_ore_top"
+  }
+}
