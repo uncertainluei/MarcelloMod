@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "marcellomod:jumperite_rod"
+    },
+    "X": {
+      "item": "marcellomod:jumperite_ingot"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "marcellomod:jumperite_shovel"
+  }
+}

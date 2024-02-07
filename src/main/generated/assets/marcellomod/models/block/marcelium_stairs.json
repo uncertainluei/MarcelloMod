@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "marcellomod:block/marcelium_planks",
+    "side": "marcellomod:block/marcelium_planks",
+    "top": "marcellomod:block/marcelium_planks"
+  }
+}

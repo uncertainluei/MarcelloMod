@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "marcellomod:block/marcelium_door_bottom",
+    "top": "marcellomod:block/marcelium_door_top"
+  }
+}

@@ -4,6 +4,8 @@ import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.data.server.tag.TagProvider;
+import net.minecraft.data.server.tag.vanilla.VanillaBlockTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -17,10 +19,49 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_ORES).add(MM_Blocks.MARCELLO_ORE).add(MM_Blocks.DEEPSLATE_MARCELLO_ORE).add(MM_Blocks.NETHER_MARCELLO_ORE);
+        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_ORES)
+                .add(MM_Blocks.MARCELLO_ORE)
+                .add(MM_Blocks.DEEPSLATE_MARCELLO_ORE)
+                .add(MM_Blocks.NETHER_MARCELLO_ORE);
+
         getOrCreateTagBuilder(MM_Tags.BLOCK_JUMPERITE_ORES).add(MM_Blocks.JUMPERITE_ORE);
-        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_EFFICIENT).add(MM_Blocks.MARCELLO_BLOCK).add(MM_Blocks.MARK_BLOCK).addTag(MM_Tags.BLOCK_MARCELLO_ORES);
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS).add(MM_Blocks.JUMPERITE_BLOCK);
+
+        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_LOGS).add(MM_Blocks.MARCELIUM_LOG).add(MM_Blocks.MARCELIUM_WOOD).add(MM_Blocks.STRIPPED_MARCELIUM_LOG).add(MM_Blocks.STRIPPED_MARCELIUM_WOOD);
+        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_LEAVES).add(MM_Blocks.RED_MARCELIUM_LEAVES).add(MM_Blocks.GREEN_MARCELIUM_LEAVES).add(MM_Blocks.YELLOW_MARCELIUM_LEAVES);
+        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_SAPLINGS).add(MM_Blocks.RED_MARCELIUM_SAPLING).add(MM_Blocks.GREEN_MARCELIUM_SAPLING).add(MM_Blocks.YELLOW_MARCELIUM_SAPLING);
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).addTag(MM_Tags.BLOCK_MARCELIUM_LOGS);
+        getOrCreateTagBuilder(BlockTags.LEAVES).addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES);
+        getOrCreateTagBuilder(BlockTags.SAPLINGS).addTag(MM_Tags.BLOCK_MARCELIUM_SAPLINGS);
+
+        getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_EFFICIENT)
+                .add(MM_Blocks.MARCELLO_BLOCK)
+                .add(MM_Blocks.MARK_BLOCK)
+                .addTag(MM_Tags.BLOCK_MARCELLO_ORES)
+                .addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES)
+                .addTag(MM_Tags.BLOCK_MARCELIUM_LOGS)
+                .add(MM_Blocks.MARCELIUM_PLANKS)
+                .add(MM_Blocks.MARCELIUM_STAIRS)
+                .add(MM_Blocks.MARCELIUM_SLAB)
+                .add(MM_Blocks.MARCELIUM_FENCE)
+                .add(MM_Blocks.MARCELIUM_FENCE_GATE)
+                .add(MM_Blocks.MARCELIUM_DOOR)
+                .add(MM_Blocks.MARCELIUM_TRAPDOOR)
+                .add(MM_Blocks.MARCELIUM_BUTTON)
+                .add(MM_Blocks.MARCELIUM_PRESSURE_PLATE)
+                .add(MM_Blocks.MARCELIUM_SIGN)
+                .add(MM_Blocks.MARCELIUM_WALL_SIGN)
+                .add(MM_Blocks.MARCELIUM_HANGING_SIGN)
+                .add(MM_Blocks.MARCELIUM_WALL_HANGING_SIGN);
+
+        getOrCreateTagBuilder(BlockTags.PLANKS).add(MM_Blocks.MARCELIUM_PLANKS);
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(MM_Blocks.MARCELIUM_SLAB);
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(MM_Blocks.MARCELIUM_STAIRS);
+        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(MM_Blocks.MARCELIUM_FENCE);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(MM_Blocks.MARCELIUM_FENCE_GATE);
+        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(MM_Blocks.MARCELIUM_DOOR);
+        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(MM_Blocks.MARCELIUM_TRAPDOOR);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(MM_Blocks.MARCELLO_BLOCK)

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.6,
+  "group": "marcello_block",
+  "ingredient": {
+    "tag": "marcellomod:marcello_block_smeltables"
+  },
+  "result": "marcellomod:marcello_block"
+}

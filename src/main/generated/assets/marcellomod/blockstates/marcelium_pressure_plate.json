@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "marcellomod:block/marcelium_pressure_plate"
+    },
+    "powered=true": {
+      "model": "marcellomod:block/marcelium_pressure_plate_down"
+    }
+  }
+}

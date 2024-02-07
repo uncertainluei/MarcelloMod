@@ -2,6 +2,14 @@
   "itemGroup.marcellomod.items": "MarcelloMod Items",
   "itemGroup.marcellomod.blocks": "MarcelloMod Blocks",
 
+  "tag.item.marcellomod.jumperite_armor": "Jumperite Armor",
+  "tag.item.marcellomod.jumperite_ores": "Jumperite Ores",
+  "tag.item.marcellomod.marcelium_leaves": "Marcelium Leaves",
+  "tag.item.marcellomod.marcelium_saplings": "Marcelium Saplings",
+  "tag.item.marcellomod.marcelium_logs": "Marcelium Logs",
+  "tag.item.marcellomod.marcello_block_smeltables": "Smeltable into Marcello Block",
+  "tag.item.marcellomod.marcello_ores": "Marcello Ores",
+
   "block.marcellomod.marcello_block": "Block of Marcello",
   "block.marcellomod.mark_block": "Block of Mark",
   "block.marcellomod.jumperite_block": "Block of Jumperite",
@@ -10,6 +18,36 @@
   "block.marcellomod.deepslate_marcello_ore": "Deepslate Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
   "block.marcellomod.jumperite_ore": "Jumperite Ore",
+
+  "block.marcellomod.marcelium_log": "Marcelium Log",
+  "block.marcellomod.marcelium_wood": "Marcelium Wood",
+  "block.marcellomod.stripped_marcelium_log": "Stripped Marcelium Log",
+  "block.marcellomod.stripped_marcelium_wood": "Stripped Marcelium Wood",
+  "block.marcellomod.marcelium_planks": "Marcelium Planks",
+  "block.marcellomod.marcelium_slab": "Marcelium Slab",
+  "block.marcellomod.marcelium_stairs": "Marcelium Stairs",
+  "block.marcellomod.marcelium_door": "Marcelium Door",
+  "block.marcellomod.marcelium_trapdoor": "Marcelium Trapdoor",
+  "block.marcellomod.marcelium_fence": "Marcelium Fence",
+  "block.marcellomod.marcelium_fence_gate": "Marcelium Fence Gate",
+  "block.marcellomod.marcelium_button": "Marcelium Button",
+  "block.marcellomod.marcelium_pressure_plate": "Marcelium Pressure Plate",
+  "block.marcellomod.marcelium_sign": "Marcelium Sign",
+  "block.marcellomod.marcelium_wall_sign": "Marcelium Wall Sign",
+  "block.marcellomod.marcelium_hanging_sign": "Marcelium Hanging Sign",
+  "block.marcellomod.marcelium_wall_hanging_sign": "Marcelium Wall Hanging Sign",
+
+  "block.marcellomod.red_marcelium_leaves": "Red Marcelium Leaves",
+  "block.marcellomod.green_marcelium_leaves": "Green Marcelium Leaves",
+  "block.marcellomod.yellow_marcelium_leaves": "Yellow Marcelium Leaves",
+
+  "block.marcellomod.red_marcelium_sapling": "Red Marcelium Sapling",
+  "block.marcellomod.green_marcelium_sapling": "Green Marcelium Sapling",
+  "block.marcellomod.yellow_marcelium_sapling": "Yellow Marcelium Sapling",
+
+  "block.marcellomod.potted_red_marcelium_sapling": "Potted Red Marcelium Sapling",
+  "block.marcellomod.potted_green_marcelium_sapling": "Potted Green Marcelium Sapling",
+  "block.marcellomod.potted_yellow_marcelium_sapling": "Potted Yellow Marcelium Sapling",
 
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
@@ -36,12 +74,14 @@
   "item.marcellomod.jumperite_boots": "Jumperite Boots",
 
   "entity.marcellomod.marcello": "Marcello",
+  "entity.marcellomod.evil_marcello": "Evil Marcello's",
   "entity.marcellomod.moldy": "Moldy",
   "entity.marcellomod.jumpman": "Jumpman25",
   "entity.marcellomod.mark": "Mark",
   "entity.marcellomod.gotta_sweep": "Gotta Sweep",
 
   "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
+  "item.marcellomod.evil_marcello_spawn_egg": "Evil Marcello's Spawn Egg",
   "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
   "item.marcellomod.jumpman_spawn_egg": "Jumpman25 Spawn Egg",
   "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
@@ -49,11 +89,23 @@
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
-  "item.marcellomod.special_phone": "Marcello's Special Phone",
+  "item.marcellomod.otherworldly_phone": "Otherworldly Phone",
   "item.marcellomod.block_button": "Block Button",
 
   "enchantment.marcellomod.mark": "Mark",
 
   "effect.marcellomod.blocked" : "Blocked",
+  "effect.marcellomod.whoosh" : "Whoosh",
+
+  "item.marcellomod.placeholder_disc": "\"Music\" Disc",
+  "item.marcellomod.placeholder_disc.info": "Placeholder, may be removed.",
+
+  "item.marcellomod.music_disc_lr1999_rap.desc": "lr1999 - Marcello Rap Battles LR1999",
+  "item.marcellomod.music_disc_call_cops.desc": "lr1999 -  Marcello Calls Cops (Oct. 2020)",
+  "item.marcellomod.music_disc_stop_call.desc": "Jumpman25, badrum - Stop Fucking Call Me",
+  "item.marcellomod.music_disc_t5_face.desc": "Marcello_TIMEnice30 - t5mpler face reveal!!!",
+  "item.marcellomod.music_disc_loksy.desc": "Marcello_TIMEnice30 - what happend losky?",
+  "item.marcellomod.music_disc_forest_funk.desc": "Danny Baranowsky, LuisRandomness - Forest Funk (SICK Mix)",
+
   "misc.marcellomod.blocked_chat" : "Your message could not be delivered. This is usually because you don't share a server with the recipient or the recipient is only accepting direct messages from friends. You can see the full list of reasons here: https://support.discord.com/hc/en-us/articles/360060145013"
 }

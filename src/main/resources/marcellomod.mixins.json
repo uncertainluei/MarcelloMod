@@ -3,7 +3,8 @@
 	"package": "io.github.luisrandomness.marcellomod.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"BlockedCreeperCloudMixin",
+		"BlockedEntityAttackMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,12 +1,8 @@
 package io.github.luisrandomness.marcellomod;
 
-import io.github.luisrandomness.marcellomod.init.MM_Blocks;
-import io.github.luisrandomness.marcellomod.init.MM_Items;
-import io.github.luisrandomness.marcellomod.init.MM_Paintings;
+import io.github.luisrandomness.marcellomod.init.*;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +25,10 @@ public class MarcelloMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		MM_SoundEvents.registerAll();
+		MM_StatusEffects.registerAll();
 		MM_Items.registerAll();
+		MM_Blocks.registerBlockEvents();
 		MM_Paintings.registerAll();
 	}
 }

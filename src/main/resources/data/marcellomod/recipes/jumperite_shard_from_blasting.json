@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "marcellomod:jumperite_ore"
-  },
-  "result": "marcellomod:jumperite_shard",
-  "experience": 1.2,
-  "cookingtime": 100
-}

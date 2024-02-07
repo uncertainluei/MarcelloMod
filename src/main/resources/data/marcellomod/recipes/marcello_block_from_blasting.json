@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "tag": "marcellomod:marcello_ores"
-  },
-  "result": "marcellomod:marcello_block",
-  "experience": 1.0,
-  "cookingtime": 100
-}

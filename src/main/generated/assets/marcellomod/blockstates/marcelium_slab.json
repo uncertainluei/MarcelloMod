@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "marcellomod:block/marcelium_slab"
+    },
+    "type=double": {
+      "model": "marcellomod:block/marcelium_planks"
+    },
+    "type=top": {
+      "model": "marcellomod:block/marcelium_slab_top"
+    }
+  }
+}

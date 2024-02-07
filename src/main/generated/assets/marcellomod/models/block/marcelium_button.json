@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "marcellomod:block/marcelium_planks"
+  }
+}

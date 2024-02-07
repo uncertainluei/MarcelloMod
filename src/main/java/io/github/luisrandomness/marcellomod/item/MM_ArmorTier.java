@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 import static io.github.luisrandomness.marcellomod.MarcelloMod.MOD_NAMESPACE;
 
 public enum MM_ArmorTier implements StringIdentifiable, ArmorMaterial {
-    JUMPERITE("jumperite", 28, armorToEnum(4,9,7,3), 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2F, -0.25F, () -> Ingredient.ofItems(MM_Items.JUMPERITE_INGOT));
+    JUMPERITE("jumperite", 28, armorToEnum(4,9,7,3), 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.5F, 0F, () -> Ingredient.ofItems(MM_Items.JUMPERITE_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;

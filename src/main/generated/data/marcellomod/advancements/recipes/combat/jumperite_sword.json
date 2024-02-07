@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jumperite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "marcellomod:jumperite_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "marcellomod:jumperite_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jumperite_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "marcellomod:jumperite_sword"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "marcellomod:block/red_marcelium_sapling"
+  }
+}

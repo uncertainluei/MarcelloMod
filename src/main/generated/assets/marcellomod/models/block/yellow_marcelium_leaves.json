@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "marcellomod:block/yellow_marcelium_leaves"
+  }
+}

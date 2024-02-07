@@ -33,15 +33,17 @@ public class PhoneItem extends Item implements Vanishable {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack phone = user.getStackInHand(hand);
-        if (!world.isClient() && world instanceof ServerWorld serverWorld && summoningEntity != null)
-        {
-            summoningEntity.spawn(serverWorld, user.getBlockPos(), SpawnReason.REINFORCEMENT);
-            user.sendMessage(callMessage);
-            phone.damage(1, user, (e) -> {
-                // Mojang why isn't there a helper function to convert from hand type -> equipment slot?!?!
-                e.sendEquipmentBreakStatus(hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-            });
-        }
-        return super.use(world, user, hand);
+        if (world.isClient() || !(world instanceof ServerWorld serverWorld) || summoningEntity == null)
+            return super.use(world, user, hand);
+
+        summoningEntity.spawn(serverWorld, user.getBlockPos(), SpawnReason.REINFORCEMENT);
+        user.sendMessage(callMessage);
+
+        user.getItemCooldownManager().set(this, 30);
+        phone.damage(1, user, (e) -> {
+            // Mojang why isn't there a helper function to convert from hand type -> equipment slot?!?!
+            e.sendEquipmentBreakStatus(hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+        });
+        return TypedActionResult.pass(phone);
     }
 }

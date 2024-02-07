@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "marcellomod:marcelium_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "marcellomod:marcelium_planks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "marcellomod:block/red_marcelium_sapling"
+  }
+}

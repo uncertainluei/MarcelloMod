@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "marcellomod:block/red_marcelium_leaves"
+  }
+}

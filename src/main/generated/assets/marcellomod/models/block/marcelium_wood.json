@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "marcellomod:block/marcelium_log",
+    "side": "marcellomod:block/marcelium_log"
+  }
+}
