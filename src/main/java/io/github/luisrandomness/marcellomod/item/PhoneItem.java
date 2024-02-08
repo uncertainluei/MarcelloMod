@@ -31,7 +31,7 @@ public class PhoneItem extends Item implements Vanishable {
             if (level.isClientSide() || !(level instanceof ServerLevel serverWorld) || summoningEntity == null)
                 return super.use(level, player, usedHand);
 
-            summoningEntity.spawn(serverWorld, player.getOnPos(), MobSpawnType.REINFORCEMENT);
+            summoningEntity.spawn(serverWorld, player.blockPosition(), MobSpawnType.REINFORCEMENT);
             player.sendSystemMessage(callMessage);
 
             player.getCooldowns().addCooldown(this, 30);
