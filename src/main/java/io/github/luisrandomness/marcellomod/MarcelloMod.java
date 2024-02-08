@@ -3,7 +3,7 @@ package io.github.luisrandomness.marcellomod;
 import io.github.luisrandomness.marcellomod.init.*;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,8 +15,8 @@ public class MarcelloMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("marcellomod");
 
-	public static Identifier modIdentifier(String location) {
-		return new Identifier(MOD_NAMESPACE, location);
+	public static ResourceLocation modIdentifier(String location) {
+		return new ResourceLocation(MOD_NAMESPACE, location);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class MarcelloMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		MM_SoundEvents.registerAll();
-		MM_StatusEffects.registerAll();
+		MM_MobEffects.registerAll();
 		MM_Items.registerAll();
 		MM_Blocks.registerBlockEvents();
 		MM_Paintings.registerAll();

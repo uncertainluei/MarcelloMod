@@ -1,18 +1,16 @@
 package io.github.luisrandomness.marcellomod.init;
 
-
-import net.minecraft.block.Block;
-import net.minecraft.entity.decoration.painting.PaintingVariant;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.decoration.PaintingVariant;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import static io.github.luisrandomness.marcellomod.MarcelloMod.modIdentifier;
 
 public class MM_Tags {
 
-    public static final TagKey<PaintingVariant> PAINTINGS = TagKey.of(RegistryKeys.PAINTING_VARIANT, modIdentifier("paintings"));
+    public static final TagKey<PaintingVariant> PAINTINGS = TagKey.create(Registries.PAINTING_VARIANT, modIdentifier("paintings"));
     public static final TagKey<Block> BLOCK_MARCELLO_EFFICIENT = blockTag("marcello_tool_efficient");
 
     public static final TagKey<Block> BLOCK_MARCELLO_ORES = blockTag("marcello_ores");
@@ -31,9 +29,9 @@ public class MM_Tags {
 
 
     private static TagKey<Block> blockTag(String identifier) {
-        return TagKey.of(RegistryKeys.BLOCK, modIdentifier(identifier));
+        return TagKey.create(Registries.BLOCK, modIdentifier(identifier));
     }
     private static TagKey<Item> itemTag(String identifier) {
-        return TagKey.of(RegistryKeys.ITEM, modIdentifier(identifier));
+        return TagKey.create(Registries.ITEM, modIdentifier(identifier));
     }
 }

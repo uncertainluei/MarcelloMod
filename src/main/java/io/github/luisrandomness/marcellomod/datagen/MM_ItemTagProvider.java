@@ -7,22 +7,19 @@ import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
 public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
-    public MM_ItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public MM_ItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture, MarcelloModDataGenerator.blockTags);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg) {
+    protected void addTags(HolderLookup.Provider arg) {
         copy(MM_Tags.BLOCK_MARCELLO_ORES, MM_Tags.ITEM_MARCELLO_ORES);
         copy(MM_Tags.BLOCK_JUMPERITE_ORES, MM_Tags.ITEM_JUMPERITE_ORES);
         copy(MM_Tags.BLOCK_MARCELIUM_LOGS, MM_Tags.ITEM_MARCELIUM_LOGS);

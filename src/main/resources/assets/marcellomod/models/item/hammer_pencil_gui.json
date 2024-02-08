@@ -1,8 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"particle": "marcellomod:item/hammer_pencil",
-		"layer0": "marcellomod:item/hammer_pencil"
-	}
-}

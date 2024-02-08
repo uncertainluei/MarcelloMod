@@ -1,10 +1,10 @@
 package io.github.luisrandomness.marcellomod.effects;
 
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 
-public class BlockedEffect extends StatusEffect {
-    public BlockedEffect(StatusEffectCategory category, int color) {
+public class BlockedEffect extends MobEffect {
+    public BlockedEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 }

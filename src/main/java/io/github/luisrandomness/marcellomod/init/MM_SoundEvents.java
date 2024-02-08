@@ -1,10 +1,10 @@
 package io.github.luisrandomness.marcellomod.init;
 
 import io.github.luisrandomness.marcellomod.MarcelloMod;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 
 public class MM_SoundEvents {
 
@@ -24,8 +24,8 @@ public class MM_SoundEvents {
     public static final SoundEvent ENTITY_MARK_DEATH = register("entity.mark.death");
 
     private static SoundEvent register(String identifier) {
-        Identifier id = MarcelloMod.modIdentifier(identifier);
-        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+        ResourceLocation id = MarcelloMod.modIdentifier(identifier);
+        return Registry.register(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
     }
 
     public static void registerAll()

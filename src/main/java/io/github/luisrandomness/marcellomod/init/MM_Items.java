@@ -4,48 +4,45 @@ import io.github.luisrandomness.marcellomod.item.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.effect.*;
-import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.stat.Stat;
-import net.minecraft.text.Text;
-import net.minecraft.util.Rarity;
-
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.*;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.*;
 import java.util.ArrayList;
 
 import static io.github.luisrandomness.marcellomod.MarcelloMod.modIdentifier;
 
 public class MM_Items {
 
-    private static FoodComponent.Builder allStatusEffects(StatusEffectCategory cat, FoodComponent.Builder builder)
+    private static FoodProperties.Builder allMobEffects(MobEffectCategory cat, FoodProperties.Builder builder)
     {
-        for (StatusEffect effect : Registries.STATUS_EFFECT)
+        for (MobEffect effect : BuiltInRegistries.MOB_EFFECT)
             if (effect.getCategory() == cat)
-                builder = builder.statusEffect(new StatusEffectInstance(effect, 1200, 5), 1F);
+                builder = builder.effect(new MobEffectInstance(effect, 1200, 5), 1F);
         return builder;
     }
 
-    public static final FoodComponent FOOD_MARCELLO_FRUIT =  new FoodComponent.Builder().hunger(3).saturationModifier(0.2F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HUNGER,480,0), 0.75F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.POISON,480,0),0.5F)
+    public static final FoodProperties FOOD_MARCELLO_FRUIT =  new FoodProperties.Builder().nutrition(3).saturationMod(0.2F)
+            .effect(new MobEffectInstance(MobEffects.HUNGER,480,0), 0.75F)
+            .effect(new MobEffectInstance(MobEffects.POISON,480,0),0.5F)
             .build();
-    public static final FoodComponent FOOD_MOLDY_FRUIT = new FoodComponent.Builder().hunger(6).saturationModifier(0.4F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,120,0), 0.5F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,480,0),0.25F)
+    public static final FoodProperties FOOD_MOLDY_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F)
+            .effect(new MobEffectInstance(MobEffects.REGENERATION,120,0), 0.5F)
+            .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,480,0),0.25F)
             .build();
 
-    public static final FoodComponent FOOD_MARCELLO_FRUIT_UNNERFED = allStatusEffects(StatusEffectCategory.HARMFUL, new FoodComponent.Builder().hunger(1).saturationModifier(0.3F)).build();
-    public static final FoodComponent FOOD_MOLDY_FRUIT_UNNERFED = allStatusEffects(StatusEffectCategory.BENEFICIAL, new FoodComponent.Builder().hunger(1).saturationModifier(0.3F)).build();
+    public static final FoodProperties FOOD_MARCELLO_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.HARMFUL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
+    public static final FoodProperties FOOD_MOLDY_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.BENEFICIAL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
 
     private static final ArrayList<Item> ALL_ITEMS = new ArrayList<>();
     private static final ArrayList<Item> AUTO_CREATIVE_ITEMS = new ArrayList<>();
 
     public static Item registerItem(String identifier, Item item, boolean includeInCreative)
     {
-        Item result = Registry.register(Registries.ITEM, modIdentifier(identifier), item);
+        Item result = Registry.register(BuiltInRegistries.ITEM, modIdentifier(identifier), item);
         ALL_ITEMS.add(result);
         if (includeInCreative)
             AUTO_CREATIVE_ITEMS.add(result);
@@ -79,6 +76,8 @@ public class MM_Items {
     public static final Item JUMPERITE_AXE = registerItem ("jumperite_axe", new MarcelloAxeItem(MM_ToolTier.JUMPERITE,5,-3.1F,new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_HOE = registerItem ("jumperite_hoe", new MarcelloHoeItem(MM_ToolTier.JUMPERITE,-5,0F,new FabricItemSettings().rarity(Rarity.EPIC)));
 
+    public static final Item HAMMER_PENCIL = registerItem ("hammer_pencil", new Item(new FabricItemSettings().maxCount(1).maxDamage(64)));
+
     public static final ArmorItem JUMPERITE_HELMET = (ArmorItem) registerItem("jumperite_helmet", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.HELMET, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final ArmorItem JUMPERITE_CHESTPLATE = (ArmorItem) registerItem("jumperite_chestplate", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final ArmorItem JUMPERITE_LEGGINGS = (ArmorItem) registerItem("jumperite_leggings", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().rarity(Rarity.EPIC)));
@@ -98,32 +97,32 @@ public class MM_Items {
     public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new FabricItemSettings().maxCount(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
     public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));
 
-    private static final ItemGroup TAB_BLOCKS = FabricItemGroup.builder()
+    private static final CreativeModeTab TAB_BLOCKS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(MM_Blocks.MARCELLO_BLOCK))
-            .displayName(Text.translatable("itemGroup.marcellomod.blocks"))
-            .entries((context, entries) -> {
+            .title(Component.translatable("itemGroup.marcellomod.blocks"))
+            .displayItems((context, entries) -> {
                 for (Item item : ALL_ITEMS)
                     if (item instanceof BlockItem)
-                        entries.add(item);
+                        entries.accept(item);
             })
             .build();
 
-    private static final ItemGroup TAB_ITEMS = FabricItemGroup.builder()
+    private static final CreativeModeTab TAB_ITEMS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(PHONE))
-            .displayName(Text.translatable("itemGroup.marcellomod.items"))
-            .entries((context, entries) -> {
+            .title(Component.translatable("itemGroup.marcellomod.items"))
+            .displayItems((context, entries) -> {
                 for (Item item : AUTO_CREATIVE_ITEMS)
                     if (!(item instanceof BlockItem))
-                        entries.add(item);
+                        entries.accept(item);
             })
             .build();
 
     public static void registerAll()
     {
-        Registry.register(Registries.ITEM_GROUP, modIdentifier("blocks"), TAB_BLOCKS);
-        Registry.register(Registries.ITEM_GROUP, modIdentifier("items"), TAB_ITEMS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, modIdentifier("blocks"), TAB_BLOCKS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, modIdentifier("items"), TAB_ITEMS);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
             content.addBefore(Items.STONE, MM_Blocks.MARCELIUM_LOG);
             content.addAfter(MM_Blocks.MARCELIUM_LOG, MM_Blocks.MARCELIUM_WOOD);
             content.addAfter(MM_Blocks.MARCELIUM_WOOD, MM_Blocks.STRIPPED_MARCELIUM_LOG);
@@ -142,12 +141,12 @@ public class MM_Items {
             content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.JUMPERITE_BLOCK);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(content -> {
             content.addBefore(Items.CHEST, MARCELIUM_SIGN);
             content.addAfter(MARCELIUM_SIGN, MARCELIUM_HANGING_SIGN);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(content -> {
             content.addBefore(Items.COAL_ORE, MM_Blocks.MARCELLO_BLOCK);
             content.addAfter(MM_Blocks.MARCELLO_BLOCK, MM_Blocks.MARK_BLOCK);
             content.addAfter(Items.DEEPSLATE_GOLD_ORE, MM_Blocks.MARCELLO_ORE);
@@ -163,12 +162,12 @@ public class MM_Items {
             content.addAfter(MM_Blocks.GREEN_MARCELIUM_SAPLING, MM_Blocks.YELLOW_MARCELIUM_SAPLING);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(content -> {
             content.addAfter(Items.CHORUS_FRUIT, MARCELLO_FRUIT);
             content.addAfter(MARCELLO_FRUIT, MOLDY_FRUIT);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
             content.addAfter(Items.RAW_GOLD, MARCELLO_FRUIT);
             content.addAfter(MARCELLO_FRUIT, PHONE);
             content.addAfter(Items.ANCIENT_DEBRIS, JUMPERITE_SHARD);
@@ -178,7 +177,7 @@ public class MM_Items {
             content.addAfter(Items.EGG, JUMPMAN_BALL);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(content -> {
             content.addAfter(Items.GOLDEN_HOE, MARCELLO_SHOVEL);
             content.addAfter(MARCELLO_SHOVEL, MARCELLO_PICKAXE);
             content.addAfter(MARCELLO_PICKAXE, MARCELLO_AXE);
@@ -190,7 +189,7 @@ public class MM_Items {
             content.addAfter(JUMPERITE_AXE, JUMPERITE_HOE);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(content -> {
             content.addAfter(Items.GOLDEN_SWORD, MARCELLO_SWORD);
             content.addAfter(Items.GOLDEN_AXE, MARCELLO_AXE);
             content.addAfter(Items.NETHERITE_SWORD, JUMPERITE_SWORD);

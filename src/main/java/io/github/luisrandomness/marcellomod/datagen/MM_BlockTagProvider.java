@@ -4,21 +4,19 @@ import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.data.server.tag.TagProvider;
-import net.minecraft.data.server.tag.vanilla.VanillaBlockTagProvider;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
 public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public MM_BlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public MM_BlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg) {
+    protected void addTags(HolderLookup.Provider arg) {
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_ORES)
                 .add(MM_Blocks.MARCELLO_ORE)
                 .add(MM_Blocks.DEEPSLATE_MARCELLO_ORE)
@@ -32,7 +30,7 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_SAPLINGS).add(MM_Blocks.RED_MARCELIUM_SAPLING).add(MM_Blocks.GREEN_MARCELIUM_SAPLING).add(MM_Blocks.YELLOW_MARCELIUM_SAPLING);
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).addTag(MM_Tags.BLOCK_MARCELIUM_LOGS);
         getOrCreateTagBuilder(BlockTags.LEAVES).addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES);
-        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES);
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE).addTag(MM_Tags.BLOCK_MARCELIUM_LEAVES);
         getOrCreateTagBuilder(BlockTags.SAPLINGS).addTag(MM_Tags.BLOCK_MARCELIUM_SAPLINGS);
 
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELLO_EFFICIENT)
@@ -63,7 +61,7 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(MM_Blocks.MARCELIUM_DOOR);
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(MM_Blocks.MARCELIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(MM_Blocks.MARCELLO_BLOCK)
                 .add(MM_Blocks.MARK_BLOCK)
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES)

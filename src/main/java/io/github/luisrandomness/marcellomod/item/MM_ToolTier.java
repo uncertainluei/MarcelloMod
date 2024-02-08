@@ -2,12 +2,13 @@ package io.github.luisrandomness.marcellomod.item;
 
 import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.recipe.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
-public enum MM_ToolTier implements ToolMaterial {
-   MARCELLO(2, 384, 6.0F, 2.0F, 8, Ingredient.ofItems(MM_Blocks.getBlockItem(MM_Blocks.MARCELLO_BLOCK))),
-   JUMPERITE(4, 1999, 9.5F, 5.0F, 12, Ingredient.ofItems(MM_Items.JUMPERITE_INGOT));
+public enum MM_ToolTier implements Tier {
+   MARCELLO(2, 384, 6.0F, 2.0F, 8, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
+   JUMPERITE(4, 1999, 9.5F, 5.0F, 12, Ingredient.of(MM_Items.JUMPERITE_INGOT));
 
    private final int level;
    private final int uses;
@@ -25,27 +26,27 @@ public enum MM_ToolTier implements ToolMaterial {
       this.repairIngredient = repairMaterial;
    }
 
-   public int getDurability() {
+   public int getUses() {
       return this.uses;
    }
 
-   public float getMiningSpeedMultiplier() {
+   public float getSpeed() {
       return this.speed;
    }
 
-   public float getAttackDamage() {
+   public float getAttackDamageBonus() {
       return this.damage;
    }
 
-   public int getMiningLevel() {
+   public int getLevel() {
       return this.level;
    }
 
-   public int getEnchantability() {
+   public int getEnchantmentValue() {
       return this.enchantmentValue;
    }
 
-   public Ingredient getRepairIngredient() {
+   public @NotNull Ingredient getRepairIngredient() {
       return this.repairIngredient;
    }
 }

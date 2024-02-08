@@ -1,22 +1,24 @@
 package io.github.luisrandomness.marcellomod.item;
 
 import io.github.luisrandomness.marcellomod.init.MM_Items;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Lazy;
-import net.minecraft.util.StringIdentifiable;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
+import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
 import static io.github.luisrandomness.marcellomod.MarcelloMod.MOD_NAMESPACE;
 
-public enum MM_ArmorTier implements StringIdentifiable, ArmorMaterial {
-    JUMPERITE("jumperite", 28, armorToEnum(4,9,7,3), 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.5F, 0F, () -> Ingredient.ofItems(MM_Items.JUMPERITE_INGOT));
+public enum MM_ArmorTier implements StringRepresentable, ArmorMaterial {
+    JUMPERITE("jumperite", 28, armorToEnum(4,9,7,3), 12, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.5F, 0F, () -> Ingredient.of(MM_Items.JUMPERITE_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -26,7 +28,7 @@ public enum MM_ArmorTier implements StringIdentifiable, ArmorMaterial {
     private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackResistance;
-    private final Lazy<Ingredient> repairIngredientSupplier;
+    private final LazyLoadedValue<Ingredient> repairIngredientSupplier;
 
     private static EnumMap armorToEnum(int head, int chest, int legs, int feet)
     {
@@ -46,30 +48,28 @@ public enum MM_ArmorTier implements StringIdentifiable, ArmorMaterial {
         this.equipSound = equipSound;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
-        this.repairIngredientSupplier = new Lazy(repairIngredientSupplier);
+        this.repairIngredientSupplier = new LazyLoadedValue(repairIngredientSupplier);
     }
 
-    public int getDurability(ArmorItem.Type type) {
-        return (Integer)BASE_DURABILITY.get(type) * this.durabilityMultiplier;
+    public int getDurabilityForType(ArmorItem.Type type) {
+        return BASE_DURABILITY.get(type) * this.durabilityMultiplier;
     }
 
-    public int getProtection(ArmorItem.Type type) {
-        return (Integer)this.protectionAmounts.get(type);
-    }
+    public int getDefenseForType(ArmorItem.Type type) { return this.protectionAmounts.get(type); }
 
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 
-    public SoundEvent getEquipSound() {
+    public @NotNull SoundEvent getEquipSound() {
         return this.equipSound;
     }
 
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return (Ingredient)this.repairIngredientSupplier.get();
     }
 
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 
@@ -81,7 +81,7 @@ public enum MM_ArmorTier implements StringIdentifiable, ArmorMaterial {
         return this.knockbackResistance;
     }
 
-    public String asString() {
+    public @NotNull String getSerializedName() {
         return this.name;
     }
 }

@@ -1,49 +1,44 @@
 package io.github.luisrandomness.marcellomod.item;
 
 import io.github.luisrandomness.marcellomod.MarcelloMod;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.Vanishable;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
-import org.apache.logging.log4j.core.jmx.Server;
-
-import java.util.function.Consumer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Vanishable;
+import net.minecraft.world.level.Level;
 
 public class PhoneItem extends Item implements Vanishable {
     public EntityType<?> summoningEntity;
-    private static final MutableText callMessage = Text.translatable("item." + MarcelloMod.MOD_NAMESPACE + ".phone.call");
+    private static final MutableComponent callMessage = Component.translatable("item." + MarcelloMod.MOD_NAMESPACE + ".phone.call");
 
-    public PhoneItem(EntityType<?> summoningEntity, Settings settings) {
+    public PhoneItem(EntityType<?> summoningEntity, Item.Properties settings) {
         super(settings);
         this.summoningEntity = summoningEntity;
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack phone = user.getStackInHand(hand);
-        if (world.isClient() || !(world instanceof ServerWorld serverWorld) || summoningEntity == null)
-            return super.use(world, user, hand);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+            ItemStack phone = player.getItemInHand(usedHand);
+            if (level.isClientSide() || !(level instanceof ServerLevel serverWorld) || summoningEntity == null)
+                return super.use(level, player, usedHand);
 
-        summoningEntity.spawn(serverWorld, user.getBlockPos(), SpawnReason.REINFORCEMENT);
-        user.sendMessage(callMessage);
+            summoningEntity.spawn(serverWorld, player.getOnPos(), MobSpawnType.REINFORCEMENT);
+            player.sendSystemMessage(callMessage);
 
-        user.getItemCooldownManager().set(this, 30);
-        phone.damage(1, user, (e) -> {
-            // Mojang why isn't there a helper function to convert from hand type -> equipment slot?!?!
-            e.sendEquipmentBreakStatus(hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-        });
-        return TypedActionResult.pass(phone);
+            player.getCooldowns().addCooldown(this, 30);
+            phone.hurtAndBreak(1, player, (e) -> {
+                // Mojang why isn't there a helper function to convert from player type -> equipment slot?!?!
+                e.broadcastBreakEvent(usedHand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+            });
+            return InteractionResultHolder.pass(phone);
     }
 }

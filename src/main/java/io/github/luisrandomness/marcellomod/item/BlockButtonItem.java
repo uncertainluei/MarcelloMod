@@ -1,48 +1,48 @@
 package io.github.luisrandomness.marcellomod.item;
 
+import io.github.luisrandomness.marcellomod.init.MM_MobEffects;
 import io.github.luisrandomness.marcellomod.init.MM_SoundEvents;
-import io.github.luisrandomness.marcellomod.init.MM_StatusEffects;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.ItemCooldownManager;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.EnderPearlItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemCooldowns;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Vanishable;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
-public class BlockButtonItem extends Item {
+public class BlockButtonItem extends Item implements Vanishable {
 
-    public BlockButtonItem(Settings settings) {
+    public BlockButtonItem(Properties settings) {
         super(settings);
     }
 
     @Override
-    public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        ItemCooldownManager cooldownManager = user.getItemCooldownManager();
-        World world = user.getWorld();
-        if (world.isClient() || cooldownManager.isCoolingDown(this))
-            return super.useOnEntity(stack, user, entity, hand);
+    public @NotNull InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity interactionTarget, InteractionHand usedHand) {
+        ItemCooldowns cooldown = player.getCooldowns();
+        Level world = player.level();
+        if (world.isClientSide() || cooldown.isOnCooldown(this))
+            return super.interactLivingEntity(stack, player, interactionTarget, usedHand);
 
-        world.playSound(null, user.getX(),user.getY(),user.getZ(), MM_SoundEvents.ITEM_BLOCK_BUTTON_PRESS, SoundCategory.NEUTRAL, 0.8F,1F);
-        if (entity.hasStatusEffect(MM_StatusEffects.BLOCKED)) {
-            entity.removeStatusEffect(MM_StatusEffects.BLOCKED);
+        world.playSound(null, player.getX(),player.getY(),player.getZ(), MM_SoundEvents.ITEM_BLOCK_BUTTON_PRESS, SoundSource.NEUTRAL, 0.8F,1F);
+        if (interactionTarget.hasEffect(MM_MobEffects.BLOCKED)) {
+            interactionTarget.removeEffect(MM_MobEffects.BLOCKED);
         } else {
-            entity.addStatusEffect(new StatusEffectInstance(MM_StatusEffects.BLOCKED, 600));
-            world.playSound(null, user.getX(),user.getY(),user.getZ(), MM_SoundEvents.ITEM_BLOCK_BUTTON_BLOCK, SoundCategory.NEUTRAL, 0.65F,1F);
+            interactionTarget.addEffect(new MobEffectInstance(MM_MobEffects.BLOCKED, 600));
+            world.playSound(null, player.getX(),player.getY(),player.getZ(), MM_SoundEvents.ITEM_BLOCK_BUTTON_BLOCK, SoundSource.NEUTRAL, 0.65F,1F);
         }
 
-        user.swingHand(hand, true);
-        cooldownManager.set(this, 30);
-        stack.damage(1, user, (e) -> {
+        player.swing(usedHand, true);
+        cooldown.addCooldown(this, 30);
+        stack.hurtAndBreak(1, player, (e) -> {
             // Mojang why isn't there a helper function to convert from hand type -> equipment slot?!?!
-            e.sendEquipmentBreakStatus(hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+            e.broadcastBreakEvent(usedHand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
         });
-        return ActionResult.PASS;
+        return InteractionResult.PASS;
     }
 }

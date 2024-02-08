@@ -1,10 +1,9 @@
 package io.github.luisrandomness.marcellomod.init;
 
 import io.github.luisrandomness.marcellomod.MarcelloMod;
-import net.minecraft.entity.decoration.painting.PaintingVariant;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.*;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class MM_Paintings {
 
     public static PaintingVariant registerPainting(String identifier, int wid, int hei)
     {
-        PaintingVariant result = Registry.register(Registries.PAINTING_VARIANT, MarcelloMod.modIdentifier(identifier), new PaintingVariant(wid*16,hei*16));
+        PaintingVariant result = Registry.register(BuiltInRegistries.PAINTING_VARIANT, MarcelloMod.modIdentifier(identifier), new PaintingVariant(wid*16,hei*16));
         ALL_PAINTINGS.add(result);
         return result;
     }

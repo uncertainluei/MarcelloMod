@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "marcellomod:block/stripped_marcelium_log_horizontal",
+      "model": "marcellomod:block/stripped_marcelium_log",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "marcellomod:block/stripped_marcelium_log"
     },
     "axis=z": {
-      "model": "marcellomod:block/stripped_marcelium_log_horizontal",
+      "model": "marcellomod:block/stripped_marcelium_log",
       "x": 90
     }
   }
