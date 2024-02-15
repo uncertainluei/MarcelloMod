@@ -9,10 +9,10 @@
 		"MoldyGangstaHero"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://gamebanana.com/members/1670046",
+		"sources": "https://github.com/LuisRandomness/MarcelloMod"
 	},
-	"license": "LGPL-2.1",
+	"license": "LGPL-3.0",
 	"icon": "assets/marcellomod/icon.png",
 	"environment": "*",
 	"entrypoints": {
