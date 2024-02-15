@@ -8,5 +8,6 @@ public class MarcelloModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		MM_BlockRendering.initialize();
 		MM_ItemRendering.initialize();
+		MM_EntityRendering.initialize();
 	}
 }

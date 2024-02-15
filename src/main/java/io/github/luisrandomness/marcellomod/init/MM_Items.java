@@ -37,7 +37,7 @@ public class MM_Items {
     public static final FoodProperties FOOD_MARCELLO_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.HARMFUL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
     public static final FoodProperties FOOD_MOLDY_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.BENEFICIAL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
 
-    private static final ArrayList<Item> ALL_ITEMS = new ArrayList<>();
+    public static final ArrayList<Item> ALL_ITEMS = new ArrayList<>();
     private static final ArrayList<Item> AUTO_CREATIVE_ITEMS = new ArrayList<>();
 
     public static Item registerItem(String identifier, Item item, boolean includeInCreative)
@@ -60,7 +60,7 @@ public class MM_Items {
     public static final Item JUMPERITE_INGOT = registerItem("jumperite_ingot", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_ROD = registerItem("jumperite_rod", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
 
-    public static final Item PHONE = registerItem ("phone", new PhoneItem(EntityType.CREEPER, new FabricItemSettings().maxCount(1).maxDamage(8)));
+    public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new FabricItemSettings().maxCount(1).maxDamage(8)));
     public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE)));
     public static final Item BLOCK_BUTTON = registerItem ("block_button", new BlockButtonItem(new FabricItemSettings().maxCount(1).maxDamage(8)));
 
@@ -83,8 +83,9 @@ public class MM_Items {
     public static final ArmorItem JUMPERITE_LEGGINGS = (ArmorItem) registerItem("jumperite_leggings", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final ArmorItem JUMPERITE_BOOTS = (ArmorItem) registerItem("jumperite_boots", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.BOOTS, new FabricItemSettings().rarity(Rarity.EPIC)));
 
-//    public static final SpawnEggItem MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new MM_SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new FabricItemSettings().tab(ItemGroup.TAB_MISC)));
-//    public static final SpawnEggItem MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new MM_SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new FabricItemSettings().tab(ItemGroup.TAB_MISC)));
+    public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new FabricItemSettings()));
+    public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new FabricItemSettings()));
+    public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new FabricItemSettings()));
 
     // TODO: Replace with original, possibly commissioned music
 //    public static final Item MUSIC_DISC_LR1999_RAP = registerItem("music_disc_lr1999_rap", new PlaceholderMusicDiscItem(1, MM_SoundEvents.MUSIC_DISC_LR1999_RAP, 234));
@@ -177,6 +178,12 @@ public class MM_Items {
             content.addAfter(Items.EGG, JUMPMAN_BALL);
         });
 
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(content -> {
+            content.addAfter(Items.MAGMA_CUBE_SPAWN_EGG, MARCELLO_SPAWN_EGG);
+            content.addAfter(MARCELLO_SPAWN_EGG, MARK_SPAWN_EGG);
+            content.addBefore(Items.MOOSHROOM_SPAWN_EGG, MOLDY_SPAWN_EGG);
+        });
+
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(content -> {
             content.addAfter(Items.GOLDEN_HOE, MARCELLO_SHOVEL);
             content.addAfter(MARCELLO_SHOVEL, MARCELLO_PICKAXE);
@@ -187,6 +194,10 @@ public class MM_Items {
             content.addAfter(JUMPERITE_SHOVEL, JUMPERITE_PICKAXE);
             content.addAfter(JUMPERITE_PICKAXE, JUMPERITE_AXE);
             content.addAfter(JUMPERITE_AXE, JUMPERITE_HOE);
+
+            content.addAfter(Items.FLINT_AND_STEEL, PHONE);
+            content.addAfter(PHONE, BLOCK_BUTTON);
+            content.addAfter(BLOCK_BUTTON, OTHERWORLDLY_PHONE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(content -> {
@@ -201,8 +212,8 @@ public class MM_Items {
             content.addAfter(JUMPERITE_LEGGINGS, JUMPERITE_BOOTS);
 
             content.addAfter(Items.EGG, JUMPMAN_BALL);
+            content.addAfter(Items.TOTEM_OF_UNDYING, BLOCK_BUTTON);
+
         });
-
-
     }
 }

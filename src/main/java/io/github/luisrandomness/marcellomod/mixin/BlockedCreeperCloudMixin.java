@@ -19,7 +19,7 @@ public abstract class BlockedCreeperCloudMixin extends Monster {
 
 	@Inject(at = @At("HEAD"), method = "spawnLingeringCloud")
 	private void init(CallbackInfo ci) {
-		LivingEntity living = (LivingEntity)this;
+		LivingEntity living = this;
 
 		// Remove block effect from creeper before exploding
 		if (living.hasEffect(MM_MobEffects.BLOCKED))

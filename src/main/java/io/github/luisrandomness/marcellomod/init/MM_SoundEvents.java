@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvent;
 public class MM_SoundEvents {
 
     public static final SoundEvent ITEM_BLOCK_BUTTON_PRESS = register("item.block_button.press");
+    public static final SoundEvent ITEM_BLOCK_BUTTON_FAILURE = register("item.block_button.failure");
     public static final SoundEvent ITEM_BLOCK_BUTTON_BLOCK = register("item.block_button.block");
 
     public static final SoundEvent ENTITY_GOTTA_SWEEP_INTRO = register("entity.gotta_sweep.intro");

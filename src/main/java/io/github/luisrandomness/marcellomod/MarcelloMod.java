@@ -27,6 +27,7 @@ public class MarcelloMod implements ModInitializer {
 
 		MM_SoundEvents.registerAll();
 		MM_MobEffects.registerAll();
+		MM_EntityTypes.registerEntities();
 		MM_Items.registerAll();
 		MM_Blocks.registerBlockEvents();
 		MM_Paintings.registerAll();

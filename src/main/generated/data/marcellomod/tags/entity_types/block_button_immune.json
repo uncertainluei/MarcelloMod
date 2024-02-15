@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:bosses",
+      "required": false
+    },
+    "minecraft:warden"
+  ]
+}

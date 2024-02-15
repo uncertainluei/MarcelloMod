@@ -5,6 +5,12 @@
     ],
     "subtitle": "subtitles.item.marcellomod.block_button.press"
   },
+  "item.block_button.failure": {
+    "sounds": [
+      "marcellomod:item/block_button/failure"
+    ],
+    "subtitle": "subtitles.item.marcellomod.block_button.failure"
+  },
   "item.block_button.block": {
     "sounds": [
       "marcellomod:item/block_button/block"

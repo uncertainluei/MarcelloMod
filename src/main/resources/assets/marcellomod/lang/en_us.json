@@ -56,6 +56,8 @@
   "item.marcellomod.jumperite_ingot": "Jumperite Ingot",
   "item.marcellomod.jumperite_rod": "Jumperite Rod",
 
+  "item.marcellomod.hammer_pencil": "Hammer Pencil",
+
   "item.marcellomod.marcello_sword": "Marcello Sword",
   "item.marcellomod.marcello_shovel": "Marcello Shovel",
   "item.marcellomod.marcello_pickaxe": "Marcello Pickaxe",
@@ -76,6 +78,7 @@
   "entity.marcellomod.marcello": "Marcello",
   "entity.marcellomod.evil_marcello": "Evil Marcello's",
   "entity.marcellomod.moldy": "Moldy",
+  "entity.marcellomod.tb": "TB",
   "entity.marcellomod.jumpman": "Jumpman25",
   "entity.marcellomod.mark": "Mark",
   "entity.marcellomod.gotta_sweep": "Gotta Sweep",
@@ -83,29 +86,36 @@
   "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
   "item.marcellomod.evil_marcello_spawn_egg": "Evil Marcello's Spawn Egg",
   "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
+  "item.marcellomod.tb_spawn_egg": "TB Spawn Egg",
   "item.marcellomod.jumpman_spawn_egg": "Jumpman25 Spawn Egg",
   "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
   "item.marcellomod.gotta_sweep_spawn_egg": "Gotta Sweep Spawn Egg",
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
+
   "item.marcellomod.otherworldly_phone": "Otherworldly Phone",
   "item.marcellomod.block_button": "Block Button",
 
-  "enchantment.marcellomod.mark": "Mark",
+  "enchantment.marcellomod.marking": "Marking",
 
   "effect.marcellomod.blocked" : "Blocked",
   "effect.marcellomod.whoosh" : "Whoosh",
 
-  "item.marcellomod.placeholder_disc": "\"Music\" Disc",
-  "item.marcellomod.placeholder_disc.info": "Placeholder, may be removed.",
+  "misc.marcellomod.blocked_chat" : "Your message could not be delivered. This is usually because you don't share a server with the recipient or the recipient is only accepting direct messages from friends. You can see the full list of reasons here: https://support.discord.com/hc/en-us/articles/360060145013",
 
-  "item.marcellomod.music_disc_lr1999_rap.desc": "lr1999 - Marcello Rap Battles LR1999",
-  "item.marcellomod.music_disc_call_cops.desc": "lr1999 -  Marcello Calls Cops (Oct. 2020)",
-  "item.marcellomod.music_disc_stop_call.desc": "Jumpman25, badrum - Stop Fucking Call Me",
-  "item.marcellomod.music_disc_t5_face.desc": "Marcello_TIMEnice30 - t5mpler face reveal!!!",
-  "item.marcellomod.music_disc_loksy.desc": "Marcello_TIMEnice30 - what happend losky?",
-  "item.marcellomod.music_disc_forest_funk.desc": "Danny Baranowsky, LuisRandomness - Forest Funk (SICK Mix)",
+  "subtitles.item.marcellomod.block_button.press": "Block Button pressed",
+  "subtitles.item.marcellomod.block_button.failure": "Entity unable to block",
+  "subtitles.item.marcellomod.block_button.block": "Entity blocked",
 
-  "misc.marcellomod.blocked_chat" : "Your message could not be delivered. This is usually because you don't share a server with the recipient or the recipient is only accepting direct messages from friends. You can see the full list of reasons here: https://support.discord.com/hc/en-us/articles/360060145013"
+  "subtitles.entity.marcellomod.gotta_sweep.yell": "Gotta Sweep sweeps",
+
+  "subtitles.entity.marcellomod.mark.ambient": "Mark cusses",
+  "subtitles.entity.marcellomod.mark.hurt": "Mark hurts",
+  "subtitles.entity.marcellomod.mark.block": "Mark blocks entity",
+  "subtitles.entity.marcellomod.mark.death": "Mark gracefully dies",
+
+  "subtitles.entity.marcellomod.marcello.ambient": "Marcello speaks",
+  "subtitles.entity.marcellomod.marcello.hurt": "Marcello hurts",
+  "subtitles.entity.marcellomod.marcello.death": "Marcello dies"
 }

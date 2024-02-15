@@ -6,8 +6,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplate;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
+
+import java.util.Optional;
 
 public class MM_ModelProvider extends FabricModelProvider {
     public MM_ModelProvider(FabricDataOutput output) {
@@ -71,5 +77,10 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.generateArmorTrims(MM_Items.JUMPERITE_CHESTPLATE);
         gen.generateArmorTrims(MM_Items.JUMPERITE_LEGGINGS);
         gen.generateArmorTrims(MM_Items.JUMPERITE_BOOTS);
+
+        ResourceLocation spawnEggTemplate = new ResourceLocation("item/template_spawn_egg");
+        for (Item item : MM_Items.ALL_ITEMS)
+            if (item instanceof SpawnEggItem)
+                gen.generateFlatItem(item, new ModelTemplate(Optional.of(spawnEggTemplate), Optional.empty()));
     }
 }
