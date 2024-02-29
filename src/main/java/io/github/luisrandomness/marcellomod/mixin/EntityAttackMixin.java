@@ -1,8 +1,6 @@
 package io.github.luisrandomness.marcellomod.mixin;
 
 import io.github.luisrandomness.marcellomod.init.MM_MobEffects;
-import io.github.luisrandomness.marcellomod.item.BlockButtonItem;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
