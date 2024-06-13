@@ -46,11 +46,5 @@ public class MM_RecipeProvider extends FabricRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.MARCELLO_PICKAXE).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("XXX").pattern(" # ").pattern(" # ").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.MARCELLO_AXE).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("XX").pattern("X#").pattern(" #").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.MARCELLO_HOE).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("XX").pattern(" #").pattern(" #").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(exporter);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MM_Items.JUMPERITE_SWORD).define('#', MM_Items.JUMPERITE_ROD).define('X', MM_Items.JUMPERITE_INGOT).pattern("X").pattern("X").pattern("#").unlockedBy("has_jumperite_ingot", has(MM_Blocks.JUMPERITE_BLOCK)).save(exporter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.JUMPERITE_SHOVEL).define('#', MM_Items.JUMPERITE_ROD).define('X', MM_Items.JUMPERITE_INGOT).pattern("X").pattern("#").pattern("#").unlockedBy("has_jumperite_ingot", has(MM_Blocks.JUMPERITE_BLOCK)).save(exporter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.JUMPERITE_PICKAXE).define('#', MM_Items.JUMPERITE_ROD).define('X', MM_Items.JUMPERITE_INGOT).pattern("XXX").pattern(" # ").pattern(" # ").unlockedBy("has_jumperite_ingot", has(MM_Blocks.JUMPERITE_BLOCK)).save(exporter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.JUMPERITE_AXE).define('#', MM_Items.JUMPERITE_ROD).define('X', MM_Items.JUMPERITE_INGOT).pattern("XX").pattern("X#").pattern(" #").unlockedBy("has_jumperite_ingot", has(MM_Blocks.JUMPERITE_BLOCK)).save(exporter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.JUMPERITE_HOE).define('#', MM_Items.JUMPERITE_ROD).define('X', MM_Items.JUMPERITE_INGOT).pattern("XX").pattern(" #").pattern(" #").unlockedBy("has_jumperite_ingot", has(MM_Blocks.JUMPERITE_BLOCK)).save(exporter);
     }
 }

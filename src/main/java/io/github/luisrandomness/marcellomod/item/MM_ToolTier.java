@@ -7,8 +7,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 public enum MM_ToolTier implements Tier {
-   MARCELLO(2, 384, 6.0F, 2.0F, 8, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
-   JUMPERITE(4, 1999, 9.5F, 5.0F, 12, Ingredient.of(MM_Items.JUMPERITE_INGOT));
+   MARCELLO(2, 384, 6F, 2F, 8, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
+   JUMPERITE(4, 1999, 9.5F, 5F, 12, Ingredient.of(MM_Items.JUMPERITE_INGOT));
 
    private final int level;
    private final int uses;
@@ -17,12 +17,12 @@ public enum MM_ToolTier implements Tier {
    private final int enchantmentValue;
    private final Ingredient repairIngredient;
 
-   private MM_ToolTier(int miningLevel, int durability, float efficiency, float attackDamage, int enchantability, Ingredient repairMaterial) {
+   private MM_ToolTier(int miningLevel, int durability, float efficiency, float attackDamage, int enchantmentValue, Ingredient repairMaterial) {
       this.level = miningLevel;
       this.uses = durability;
       this.speed = efficiency;
       this.damage = attackDamage;
-      this.enchantmentValue = enchantability;
+      this.enchantmentValue = enchantmentValue;
       this.repairIngredient = repairMaterial;
    }
 
