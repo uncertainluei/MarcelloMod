@@ -1,13 +1,13 @@
 package io.github.luisrandomness.marcellomod.entity;
 
-import io.github.luisrandomness.marcellomod.init.MM_EntityTypes;
-import io.github.luisrandomness.marcellomod.init.MM_Items;
-import io.github.luisrandomness.marcellomod.init.MM_SoundEvents;
+import io.github.luisrandomness.marcellomod.init.*;
+import io.github.luisrandomness.marcellomod.item.BlockButtonItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -88,6 +88,36 @@ public class MarkEntity extends Monster {
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers(this.getClass()));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(7, new RandomSwimmingGoal(this, 1, 120));
+        this.goalSelector.addGoal(7, new FloatGoal(this));
+        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1, 120));
+    }
+
+    public boolean doHurtTarget(Entity target) {
+        boolean flag = super.doHurtTarget(target);
+        if (flag && target instanceof LivingEntity && !target.getType().is(MM_Tags.ENTITY_BLOCK_BUTTON_IMMUNE)) {
+            float f = level().getCurrentDifficultyAt(blockPosition()).getEffectiveDifficulty();
+            InteractionHand hand;
+            LivingEntity livingTarget = (LivingEntity)target;
+
+            if (getMainHandItem().getItem() instanceof BlockButtonItem)
+                hand = InteractionHand.MAIN_HAND;
+            else if (getOffhandItem().getItem() instanceof BlockButtonItem)
+                hand = InteractionHand.OFF_HAND;
+            else
+                hand = null;
+
+            if (!livingTarget.hasEffect(MM_MobEffects.BLOCKED) && hand != null && getRandom().nextInt(3) <= f)
+            {
+                playSound(MM_SoundEvents.ENTITY_MARK_BLOCK);
+                livingTarget.addEffect(new MobEffectInstance(MM_MobEffects.BLOCKED, 200 + 100 * (int)f), this);
+
+                swing(hand);
+                getItemInHand(hand).hurtAndBreak(1, this, (e) -> {
+                    e.broadcastBreakEvent(hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+                });
+            }
+        }
+
+        return flag;
     }
 }

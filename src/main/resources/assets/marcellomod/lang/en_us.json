@@ -17,7 +17,15 @@
   "block.marcellomod.marcello_ore": "Marcello Ore",
   "block.marcellomod.deepslate_marcello_ore": "Deepslate Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
+
   "block.marcellomod.jumperite_ore": "Jumperite Ore",
+
+  "block.marcellomod.jumperite_shard_block": "Block of Jumperite Shards",
+
+  "block.marcellomod.jumperite_shard_bricks": "Jumperite Shard Bricks",
+  "block.marcellomod.jumperite_shard_brick_slab": "Jumperite Shard Brick Slab",
+  "block.marcellomod.jumperite_shard_brick_stairs": "Jumperite Shard Brick Stairs",
+  "block.marcellomod.jumperite_shard_brick_wall": "Jumperite Shard Brick Wall",
 
   "block.marcellomod.marcelium_log": "Marcelium Log",
   "block.marcellomod.marcelium_wood": "Marcelium Wood",
@@ -37,6 +45,9 @@
   "block.marcellomod.marcelium_hanging_sign": "Marcelium Hanging Sign",
   "block.marcellomod.marcelium_wall_hanging_sign": "Marcelium Wall Hanging Sign",
 
+  "item.marcellomod.marcelium_boat": "Marcelium Boat",
+  "item.marcellomod.marcelium_chest_boat": "Marcelium Boat with Chest",
+
   "block.marcellomod.red_marcelium_leaves": "Red Marcelium Leaves",
   "block.marcellomod.green_marcelium_leaves": "Green Marcelium Leaves",
   "block.marcellomod.yellow_marcelium_leaves": "Yellow Marcelium Leaves",
@@ -51,10 +62,17 @@
 
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
+
   "item.marcellomod.jumpman_ball": "Jumpman25 Ball",
+
   "item.marcellomod.jumperite_shard": "Jumperite Shard",
   "item.marcellomod.jumperite_ingot": "Jumperite Ingot",
-  "item.marcellomod.jumperite_rod": "Jumperite Rod",
+
+  "item.marcellomod.jumperite_upgrade_smithing_template": "Smithing Template",
+
+  "item.marcellomod.smithing_template.jumperite_upgrade.additions_slot_description": "Add Jumperite Ingot",
+  "item.marcellomod.smithing_template.jumperite_upgrade.ingredients": "Jumperite Ingot",
+  "upgrade.marcellomod.jumperite_upgrade": "Jumperite Upgrade",
 
   "item.marcellomod.hammer_pencil": "Hammer Pencil",
 
@@ -69,6 +87,8 @@
   "item.marcellomod.jumperite_pickaxe": "Jumperite Pickaxe",
   "item.marcellomod.jumperite_axe": "Jumperite Axe",
   "item.marcellomod.jumperite_hoe": "Jumperite Hoe",
+
+  "item.marcellomod.jumperite_bow": "Jumperite Bow",
 
   "item.marcellomod.jumperite_helmet": "Jumperite Helmet",
   "item.marcellomod.jumperite_chestplate": "Jumperite Chestplate",

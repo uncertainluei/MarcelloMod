@@ -13,12 +13,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Creeper.class)
 public abstract class BlockedCreeperCloudMixin extends Monster {
-	protected BlockedCreeperCloudMixin(EntityType<? extends Monster> entityType, Level world) {
+	private BlockedCreeperCloudMixin(EntityType<? extends Monster> entityType, Level world) {
 		super(entityType, world);
 	}
 
 	@Inject(at = @At("HEAD"), method = "spawnLingeringCloud")
-	private void init(CallbackInfo ci) {
+	private void marcellomod$onCloudSpawn(CallbackInfo ci) {
 		LivingEntity living = this;
 
 		// Remove block effect from creeper before exploding

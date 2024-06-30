@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "marcellomod:jumperite_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_helmet"
+  },
+  "result": {
+    "item": "marcellomod:jumperite_helmet"
+  },
+  "template": {
+    "item": "marcellomod:jumperite_upgrade_smithing_template"
+  }
+}

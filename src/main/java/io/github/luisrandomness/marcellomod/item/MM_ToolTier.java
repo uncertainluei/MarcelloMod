@@ -3,12 +3,13 @@ package io.github.luisrandomness.marcellomod.item;
 import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 public enum MM_ToolTier implements Tier {
-   MARCELLO(2, 384, 6F, 2F, 8, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
-   JUMPERITE(4, 1999, 9.5F, 5F, 12, Ingredient.of(MM_Items.JUMPERITE_INGOT));
+   MARCELLO(1, 226, 5F, 2F, 11, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
+   JUMPERITE(4, 1999, 9.5F, 5F, 9, Ingredient.of(MM_Items.JUMPERITE_SHARD));
 
    private final int level;
    private final int uses;

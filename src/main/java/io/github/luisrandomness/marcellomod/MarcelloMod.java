@@ -1,9 +1,11 @@
 package io.github.luisrandomness.marcellomod;
 
 import io.github.luisrandomness.marcellomod.init.*;
+import io.github.luisrandomness.marcellomod.world.generation.MM_WorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,5 +33,7 @@ public class MarcelloMod implements ModInitializer {
 		MM_Items.registerAll();
 		MM_Blocks.registerBlockEvents();
 		MM_Paintings.registerAll();
+
+		MM_WorldGeneration.addWorldGenModifications();
 	}
 }

@@ -1,12 +1,12 @@
 package io.github.luisrandomness.marcellomod;
 
 import io.github.luisrandomness.marcellomod.datagen.*;
+import io.github.luisrandomness.marcellomod.world.MM_ConfiguredFeatures;
+import io.github.luisrandomness.marcellomod.world.MM_PlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.DimensionTypes;
-import net.minecraft.data.worldgen.biome.NetherBiomes;
-import net.minecraft.data.worldgen.placement.TreePlacements;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 
 public class MarcelloModDataGenerator implements DataGeneratorEntrypoint {
 	public static FabricTagProvider.BlockTagProvider blockTags;
@@ -23,5 +23,12 @@ public class MarcelloModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(MM_PaintingTagProvider::new);
 		pack.addProvider(MM_BlockLootTableProvider::new);
 		pack.addProvider(MM_RecipeProvider::new);
+		pack.addProvider(MM_WorldGenerationProvider::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistrySetBuilder registryBuilder) {
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, MM_ConfiguredFeatures::bootstrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, MM_PlacedFeatures::bootstrap);
 	}
 }

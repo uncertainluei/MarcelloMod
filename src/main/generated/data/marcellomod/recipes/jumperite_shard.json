@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "marcellomod:jumperite_shard_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "marcellomod:jumperite_shard"
+  }
+}

@@ -38,8 +38,8 @@ public class HumanoidNpcRenderer<T extends Mob> extends MobRenderer<T, PlayerMod
     
     @Override
     protected void scale(Mob livingEntity, PoseStack poseStack, float partialTickTime) {
-        if (!playerScale) return;
-        poseStack.scale(0.9375F, 0.9375F, 0.9375F);
+        if (playerScale)
+            poseStack.scale(0.9375F, 0.9375F, 0.9375F);
     }
 
     @Override

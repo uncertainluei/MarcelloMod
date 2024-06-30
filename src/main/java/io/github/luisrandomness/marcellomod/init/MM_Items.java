@@ -1,12 +1,17 @@
 package io.github.luisrandomness.marcellomod.init;
 
+import com.terraformersmc.terraform.boat.api.TerraformBoatType;
+import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import io.github.luisrandomness.marcellomod.item.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.*;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
@@ -43,11 +48,17 @@ public class MM_Items {
     public static Item registerItem(String identifier, Item item, boolean includeInCreative)
     {
         Item result = Registry.register(BuiltInRegistries.ITEM, modIdentifier(identifier), item);
-        ALL_ITEMS.add(result);
-        if (includeInCreative)
-            AUTO_CREATIVE_ITEMS.add(result);
-        return result;
+        return addToItemList(item, includeInCreative);
     }
+
+    public static Item addToItemList(Item registeredItem, boolean includeInCreative)
+    {
+        ALL_ITEMS.add(registeredItem);
+        if (includeInCreative)
+            AUTO_CREATIVE_ITEMS.add(registeredItem);
+        return registeredItem;
+    }
+
     public static Item registerItem(String identifier, Item item)
     {
         return registerItem(identifier,item,true);
@@ -58,7 +69,7 @@ public class MM_Items {
     public static final Item JUMPMAN_BALL =  registerItem("jumpman_ball", new SnowballItem(new FabricItemSettings().maxCount(16)));
     public static final Item JUMPERITE_SHARD = registerItem("jumperite_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_INGOT = registerItem("jumperite_ingot", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_ROD = registerItem("jumperite_rod", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item JUMPERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("jumperite_upgrade_smithing_template", new JumperiteUpgradeTemplateItem());
 
     public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new FabricItemSettings().maxCount(1).maxDamage(8)));
     public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE)));
@@ -75,6 +86,8 @@ public class MM_Items {
     public static final Item JUMPERITE_PICKAXE = registerItem ("jumperite_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.JUMPERITE,1,-2.8F,new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_AXE = registerItem ("jumperite_axe", new MarcelloAxeItem(MM_ToolTier.JUMPERITE,5,-3.1F,new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_HOE = registerItem ("jumperite_hoe", new MarcelloHoeItem(MM_ToolTier.JUMPERITE,-5,0F,new FabricItemSettings().rarity(Rarity.EPIC)));
+
+    public static final Item JUMPERITE_BOW = registerItem("jumperite_bow", new JumperiteBowItem(MM_ToolTier.JUMPERITE, new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static final Item HAMMER_PENCIL = registerItem ("hammer_pencil", new Item(new FabricItemSettings().maxCount(1).maxDamage(64)));
 
@@ -98,6 +111,18 @@ public class MM_Items {
     public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new FabricItemSettings().maxCount(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
     public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));
 
+    public static final ResourceKey<TerraformBoatType> MARCELIUM_BOAT_KEY = TerraformBoatTypeRegistry.createKey(modIdentifier("marcelium"));
+
+    public static final Item MARCELIUM_BOAT_ITEM = addToItemList(TerraformBoatItemHelper.registerBoatItem(modIdentifier("marcelium_boat"), MARCELIUM_BOAT_KEY, false), true);
+    public static final Item MARCELIUM_CHEST_BOAT_ITEM = addToItemList(TerraformBoatItemHelper.registerBoatItem(modIdentifier("marcelium_chest_boat"), MARCELIUM_BOAT_KEY, true), true);
+
+    public static final TerraformBoatType MARCELIUM_BOAT_TYPE = new TerraformBoatType.Builder()
+            .item(MARCELIUM_BOAT_ITEM)
+            .chestItem(MARCELIUM_CHEST_BOAT_ITEM)
+            .planks(MM_Blocks.MARCELIUM_PLANKS.asItem())
+            .build();
+
+
     private static final CreativeModeTab TAB_BLOCKS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(MM_Blocks.MARCELLO_BLOCK))
             .title(Component.translatable("itemGroup.marcellomod.blocks"))
@@ -120,6 +145,8 @@ public class MM_Items {
 
     public static void registerAll()
     {
+        Registry.register(TerraformBoatTypeRegistry.INSTANCE, MARCELIUM_BOAT_KEY, MARCELIUM_BOAT_TYPE);
+
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, modIdentifier("blocks"), TAB_BLOCKS);
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, modIdentifier("items"), TAB_ITEMS);
 
@@ -173,7 +200,7 @@ public class MM_Items {
             content.addAfter(MARCELLO_FRUIT, PHONE);
             content.addAfter(Items.ANCIENT_DEBRIS, JUMPERITE_SHARD);
             content.addAfter(Items.NETHERITE_INGOT, JUMPERITE_INGOT);
-            content.addAfter(JUMPERITE_INGOT, JUMPERITE_ROD);
+            content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, JUMPERITE_UPGRADE_SMITHING_TEMPLATE);
 
             content.addAfter(Items.EGG, JUMPMAN_BALL);
         });

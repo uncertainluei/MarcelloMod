@@ -51,6 +51,8 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.AXES).add(MM_Items.MARCELLO_AXE).add(MM_Items.JUMPERITE_AXE);
         getOrCreateTagBuilder(ItemTags.HOES).add(MM_Items.MARCELLO_HOE).add(MM_Items.JUMPERITE_HOE);
 
+        getOrCreateTagBuilder(ConventionalItemTags.BOWS).add(MM_Items.JUMPERITE_BOW);
+
         getOrCreateTagBuilder(MM_Tags.ITEM_JUMPERITE_ARMOR)
                 .add(MM_Items.JUMPERITE_HELMET)
                 .add(MM_Items.JUMPERITE_CHESTPLATE)

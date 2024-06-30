@@ -7,6 +7,7 @@ import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import io.github.luisrandomness.marcellomod.MarcelloMod;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,7 +18,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -57,6 +60,19 @@ public class MM_Blocks {
 
     public static final DropExperienceBlock JUMPERITE_ORE = (DropExperienceBlock) registerBlock("jumperite_ore", new DropExperienceBlock(UniformInt.of(4, 7), FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)
             .strength(8F,32F).requiresTool()));
+
+    public static final Block JUMPERITE_SHARD_BLOCK = registerBlock("jumperite_shard_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)
+            .strength(12F,32F).requiresTool().sounds(SoundType.ANCIENT_DEBRIS)));
+
+    public static final Block JUMPERITE_SHARD_BRICKS = registerBlock("jumperite_shard_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)
+            .strength(12F,32F).requiresTool().sounds(SoundType.ANCIENT_DEBRIS)));
+    public static final Block JUMPERITE_SHARD_BRICK_SLAB = registerBlock("jumperite_shard_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB)
+            .strength(12F,32F).requiresTool().sounds(SoundType.ANCIENT_DEBRIS)));
+    public static final Block JUMPERITE_SHARD_BRICK_STAIRS = registerBlock("jumperite_shard_brick_stairs", new StairBlock(JUMPERITE_SHARD_BRICKS.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)
+            .strength(12F,32F).requiresTool().sounds(SoundType.ANCIENT_DEBRIS)));
+    public static final Block JUMPERITE_SHARD_BRICK_WALL = registerBlock("jumperite_shard_brick_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)
+            .strength(12F,32F).requiresTool().sounds(SoundType.ANCIENT_DEBRIS)));
+
     public static final Block JUMPERITE_BLOCK = registerBlock("jumperite_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
             .strength(20F,32F).requiresTool().sounds(SoundType.NETHERITE_BLOCK)));
 
@@ -96,14 +112,43 @@ public class MM_Blocks {
     public static final Block YELLOW_MARCELIUM_SAPLING = registerBlock("yellow_marcelium_sapling", new SaplingBlock(TreeGrower.OAK, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block POTTED_RED_MARCELIUM_SAPLING = registerBlock("potted_red_marcelium_sapling", new FlowerPotBlock(RED_MARCELIUM_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_OAK_SAPLING)), false);
     public static final Block POTTED_YELLOW_MARCELIUM_SAPLING = registerBlock("potted_yellow_marcelium_sapling", new FlowerPotBlock(YELLOW_MARCELIUM_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_OAK_SAPLING)), false);
-
     public static final Block POTTED_GREEN_MARCELIUM_SAPLING = registerBlock("potted_green_marcelium_sapling", new FlowerPotBlock(GREEN_MARCELIUM_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_OAK_SAPLING)), false);
 
-    public static final BlockFamily FAMILY_MARCELIUM = BlockFamilies.familyBuilder(MM_Blocks.MARCELIUM_PLANKS).button(MM_Blocks.MARCELIUM_BUTTON).fence(MM_Blocks.MARCELIUM_FENCE).fenceGate(MM_Blocks.MARCELIUM_FENCE_GATE).pressurePlate(MM_Blocks.MARCELIUM_PRESSURE_PLATE).slab(MM_Blocks.MARCELIUM_SLAB).stairs(MM_Blocks.MARCELIUM_STAIRS).sign(MARCELIUM_SIGN,MARCELIUM_WALL_SIGN).door(MM_Blocks.MARCELIUM_DOOR).trapdoor(MM_Blocks.MARCELIUM_TRAPDOOR).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
+    public static final BlockSetType BLOCKSET_QUARTZ_BRICKS = new BlockSetType("marcellomod:quartz_bricks");
+
+    public static final Block DOOR_2_WALL = registerBlock("door_2_wall", new DoorBlock(BLOCKSET_QUARTZ_BRICKS,FabricBlockSettings.copyOf(Blocks.IRON_DOOR).strength(0.8F).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM)));
+
+    public static final BlockFamily FAMILY_MARCELIUM = BlockFamilies.familyBuilder(MARCELIUM_PLANKS)
+            .button(MARCELIUM_BUTTON)
+            .fence(MARCELIUM_FENCE)
+            .fenceGate(MARCELIUM_FENCE_GATE)
+            .pressurePlate(MARCELIUM_PRESSURE_PLATE)
+            .slab(MARCELIUM_SLAB)
+            .stairs(MARCELIUM_STAIRS)
+            .sign(MARCELIUM_SIGN,MARCELIUM_WALL_SIGN)
+            .door(MARCELIUM_DOOR)
+            .trapdoor(MARCELIUM_TRAPDOOR)
+            .recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
+    public static final BlockFamily FAMILY_JUMPERITE_SHARD_BRICK = BlockFamilies.familyBuilder(JUMPERITE_SHARD_BRICKS)
+            .slab(JUMPERITE_SHARD_BRICK_SLAB)
+            .stairs(JUMPERITE_SHARD_BRICK_STAIRS)
+            .wall(JUMPERITE_SHARD_BRICK_WALL)
+            .recipeUnlockedBy("has_jumperite_shard").getFamily();
 
     public static void registerBlockEvents()
     {
         StrippableBlockRegistry.register(MARCELIUM_LOG,STRIPPED_MARCELIUM_LOG);
         StrippableBlockRegistry.register(MARCELIUM_WOOD,STRIPPED_MARCELIUM_WOOD);
+
+        FlammableBlockRegistry flammables = FlammableBlockRegistry.getDefaultInstance();
+        flammables.add(MM_Tags.BLOCK_MARCELIUM_LOGS, 6, 3);
+        flammables.add(MARCELIUM_PLANKS, 6, 3);
+        flammables.add(MARCELIUM_SLAB, 6, 3);
+        flammables.add(MARCELIUM_STAIRS, 6, 3);
+        flammables.add(MARCELIUM_FENCE, 6, 3);
+        flammables.add(MARCELIUM_FENCE_GATE, 6, 3);
+        flammables.add(MARCELIUM_FENCE_GATE, 6, 3);
+
+        flammables.add(MM_Tags.BLOCK_MARCELIUM_LEAVES, 9, 6);
     }
 }

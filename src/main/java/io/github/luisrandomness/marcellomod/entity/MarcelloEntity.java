@@ -29,7 +29,10 @@ public class MarcelloEntity extends Monster {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
         if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
+        {
             setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(MM_Items.PHONE, 1));
+            setDropChance(EquipmentSlot.MAINHAND, 0.8F);
+        }
         return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 

@@ -38,7 +38,7 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
         dropSelf(MM_Blocks.MARCELIUM_SLAB);
         dropSelf(MM_Blocks.MARCELIUM_FENCE);
         dropSelf(MM_Blocks.MARCELIUM_FENCE_GATE);
-        dropSelf(MM_Blocks.MARCELIUM_DOOR);
+        createDoorTable(MM_Blocks.MARCELIUM_DOOR);
         dropSelf(MM_Blocks.MARCELIUM_TRAPDOOR);
 
         dropOther(MM_Blocks.MARCELIUM_SIGN, MM_Items.MARCELIUM_SIGN);
@@ -57,10 +57,12 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
         add(MM_Blocks.RED_MARCELIUM_LEAVES, (block) -> createLeavesDrops(block, MM_Blocks.RED_MARCELIUM_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         add(MM_Blocks.GREEN_MARCELIUM_LEAVES, (block) -> createLeavesDrops(block, MM_Blocks.GREEN_MARCELIUM_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         add(MM_Blocks.YELLOW_MARCELIUM_LEAVES, (block) -> createLeavesDrops(block, MM_Blocks.YELLOW_MARCELIUM_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
+
+        createDoorTable(MM_Blocks.DOOR_2_WALL);
     }
 
     public LootTable.Builder marcelloOreDrops(Block drop) {
-        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.MARCELLO_FRUIT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.MARCELLO_FRUIT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 
     public LootTable.Builder jumperiteOreDrops(Block drop) {

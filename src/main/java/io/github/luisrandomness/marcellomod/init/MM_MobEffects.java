@@ -27,7 +27,6 @@ public class MM_MobEffects {
     public static void registerAll()
     {
         // TODO - Make these configurable!
-
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
             if (!player.isSpectator() && player.hasEffect(BLOCKED))
                 return InteractionResult.FAIL;

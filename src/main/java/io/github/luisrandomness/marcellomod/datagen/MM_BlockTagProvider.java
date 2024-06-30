@@ -61,12 +61,22 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(MM_Blocks.MARCELIUM_DOOR);
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(MM_Blocks.MARCELIUM_TRAPDOOR);
 
+        getOrCreateTagBuilder(BlockTags.SLABS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.WALLS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
+
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(MM_Blocks.MARCELLO_BLOCK)
                 .add(MM_Blocks.MARK_BLOCK)
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES)
                 .addTag(MM_Tags.BLOCK_JUMPERITE_ORES)
-                .add(MM_Blocks.JUMPERITE_BLOCK);
+                .add(MM_Blocks.JUMPERITE_BLOCK)
+                .add(MM_Blocks.JUMPERITE_SHARD_BLOCK)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICKS)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(MM_Blocks.MARCELLO_BLOCK)
@@ -75,6 +85,11 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .addTag(MM_Tags.BLOCK_JUMPERITE_ORES)
-                .add(MM_Blocks.JUMPERITE_BLOCK);
+                .add(MM_Blocks.JUMPERITE_BLOCK)
+                .add(MM_Blocks.JUMPERITE_SHARD_BLOCK)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICKS)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS)
+                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "marcellomod:block/jumperite_shard_bricks",
+    "side": "marcellomod:block/jumperite_shard_bricks",
+    "top": "marcellomod:block/jumperite_shard_bricks"
+  }
+}

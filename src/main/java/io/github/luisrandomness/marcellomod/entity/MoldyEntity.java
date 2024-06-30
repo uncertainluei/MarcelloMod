@@ -1,5 +1,6 @@
 package io.github.luisrandomness.marcellomod.entity;
 
+import io.github.luisrandomness.marcellomod.init.MM_EntityTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -41,13 +42,13 @@ public class MoldyEntity extends Monster {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0D)
                 .add(Attributes.ATTACK_SPEED, 4.0D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.ATTACK_KNOCKBACK, 0.2D)
-                .add(Attributes.FOLLOW_RANGE, 16.0);
+                .add(Attributes.ATTACK_KNOCKBACK, 0.2D);
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, MarcelloEntity.class, true));
+        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, true, (livingEntity) -> {
+            return livingEntity.getMobType() == MM_EntityTypes.MARCELLO_TYPE;}));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers(this.getClass()));

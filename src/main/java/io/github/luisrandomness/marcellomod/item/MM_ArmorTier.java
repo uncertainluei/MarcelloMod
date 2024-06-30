@@ -8,7 +8,6 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,13 +17,13 @@ import java.util.function.Supplier;
 import static io.github.luisrandomness.marcellomod.MarcelloMod.MOD_NAMESPACE;
 
 public enum MM_ArmorTier implements StringRepresentable, ArmorMaterial {
-    JUMPERITE("jumperite", 28, armorToEnum(4,9,7,3), 12, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.5F, 0F, () -> Ingredient.of(MM_Items.JUMPERITE_INGOT));
+    JUMPERITE("jumperite", 35, armorToEnum(4,9,7,3), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 1F, 0F, () -> Ingredient.of(MM_Items.JUMPERITE_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;
     private final EnumMap<ArmorItem.Type, Integer> protectionAmounts;
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = armorToEnum(11,16,15,13);
-    private final int enchantability;
+    private final int enchantmentValue;
     private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackResistance;
@@ -40,11 +39,11 @@ public enum MM_ArmorTier implements StringRepresentable, ArmorMaterial {
         });
     }
 
-    private MM_ArmorTier(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier repairIngredientSupplier) {
+    private MM_ArmorTier(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier repairIngredientSupplier) {
         this.name = MOD_NAMESPACE + ":" + name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
-        this.enchantability = enchantability;
+        this.enchantmentValue = enchantmentValue;
         this.equipSound = equipSound;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
@@ -58,7 +57,7 @@ public enum MM_ArmorTier implements StringRepresentable, ArmorMaterial {
     public int getDefenseForType(ArmorItem.Type type) { return this.protectionAmounts.get(type); }
 
     public int getEnchantmentValue() {
-        return this.enchantability;
+        return this.enchantmentValue;
     }
 
     public @NotNull SoundEvent getEquipSound() {

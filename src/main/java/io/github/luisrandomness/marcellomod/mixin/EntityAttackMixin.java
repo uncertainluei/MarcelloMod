@@ -12,17 +12,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public class EntityAttackMixin {
 	@Inject(at = @At("HEAD"), method = "isInvulnerableTo", cancellable = true)
-	private void init(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+	private void marcellomod$isInvincible(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
 		Entity attacker = source.getEntity();
-		if (!(attacker instanceof LivingEntity))
-			return;
 
-		LivingEntity attackerLiving = (LivingEntity) attacker;
-
-		// If the attacker is blocked, return invulnerability flag as true.
-		if (attackerLiving.hasEffect(MM_MobEffects.BLOCKED)) {
+		// If the attacker is a living entity and has the blocked effect, return invulnerability flag as true.
+		if (attacker instanceof LivingEntity attackerLiving && attackerLiving.hasEffect(MM_MobEffects.BLOCKED))
 			cir.setReturnValue(true);
-			return;
-		}
 	}
 }
