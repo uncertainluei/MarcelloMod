@@ -48,5 +48,6 @@ public class MM_Paintings {
         register(context, RACIST, 2, 2);
         register(context, THE_WHAT, 2, 2);
         register(context, MICHAEL_SONIC, 1, 2);
+        register(context, RUN, 4, 2);
     }
 }
