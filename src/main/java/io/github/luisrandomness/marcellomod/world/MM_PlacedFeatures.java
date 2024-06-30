@@ -4,7 +4,7 @@ import io.github.luisrandomness.marcellomod.MarcelloMod;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -20,7 +20,7 @@ public class MM_PlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> ORE_MARCELLO_NETHER = registerKey("ore_marcello_nether");
 
-    public static void bootstrap(BootstapContext<PlacedFeature> context) {
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> cfLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
         Holder<ConfiguredFeature<?,?>> oreConfig = cfLookup.getOrThrow(MM_ConfiguredFeatures.ORE_MARCELLO_SMALL);
@@ -36,7 +36,7 @@ public class MM_PlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE, MarcelloMod.modIdentifier(name));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?,?>> config, List<PlacementModifier> modifiers) {
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?,?>> config, List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(config, List.copyOf(modifiers)));
     }
 

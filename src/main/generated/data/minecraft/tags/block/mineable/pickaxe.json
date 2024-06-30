@@ -1,0 +1,14 @@
+{
+  "values": [
+    "marcellomod:marcello_block",
+    "marcellomod:mark_block",
+    "#marcellomod:marcello_ores",
+    "#marcellomod:jumperite_ores",
+    "marcellomod:jumperite_block",
+    "marcellomod:jumperite_shard_block",
+    "marcellomod:jumperite_shard_bricks",
+    "marcellomod:jumperite_shard_brick_slab",
+    "marcellomod:jumperite_shard_brick_stairs",
+    "marcellomod:jumperite_shard_brick_wall"
+  ]
+}

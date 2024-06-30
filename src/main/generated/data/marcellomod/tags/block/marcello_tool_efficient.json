@@ -1,0 +1,22 @@
+{
+  "values": [
+    "marcellomod:marcello_block",
+    "marcellomod:mark_block",
+    "#marcellomod:marcello_ores",
+    "#marcellomod:marcelium_leaves",
+    "#marcellomod:marcelium_logs",
+    "marcellomod:marcelium_planks",
+    "marcellomod:marcelium_stairs",
+    "marcellomod:marcelium_slab",
+    "marcellomod:marcelium_fence",
+    "marcellomod:marcelium_fence_gate",
+    "marcellomod:marcelium_door",
+    "marcellomod:marcelium_trapdoor",
+    "marcellomod:marcelium_button",
+    "marcellomod:marcelium_pressure_plate",
+    "marcellomod:marcelium_sign",
+    "marcellomod:marcelium_wall_sign",
+    "marcellomod:marcelium_hanging_sign",
+    "marcellomod:marcelium_wall_hanging_sign"
+  ]
+}

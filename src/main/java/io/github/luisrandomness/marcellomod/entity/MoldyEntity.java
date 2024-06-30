@@ -1,7 +1,6 @@
 package io.github.luisrandomness.marcellomod.entity;
 
-import io.github.luisrandomness.marcellomod.init.MM_EntityTypes;
-import net.minecraft.nbt.CompoundTag;
+import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.*;
@@ -13,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MoldyEntity extends Monster {
@@ -23,15 +21,10 @@ public class MoldyEntity extends Monster {
 
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
             setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_SWORD, 1));
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
-    }
-
-    @Override
-    protected float ridingOffset(Entity entity) {
-        return -0.6F;
+        return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
     }
 
     public static AttributeSupplier.Builder createMoldyAttributes() {
@@ -48,7 +41,7 @@ public class MoldyEntity extends Monster {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, true, (livingEntity) -> {
-            return livingEntity.getMobType() == MM_EntityTypes.MARCELLO_TYPE;}));
+            return livingEntity.getType().is(MM_Tags.ENTITY_MARCELLO_TYPE);}));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers(this.getClass()));

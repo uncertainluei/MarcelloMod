@@ -14,11 +14,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class BlockButtonItem extends Item implements Vanishable {
+public class BlockButtonItem extends Item {
 
     public BlockButtonItem(Properties settings) {
         super(settings);
@@ -48,10 +47,7 @@ public class BlockButtonItem extends Item implements Vanishable {
             world.playSound(null, player.getX(),player.getY(),player.getZ(), MM_SoundEvents.ITEM_BLOCK_BUTTON_BLOCK, SoundSource.NEUTRAL, 0.65F,1F);
         }
 
-        stack.hurtAndBreak(1, player, (e) -> {
-            // Mojang why isn't there a helper function to convert from hand type -> equipment slot?!?!
-            e.broadcastBreakEvent(usedHand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-        });
+        stack.hurtAndBreak(1, player, usedHand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
         return InteractionResult.PASS;
     }
 }

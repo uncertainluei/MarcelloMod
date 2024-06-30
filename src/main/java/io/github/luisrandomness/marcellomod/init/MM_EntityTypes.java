@@ -17,14 +17,12 @@ public class MM_EntityTypes {
     }
 
     public static EntityType<MarcelloEntity> MARCELLO = registerEntityType("marcello",
-            FabricEntityTypeBuilder.create(MobCategory.MONSTER, MarcelloEntity::new).dimensions(EntityDimensions.fixed(0.6F, 1.8F)).build());
+            EntityType.Builder.of(MarcelloEntity::new, MobCategory.MONSTER).sized(0.6F, 1.8F).ridingOffset(-0.6F).build());
     public static EntityType<MoldyEntity> MOLDY = registerEntityType("moldy",
-            FabricEntityTypeBuilder.create(MobCategory.MONSTER, MoldyEntity::new).dimensions(EntityDimensions.fixed(0.6F, 1.8F)).build());
+            EntityType.Builder.of(MoldyEntity::new, MobCategory.MONSTER).sized(0.6F, 1.8F).ridingOffset(-0.6F).build());
 
     public static EntityType<MarkEntity> MARK = registerEntityType("mark",
-            FabricEntityTypeBuilder.create(MobCategory.MONSTER, MarkEntity::new).dimensions(EntityDimensions.fixed(0.6F, 1.95F)).fireImmune().build());
-
-    public static final MobType MARCELLO_TYPE = new MobType();
+            EntityType.Builder.of(MarkEntity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).ridingOffset(-0.7F).fireImmune().build());
 
     public static void registerEntities()
     {

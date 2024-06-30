@@ -18,7 +18,7 @@ public class MarcelloMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("marcellomod");
 
 	public static ResourceLocation modIdentifier(String location) {
-		return new ResourceLocation(MOD_NAMESPACE, location);
+		return ResourceLocation.fromNamespaceAndPath(MOD_NAMESPACE, location);
 	}
 
 	@Override
@@ -32,7 +32,9 @@ public class MarcelloMod implements ModInitializer {
 		MM_EntityTypes.registerEntities();
 		MM_Items.registerAll();
 		MM_Blocks.registerBlockEvents();
-		MM_Paintings.registerAll();
+		MM_ArmorTiers.registerArmorTiers();;
+
+		MM_Paintings.createKeys();
 
 		MM_WorldGeneration.addWorldGenModifications();
 	}

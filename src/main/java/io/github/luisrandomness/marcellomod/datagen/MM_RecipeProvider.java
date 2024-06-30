@@ -6,6 +6,7 @@ import io.github.luisrandomness.marcellomod.init.MM_Items;
 import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.*;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
 import net.minecraft.world.item.Item;
@@ -13,9 +14,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.concurrent.CompletableFuture;
+
 public class MM_RecipeProvider extends FabricRecipeProvider {
-    public MM_RecipeProvider(FabricDataOutput output) {
-        super(output);
+
+    public MM_RecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override

@@ -27,18 +27,12 @@ public class MarcelloEntity extends Monster {
 
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
-        if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {    if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
         {
             setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(MM_Items.PHONE, 1));
             setDropChance(EquipmentSlot.MAINHAND, 0.8F);
         }
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
-    }
-
-    @Override
-    protected float ridingOffset(Entity entity) {
-        return -0.6F;
+        return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
     }
 
     public static AttributeSupplier.Builder createMarcelloAttributes() {
@@ -67,11 +61,6 @@ public class MarcelloEntity extends Monster {
     @Override
     protected SoundEvent getDeathSound() {
         return MM_SoundEvents.ENTITY_MARCELLO_DEATH;
-    }
-
-    @Override
-    public MobType getMobType() {
-        return MM_EntityTypes.MARCELLO_TYPE;
     }
 
     @Override

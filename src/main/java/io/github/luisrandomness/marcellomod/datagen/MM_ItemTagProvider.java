@@ -45,6 +45,11 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(MM_Tags.ITEM_JUMPERITE_ORES).add(MM_Blocks.JUMPERITE_ORE.asItem());
 
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(MM_Items.JUMPERITE_HELMET);
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(MM_Items.JUMPERITE_CHESTPLATE);
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR).add(MM_Items.JUMPERITE_LEGGINGS);
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR).add(MM_Items.JUMPERITE_BOOTS);
+
         getOrCreateTagBuilder(ItemTags.SWORDS).add(MM_Items.MARCELLO_SWORD).add(MM_Items.JUMPERITE_SWORD);
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(MM_Items.MARCELLO_SHOVEL).add(MM_Items.JUMPERITE_SHOVEL);
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(MM_Items.MARCELLO_PICKAXE).add(MM_Items.JUMPERITE_PICKAXE);
@@ -52,6 +57,9 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HOES).add(MM_Items.MARCELLO_HOE).add(MM_Items.JUMPERITE_HOE);
 
         getOrCreateTagBuilder(ConventionalItemTags.BOWS).add(MM_Items.JUMPERITE_BOW);
+
+        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(MM_Items.JUMPERITE_BOW);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(MM_Items.JUMPERITE_BOW);
 
         getOrCreateTagBuilder(MM_Tags.ITEM_JUMPERITE_ARMOR)
                 .add(MM_Items.JUMPERITE_HELMET)

@@ -4,8 +4,10 @@ import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -14,10 +16,15 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.util.concurrent.CompletableFuture;
+
 public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
-    public MM_BlockLootTableProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+
+    public MM_BlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+        super(dataOutput, registryLookup);
     }
+
+    private HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup;
 
     @Override
     public void generate() {
@@ -25,10 +32,12 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
         dropSelf(MM_Blocks.MARK_BLOCK);
         dropSelf(MM_Blocks.JUMPERITE_BLOCK);
 
+        enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         add(MM_Blocks.MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.DEEPSLATE_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.NETHER_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.JUMPERITE_ORE, this::jumperiteOreDrops);
+
         dropSelf(MM_Blocks.MARCELIUM_LOG);
         dropSelf(MM_Blocks.MARCELIUM_WOOD);
         dropSelf(MM_Blocks.STRIPPED_MARCELIUM_LOG);
@@ -62,10 +71,10 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     public LootTable.Builder marcelloOreDrops(Block drop) {
-        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.MARCELLO_FRUIT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.MARCELLO_FRUIT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addOreBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
     public LootTable.Builder jumperiteOreDrops(Block drop) {
-        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.JUMPERITE_SHARD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.JUMPERITE_SHARD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))).apply(ApplyBonusCount.addOreBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 }

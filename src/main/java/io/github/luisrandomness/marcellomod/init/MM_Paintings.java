@@ -3,7 +3,11 @@ package io.github.luisrandomness.marcellomod.init;
 import io.github.luisrandomness.marcellomod.MarcelloMod;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.*;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.decoration.PaintingVariant;
+import net.minecraft.world.entity.decoration.PaintingVariants;
 
 import java.util.ArrayList;
 
@@ -12,24 +16,37 @@ import static io.github.luisrandomness.marcellomod.MarcelloMod.modIdentifier;
 
 public class MM_Paintings {
 
-    public static final ArrayList<PaintingVariant> ALL_PAINTINGS = new ArrayList<>();
+    public static ArrayList<ResourceKey<PaintingVariant>> ALL_PAINTINGS = new ArrayList<ResourceKey<PaintingVariant>>();
 
-    public static PaintingVariant registerPainting(String identifier, int wid, int hei)
-    {
-        PaintingVariant result = Registry.register(BuiltInRegistries.PAINTING_VARIANT, MarcelloMod.modIdentifier(identifier), new PaintingVariant(wid*16,hei*16));
-        ALL_PAINTINGS.add(result);
-        return result;
+    private static ResourceKey<PaintingVariant> create(String name) {
+        return ResourceKey.create(Registries.PAINTING_VARIANT, MarcelloMod.modIdentifier(name));
     }
 
-    public static final PaintingVariant MARSELO = registerPainting("marselo", 1,1);
-    public static final PaintingVariant LETS_PLAY_MINECRAFT = registerPainting("lets_play_minecraft", 2,1);
-    public static final PaintingVariant SPOOKY_MONTH = registerPainting("spooky_month", 2,1);
-    public static final PaintingVariant XMAS = registerPainting("xmas", 2,2);
-    public static final PaintingVariant PFP = registerPainting("pfp", 2,2);
-    public static final PaintingVariant RACIST = registerPainting("racist", 2,2);
-    public static final PaintingVariant THE_WHAT = registerPainting("the_what", 2,2);
-    public static final PaintingVariant MICHAEL_SONIC = registerPainting("michael_sonic", 1,2);
-    public static final PaintingVariant RUN = registerPainting("run", 4,2);
+    private static void register(BootstrapContext<PaintingVariant> context, ResourceKey<PaintingVariant> key, int width, int height) {
+        context.register(key, new PaintingVariant(width, height, key.location()));
+        ALL_PAINTINGS.add(key);
+    }
 
-    public static void registerAll() {}
+    public static final ResourceKey<PaintingVariant> MARSELO = create("marselo");
+    public static final ResourceKey<PaintingVariant> LETS_PLAY_MINECRAFT = create("lets_play_minecraft");
+    public static final ResourceKey<PaintingVariant> SPOOKY_MONTH = create("spooky_month");
+    public static final ResourceKey<PaintingVariant> XMAS = create("xmas");
+    public static final ResourceKey<PaintingVariant> PFP = create("pfp");
+    public static final ResourceKey<PaintingVariant> RACIST = create("racist");
+    public static final ResourceKey<PaintingVariant> THE_WHAT = create("the_what");
+    public static final ResourceKey<PaintingVariant> MICHAEL_SONIC = create("michael_sonic");
+    public static final ResourceKey<PaintingVariant> RUN = create("run");
+
+    public static void createKeys() {}
+
+    public static void bootstrap(BootstrapContext<PaintingVariant> context) {
+        register(context, MARSELO, 1, 1);
+        register(context, LETS_PLAY_MINECRAFT, 2, 1);
+        register(context, SPOOKY_MONTH, 2, 1);
+        register(context, XMAS, 2, 2);
+        register(context, PFP, 2, 2);
+        register(context, RACIST, 2, 2);
+        register(context, THE_WHAT, 2, 2);
+        register(context, MICHAEL_SONIC, 1, 2);
+    }
 }

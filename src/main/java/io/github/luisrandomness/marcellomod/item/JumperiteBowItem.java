@@ -10,7 +10,7 @@ public class JumperiteBowItem extends BowItem {
     private final Tier tier;
 
     public JumperiteBowItem(Tier tier, Properties properties) {
-        super(properties.defaultDurability(514));
+        super(properties.durability(514));
         this.tier = tier;
     }
 

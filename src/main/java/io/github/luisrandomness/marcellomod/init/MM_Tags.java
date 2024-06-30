@@ -1,6 +1,7 @@
 package io.github.luisrandomness.marcellomod.init;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.PaintingVariant;
@@ -20,6 +21,9 @@ public class MM_Tags {
     public static final TagKey<Block> BLOCK_MARCELIUM_LEAVES = blockTag("marcelium_leaves");
     public static final TagKey<Block> BLOCK_MARCELIUM_SAPLINGS = blockTag("marcelium_saplings");
 
+    public static final TagKey<Item> ITEM_MARCELLO_TOOLS = itemTag("marcello_effective_tools");
+    public static final TagKey<Item> ITEM_MARCELLO_WEAPONS = itemTag("marcello_effective_weapons");
+
     public static final TagKey<Item> ITEM_MARCELLO_ORES = itemTag("marcello_ores");
     public static final TagKey<Item> ITEM_MARCELLO_BLOCK_SMELTABLES = itemTag("marcello_block_smeltables");
     public static final TagKey<Item> ITEM_JUMPERITE_ORES = itemTag("jumperite_ores");
@@ -29,6 +33,8 @@ public class MM_Tags {
     public static final TagKey<Item> ITEM_MARCELIUM_SAPLINGS = itemTag("marcelium_saplings");
 
     public static final TagKey<EntityType<?>> ENTITY_BLOCK_BUTTON_IMMUNE = entityTag("block_button_immune");
+    public static final TagKey<EntityType<?>> ENTITY_MARCELLO_TYPE = entityTag("marcello_type");
+    public static final TagKey<EntityType<?>> ENTITY_SENSITIVE_TO_MARCELLO_WEAPON = entityTag("sensitive_to_marcello_weapon");
 
 
     private static TagKey<Block> blockTag(String identifier) {

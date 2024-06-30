@@ -85,7 +85,7 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.generateArmorTrims(MM_Items.JUMPERITE_LEGGINGS);
         gen.generateArmorTrims(MM_Items.JUMPERITE_BOOTS);
 
-        ResourceLocation spawnEggTemplate = new ResourceLocation("item/template_spawn_egg");
+        ResourceLocation spawnEggTemplate = ResourceLocation.withDefaultNamespace("item/template_spawn_egg");
         for (Item item : MM_Items.ALL_ITEMS)
             if (item instanceof SpawnEggItem)
                 gen.generateFlatItem(item, new ModelTemplate(Optional.of(spawnEggTemplate), Optional.empty()));

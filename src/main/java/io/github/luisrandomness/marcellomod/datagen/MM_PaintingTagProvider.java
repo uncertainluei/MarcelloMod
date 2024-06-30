@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 
@@ -19,7 +20,7 @@ public class MM_PaintingTagProvider extends FabricTagProvider<PaintingVariant> {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        for (PaintingVariant paintingVariant : MM_Paintings.ALL_PAINTINGS)
+        for (ResourceKey<PaintingVariant> paintingVariant : MM_Paintings.ALL_PAINTINGS)
             getOrCreateTagBuilder(MM_Tags.PAINTINGS).add(paintingVariant);
         getOrCreateTagBuilder(PaintingVariantTags.PLACEABLE).addTag(MM_Tags.PAINTINGS);
     }

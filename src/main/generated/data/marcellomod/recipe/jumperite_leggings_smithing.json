@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "marcellomod:jumperite_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "marcellomod:jumperite_leggings"
+  },
+  "template": {
+    "item": "marcellomod:jumperite_upgrade_smithing_template"
+  }
+}

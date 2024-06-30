@@ -34,10 +34,10 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.15.6",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
-		"fabric-api": "*"
+		"fabricloader": ">=0.15.11",
+		"minecraft": "1.21",
+		"java": ">=21",
+		"fabric-api": ">=0.100.4"
 	},
 	"accessWidener" : "marcellomod.accesswidener"
 }

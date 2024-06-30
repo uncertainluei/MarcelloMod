@@ -5,7 +5,7 @@
   "client": [
     "ItemRendererAccessor",
     "ItemRendererMixin",
-    "ModelLoaderMixin"
+    "ModelBakeryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

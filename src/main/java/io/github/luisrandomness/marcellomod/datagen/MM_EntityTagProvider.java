@@ -2,6 +2,7 @@ package io.github.luisrandomness.marcellomod.datagen;
 
 import io.github.luisrandomness.marcellomod.MarcelloModDataGenerator;
 import io.github.luisrandomness.marcellomod.init.MM_Blocks;
+import io.github.luisrandomness.marcellomod.init.MM_EntityTypes;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
 import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -25,5 +26,12 @@ public class MM_EntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
         getOrCreateTagBuilder(MM_Tags.ENTITY_BLOCK_BUTTON_IMMUNE)
                 .addOptionalTag(ConventionalEntityTypeTags.BOSSES)
                 .add(EntityType.WARDEN);
+
+        getOrCreateTagBuilder(MM_Tags.ENTITY_MARCELLO_TYPE)
+                .add(MM_EntityTypes.MARCELLO)
+                .add(MM_EntityTypes.MARK);
+
+        getOrCreateTagBuilder(MM_Tags.ENTITY_SENSITIVE_TO_MARCELLO_WEAPON)
+                .addTag(MM_Tags.ENTITY_MARCELLO_TYPE);
     }
 }

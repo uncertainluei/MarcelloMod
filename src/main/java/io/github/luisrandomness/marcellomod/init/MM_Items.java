@@ -4,16 +4,13 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import io.github.luisrandomness.marcellomod.item.*;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.*;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import java.util.ArrayList;
@@ -21,26 +18,14 @@ import java.util.ArrayList;
 import static io.github.luisrandomness.marcellomod.MarcelloMod.modIdentifier;
 
 public class MM_Items {
-
-    private static FoodProperties.Builder allMobEffects(MobEffectCategory cat, FoodProperties.Builder builder)
-    {
-        for (MobEffect effect : BuiltInRegistries.MOB_EFFECT)
-            if (effect.getCategory() == cat)
-                builder = builder.effect(new MobEffectInstance(effect, 1200, 5), 1F);
-        return builder;
-    }
-
-    public static final FoodProperties FOOD_MARCELLO_FRUIT =  new FoodProperties.Builder().nutrition(3).saturationMod(0.2F)
+    public static final FoodProperties FOOD_MARCELLO_FRUIT =  new FoodProperties.Builder().nutrition(3).saturationModifier(0.2F)
             .effect(new MobEffectInstance(MobEffects.HUNGER,480,0), 0.75F)
             .effect(new MobEffectInstance(MobEffects.POISON,480,0),0.5F)
             .build();
-    public static final FoodProperties FOOD_MOLDY_FRUIT = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F)
+    public static final FoodProperties FOOD_MOLDY_FRUIT = new FoodProperties.Builder().nutrition(6).saturationModifier(0.4F)
             .effect(new MobEffectInstance(MobEffects.REGENERATION,120,0), 0.5F)
             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,480,0),0.25F)
             .build();
-
-    public static final FoodProperties FOOD_MARCELLO_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.HARMFUL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
-    public static final FoodProperties FOOD_MOLDY_FRUIT_UNNERFED = allMobEffects(MobEffectCategory.BENEFICIAL, new FoodProperties.Builder().nutrition(1).saturationMod(0.3F)).build();
 
     public static final ArrayList<Item> ALL_ITEMS = new ArrayList<>();
     private static final ArrayList<Item> AUTO_CREATIVE_ITEMS = new ArrayList<>();
@@ -64,41 +49,41 @@ public class MM_Items {
         return registerItem(identifier,item,true);
     }
 
-    public static final Item MARCELLO_FRUIT =  registerItem("marcello_fruit", new Item(new FabricItemSettings().food(FOOD_MARCELLO_FRUIT)));
-    public static final Item MOLDY_FRUIT =  registerItem("moldy_fruit", new Item(new FabricItemSettings().food(FOOD_MOLDY_FRUIT)));
-    public static final Item JUMPMAN_BALL =  registerItem("jumpman_ball", new SnowballItem(new FabricItemSettings().maxCount(16)));
-    public static final Item JUMPERITE_SHARD = registerItem("jumperite_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_INGOT = registerItem("jumperite_ingot", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item MARCELLO_FRUIT =  registerItem("marcello_fruit", new Item(new Item.Properties().food(FOOD_MARCELLO_FRUIT)));
+    public static final Item MOLDY_FRUIT =  registerItem("moldy_fruit", new Item(new Item.Properties().food(FOOD_MOLDY_FRUIT)));
+    public static final Item JUMPMAN_BALL =  registerItem("jumpman_ball", new SnowballItem(new Item.Properties().stacksTo(16)));
+    public static final Item JUMPERITE_SHARD = registerItem("jumperite_shard", new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final Item JUMPERITE_INGOT = registerItem("jumperite_ingot", new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final Item JUMPERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("jumperite_upgrade_smithing_template", new JumperiteUpgradeTemplateItem());
 
-    public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new FabricItemSettings().maxCount(1).maxDamage(8)));
-    public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE)));
-    public static final Item BLOCK_BUTTON = registerItem ("block_button", new BlockButtonItem(new FabricItemSettings().maxCount(1).maxDamage(8)));
+    public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new Item.Properties().stacksTo(1).durability(8)));
+    public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new Item.Properties().stacksTo(1).durability(64).rarity(Rarity.RARE)));
+    public static final Item BLOCK_BUTTON = registerItem ("block_button", new BlockButtonItem(new Item.Properties().stacksTo(1).durability(8)));
 
-    public static final Item MARCELLO_SWORD = registerItem ("marcello_sword", new MarcelloSwordItem(MM_ToolTier.MARCELLO,3,-2.4F,new FabricItemSettings()));
-    public static final Item MARCELLO_SHOVEL = registerItem ("marcello_shovel", new MarcelloShovelItem(MM_ToolTier.MARCELLO,1.5F,-3F,new FabricItemSettings()));
-    public static final Item MARCELLO_PICKAXE = registerItem ("marcello_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.MARCELLO,1,-2.8F,new FabricItemSettings()));
-    public static final Item MARCELLO_AXE = registerItem ("marcello_axe", new MarcelloAxeItem(MM_ToolTier.MARCELLO,6,-3.1F,new FabricItemSettings()));
-    public static final Item MARCELLO_HOE = registerItem ("marcello_hoe", new MarcelloHoeItem(MM_ToolTier.MARCELLO,-2,-1F,new FabricItemSettings()));
+    public static final Item MARCELLO_SWORD = registerItem ("marcello_sword", new MarcelloSwordItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(SwordItem.createAttributes(MM_ToolTier.MARCELLO, 3, -2.4F))));
+    public static final Item MARCELLO_SHOVEL = registerItem ("marcello_shovel", new MarcelloShovelItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(ShovelItem.createAttributes(MM_ToolTier.MARCELLO, 1.5F, -3F))));
+    public static final Item MARCELLO_PICKAXE = registerItem ("marcello_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(PickaxeItem.createAttributes(MM_ToolTier.MARCELLO, 1F, -2.8F))));
+    public static final Item MARCELLO_AXE = registerItem ("marcello_axe", new MarcelloAxeItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(AxeItem.createAttributes(MM_ToolTier.MARCELLO, 6F, -3.1F))));
+    public static final Item MARCELLO_HOE = registerItem ("marcello_hoe", new MarcelloHoeItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(HoeItem.createAttributes(MM_ToolTier.MARCELLO, -2F, -1F))));
 
-    public static final Item JUMPERITE_SWORD = registerItem ("jumperite_sword", new MarcelloSwordItem(MM_ToolTier.JUMPERITE,3,-2.4F,new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_SHOVEL = registerItem ("jumperite_shovel", new MarcelloShovelItem(MM_ToolTier.JUMPERITE,1.5F,-3F,new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_PICKAXE = registerItem ("jumperite_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.JUMPERITE,1,-2.8F,new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_AXE = registerItem ("jumperite_axe", new MarcelloAxeItem(MM_ToolTier.JUMPERITE,5,-3.1F,new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_HOE = registerItem ("jumperite_hoe", new MarcelloHoeItem(MM_ToolTier.JUMPERITE,-5,0F,new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item JUMPERITE_SWORD = registerItem ("jumperite_sword", new MarcelloSwordItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(SwordItem.createAttributes(MM_ToolTier.JUMPERITE, 3, -2.6F))));
+    public static final Item JUMPERITE_SHOVEL = registerItem ("jumperite_shovel", new MarcelloShovelItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(ShovelItem.createAttributes(MM_ToolTier.JUMPERITE, 1.5F, -3F))));
+    public static final Item JUMPERITE_PICKAXE = registerItem ("jumperite_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(PickaxeItem.createAttributes(MM_ToolTier.JUMPERITE, 1F, -2.8F))));
+    public static final Item JUMPERITE_AXE = registerItem ("jumperite_axe", new MarcelloAxeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MM_ToolTier.JUMPERITE, 5F, -3.1F))));
+    public static final Item JUMPERITE_HOE = registerItem ("jumperite_hoe", new MarcelloHoeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(HoeItem.createAttributes(MM_ToolTier.JUMPERITE, -5, -0F))));
 
-    public static final Item JUMPERITE_BOW = registerItem("jumperite_bow", new JumperiteBowItem(MM_ToolTier.JUMPERITE, new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item JUMPERITE_BOW = registerItem("jumperite_bow", new JumperiteBowItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC)));
 
-    public static final Item HAMMER_PENCIL = registerItem ("hammer_pencil", new Item(new FabricItemSettings().maxCount(1).maxDamage(64)));
+    public static final Item HAMMER_PENCIL = registerItem ("hammer_pencil", new Item(new Item.Properties().stacksTo(1).durability(64)));
 
-    public static final ArmorItem JUMPERITE_HELMET = (ArmorItem) registerItem("jumperite_helmet", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.HELMET, new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final ArmorItem JUMPERITE_CHESTPLATE = (ArmorItem) registerItem("jumperite_chestplate", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final ArmorItem JUMPERITE_LEGGINGS = (ArmorItem) registerItem("jumperite_leggings", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final ArmorItem JUMPERITE_BOOTS = (ArmorItem) registerItem("jumperite_boots", new ArmorItem(MM_ArmorTier.JUMPERITE, ArmorItem.Type.BOOTS, new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final ArmorItem JUMPERITE_HELMET = (ArmorItem) registerItem("jumperite_helmet", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.HELMET, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.HELMET.getDurability(35))));
+    public static final ArmorItem JUMPERITE_CHESTPLATE = (ArmorItem) registerItem("jumperite_chestplate", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.CHESTPLATE.getDurability(35))));
+    public static final ArmorItem JUMPERITE_LEGGINGS = (ArmorItem) registerItem("jumperite_leggings", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.LEGGINGS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.LEGGINGS.getDurability(35))));
+    public static final ArmorItem JUMPERITE_BOOTS = (ArmorItem) registerItem("jumperite_boots", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.BOOTS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.BOOTS.getDurability(35))));
 
-    public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new FabricItemSettings()));
-    public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new FabricItemSettings()));
-    public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new FabricItemSettings()));
+    public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new Item.Properties()));
+    public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new Item.Properties()));
+    public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new Item.Properties()));
 
     // TODO: Replace with original, possibly commissioned music
 //    public static final Item MUSIC_DISC_LR1999_RAP = registerItem("music_disc_lr1999_rap", new PlaceholderMusicDiscItem(1, MM_SoundEvents.MUSIC_DISC_LR1999_RAP, 234));
@@ -108,8 +93,8 @@ public class MM_Items {
 //    public static final Item MUSIC_DISC_LOKSY = registerItem("music_disc_loksy", new PlaceholderMusicDiscItem(5, MM_SoundEvents.MUSIC_DISC_LOKSY, 82));
 //    public static final Item MUSIC_DISC_FOREST_FUNK = registerItem("music_disc_forest_funk", new PlaceholderMusicDiscItem(6, MM_SoundEvents.MUSIC_DISC_FOREST_FUNK, 120));
 
-    public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new FabricItemSettings().maxCount(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
-    public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new Item.Properties().stacksTo(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
+    public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new Item.Properties().stacksTo(16)));
 
     public static final ResourceKey<TerraformBoatType> MARCELIUM_BOAT_KEY = TerraformBoatTypeRegistry.createKey(modIdentifier("marcelium"));
 

@@ -15,6 +15,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -27,21 +28,16 @@ public class MarkEntity extends Monster {
         super(entityType, level);
     }
 
-    @Override
-    protected float ridingOffset(Entity entity) {
-        return -0.7F;
-    }
-
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
             setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(MM_Items.MARCELLO_SWORD, 1));
         if (getItemInHand(InteractionHand.OFF_HAND).isEmpty() && random.nextInt(0,2) == 0)
             setItemInHand(InteractionHand.OFF_HAND, new ItemStack(MM_Items.BLOCK_BUTTON, 1));
 
         populateDefaultEquipmentSlots(level.getRandom(),difficulty);
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
+        return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
     }
 
     public static AttributeSupplier.Builder createMarkAttributes() {
@@ -57,8 +53,7 @@ public class MarkEntity extends Monster {
     }
 
     @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
+    protected SoundEvent get() {
         return MM_SoundEvents.ENTITY_MARK_AMBIENT;
     }
 
@@ -73,15 +68,10 @@ public class MarkEntity extends Monster {
     }
 
     @Override
-    public MobType getMobType() {
-        return MM_EntityTypes.MARCELLO_TYPE;
-    }
-
-    @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, true, (livingEntity) -> {
-            return livingEntity.getMobType() != MM_EntityTypes.MARCELLO_TYPE && !(livingEntity instanceof MarkEntity);
+            return !livingEntity.getType().is(MM_Tags.ENTITY_MARCELLO_TYPE) && !(livingEntity instanceof MarkEntity);
         }));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
@@ -112,12 +102,9 @@ public class MarkEntity extends Monster {
                 livingTarget.addEffect(new MobEffectInstance(MM_MobEffects.BLOCKED, 200 + 100 * (int)f), this);
 
                 swing(hand);
-                getItemInHand(hand).hurtAndBreak(1, this, (e) -> {
-                    e.broadcastBreakEvent(hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-                });
+                getItemInHand(hand).hurtAndBreak(1, this, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
             }
         }
-
         return flag;
     }
 }

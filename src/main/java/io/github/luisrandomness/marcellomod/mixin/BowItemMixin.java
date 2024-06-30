@@ -37,9 +37,10 @@ public abstract class BowItemMixin extends ProjectileWeaponItem {
         return ((ProjectileWeaponItem)this instanceof JumperiteBowItem) ? JumperiteBowItem.getPowerForTime(i) : original;
     }
 
-    @Inject(method = "releaseUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addFreshEntity(Lnet/minecraft/world/entity/Entity;)Z", shift = At.Shift.BEFORE, ordinal = 0))
-    private void marcellomod$handleArrowCrit(ItemStack stack, Level level, LivingEntity livingEntity, int timeCharged, CallbackInfo ci, @Local(name = "f") float power, @Local(name = "abstractArrow")AbstractArrow arrow) {
-        if (power >= 1F)
-            arrow.setCritArrow(!((ProjectileWeaponItem)this instanceof JumperiteBowItem) || power >= 1.5F);
-    }
+    // TODO :: Write 1.21 equivalent
+//    @Inject(method = "releaseUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/BowItem;shoot(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;Ljava/util/List;FFZLnet/minecraft/world/entity/LivingEntity;)V", shift = At.Shift.BEFORE, ordinal = 0))
+//    private void marcellomod$handleArrowCrit(ItemStack stack, Level level, LivingEntity livingEntity, int timeCharged, CallbackInfo ci, @Local(name = "f") float power, @Local(name = "abstractArrow")AbstractArrow arrow) {
+//        if (power >= 1F)
+//            arrow.setCritArrow(!((ProjectileWeaponItem)this instanceof JumperiteBowItem) || power >= 1.5F);
+//    }
 }
