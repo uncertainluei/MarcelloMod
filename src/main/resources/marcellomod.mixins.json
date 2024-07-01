@@ -6,7 +6,8 @@
     "BowItemMixin",
     "BlockedCreeperCloudMixin",
     "EntityAttackMixin",
-    "EnchantmentHelperMixin"
+    "EnchantmentHelperMixin",
+    "ProjectileWeaponItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -29,12 +29,12 @@ public class JumperiteBowItem extends BowItem {
         if (f <= 1F)
             return f;
 
-        // TODO: Optimize code to use mathematical equivalent
+        // TODO: Re-adjust equation and provide a 'cap'
         float total = 0F;
         while (f >= 0.5F) {
             total += 0.5F;
             f -= 0.5F;
-            f *= 0.5F;
+            f *= 0.8F;
         }
 
         return total+f;
