@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "marcellomod:ruisium_block"
+    }
+  ],
+  "result": {
+    "item": "marcellomod:ruisium_ingot",
+    "count": 9
+  }
+}

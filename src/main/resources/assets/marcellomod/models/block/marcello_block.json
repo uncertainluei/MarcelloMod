@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "marcellomod:block/marcello_block_bottom",
     "top": "marcellomod:block/marcello_block_top",
-    "side": "marcellomod:block/marcello_block"
+    "side": "marcellomod:block/marcello_block_side"
   }
 }

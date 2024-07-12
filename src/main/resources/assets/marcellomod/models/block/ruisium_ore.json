@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "marcellomod:block/ruisium_ore_bottom",
+    "top": "marcellomod:block/ruisium_ore_top",
+    "side": "marcellomod:block/ruisium_ore_side"
+  }
+}

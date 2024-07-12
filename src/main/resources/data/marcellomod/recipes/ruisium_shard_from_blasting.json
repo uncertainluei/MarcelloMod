@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "marcellomod:ruisium_ore"
+  },
+  "result": "marcellomod:ruisium_shard",
+  "experience": 1.2,
+  "cookingtime": 100
+}

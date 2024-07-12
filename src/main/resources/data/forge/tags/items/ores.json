@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/jumperite",
+    "#forge:ores/ruisium",
     "#forge:ores/marcello"
   ]
 }

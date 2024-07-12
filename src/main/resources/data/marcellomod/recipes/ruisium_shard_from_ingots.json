@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "marcellomod:ruisium_ingot"
+    }
+  ],
+  "result": {
+    "item": "marcellomod:ruisium_shard",
+    "count": 2
+  }
+}

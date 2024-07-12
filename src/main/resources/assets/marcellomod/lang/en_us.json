@@ -3,17 +3,16 @@
 
   "block.marcellomod.marcello_block": "Block of Marcello",
   "block.marcellomod.mark_block": "Block of Mark",
-  "block.marcellomod.jumperite_block": "Block of Jumperite",
+  "block.marcellomod.ruisium_block": "Block of Ruisium",
 
   "block.marcellomod.marcello_ore": "Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
-  "block.marcellomod.jumperite_ore": "Jumperite Ore",
+  "block.marcellomod.ruisium_ore": "Ruisium Ore",
 
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
-  "item.marcellomod.jumperite_shard": "Jumperite Shard",
-  "item.marcellomod.jumperite_ingot": "Jumperite Ingot",
-  "item.marcellomod.jumperite_rod": "Jumperite Rod",
+  "item.marcellomod.ruisium_shard": "Ruisium Shard",
+  "item.marcellomod.ruisium_ingot": "Ruisium Ingot",
 
   "item.marcellomod.marcello_sword": "Marcello Sword",
   "item.marcellomod.marcello_shovel": "Marcello Shovel",
@@ -21,16 +20,16 @@
   "item.marcellomod.marcello_axe": "Marcello Axe",
   "item.marcellomod.marcello_hoe": "Marcello Hoe",
 
-  "item.marcellomod.jumperite_sword": "Jumperite Sword",
-  "item.marcellomod.jumperite_shovel": "Jumperite Shovel",
-  "item.marcellomod.jumperite_pickaxe": "Jumperite Pickaxe",
-  "item.marcellomod.jumperite_axe": "Jumperite Axe",
-  "item.marcellomod.jumperite_hoe": "Jumperite Hoe",
+  "item.marcellomod.ruisium_sword": "Ruisium Sword",
+  "item.marcellomod.ruisium_shovel": "Ruisium Shovel",
+  "item.marcellomod.ruisium_pickaxe": "Ruisium Pickaxe",
+  "item.marcellomod.ruisium_axe": "Ruisium Axe",
+  "item.marcellomod.ruisium_hoe": "Ruisium Hoe",
 
-  "item.marcellomod.jumperite_helmet": "Jumperite Helmet",
-  "item.marcellomod.jumperite_chestplate": "Jumperite Chestplate",
-  "item.marcellomod.jumperite_leggings": "Jumperite Leggings",
-  "item.marcellomod.jumperite_boots": "Jumperite Boots",
+  "item.marcellomod.ruisium_helmet": "Ruisium Helmet",
+  "item.marcellomod.ruisium_chestplate": "Ruisium Chestplate",
+  "item.marcellomod.ruisium_leggings": "Ruisium Leggings",
+  "item.marcellomod.ruisium_boots": "Ruisium Boots",
 
   "entity.marcellomod.marcello": "Marcello",
   "entity.marcellomod.modly": "Moldy",
@@ -42,7 +41,7 @@
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
-  "item.marcellomod.special_phone": "Marcello's Special Phone",
+  "item.marcellomod.otherworldly_phone": "Otherworldly Phone",
   "item.marcellomod.block_button": "Block Button",
 
 

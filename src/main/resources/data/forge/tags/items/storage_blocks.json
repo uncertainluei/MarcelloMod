@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#forge:storage_blocks/marcello",
-    "#forge:storage_blocks/mark"
+    "#forge:storage_blocks/mark",
+    "#forge:storage_blocks/ruisium"
   ]
 }
