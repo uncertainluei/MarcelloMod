@@ -11,10 +11,10 @@ public class MM_ItemRendering {
     public static final ModelResourceLocation HAMMER_PENCIL_HANDHELD_MODEL = ModelResourceLocation.inventory(MarcelloMod.modIdentifier("hammer_pencil_in_hand"));
     public static void initialize()
     {
-        ItemProperties.register(MM_Items.JUMPERITE_BOW, ResourceLocation.withDefaultNamespace("pulling"), (itemStack, clientLevel, livingEntity, i) -> {
+        ItemProperties.register(MM_Items.RUISIUM_BOW, ResourceLocation.withDefaultNamespace("pulling"), (itemStack, clientLevel, livingEntity, i) -> {
             return livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F;
         });
-        ItemProperties.register(MM_Items.JUMPERITE_BOW, ResourceLocation.withDefaultNamespace("pull"), (itemStack, clientLevel, livingEntity, i) -> {
+        ItemProperties.register(MM_Items.RUISIUM_BOW, ResourceLocation.withDefaultNamespace("pull"), (itemStack, clientLevel, livingEntity, i) -> {
             if (livingEntity == null) {
                 return 0.0F;
             } else {

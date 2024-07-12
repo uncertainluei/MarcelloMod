@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public enum MM_ToolTier implements Tier {
    MARCELLO(BlockTags.INCORRECT_FOR_STONE_TOOL, 226, 5F, 2F, 11, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
-   JUMPERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1999, 9.5F, 5F, 9, Ingredient.of(MM_Items.JUMPERITE_SHARD));
+   RUISIUM(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1999, 9.5F, 5F, 9, Ingredient.of(MM_Items.RUISIUM_SHARD));
 
    private final TagKey incompatibleBlockTag;
    private final int uses;

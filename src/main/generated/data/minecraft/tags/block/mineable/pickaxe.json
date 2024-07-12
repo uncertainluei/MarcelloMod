@@ -3,12 +3,12 @@
     "marcellomod:marcello_block",
     "marcellomod:mark_block",
     "#marcellomod:marcello_ores",
-    "#marcellomod:jumperite_ores",
-    "marcellomod:jumperite_block",
-    "marcellomod:jumperite_shard_block",
-    "marcellomod:jumperite_shard_bricks",
-    "marcellomod:jumperite_shard_brick_slab",
-    "marcellomod:jumperite_shard_brick_stairs",
-    "marcellomod:jumperite_shard_brick_wall"
+    "#marcellomod:ruisium_ores",
+    "marcellomod:ruisium_block",
+    "marcellomod:ruisium_shard_block",
+    "marcellomod:ruisium_shard_bricks",
+    "marcellomod:ruisium_shard_brick_slab",
+    "marcellomod:ruisium_shard_brick_stairs",
+    "marcellomod:ruisium_shard_brick_wall"
   ]
 }

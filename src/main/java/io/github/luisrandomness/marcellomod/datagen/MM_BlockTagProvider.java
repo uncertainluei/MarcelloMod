@@ -22,8 +22,8 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(MM_Blocks.DEEPSLATE_MARCELLO_ORE)
                 .add(MM_Blocks.NETHER_MARCELLO_ORE);
 
-        getOrCreateTagBuilder(MM_Tags.BLOCK_JUMPERITE_ORES).add(MM_Blocks.JUMPERITE_ORE);
-        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS).add(MM_Blocks.JUMPERITE_BLOCK);
+        getOrCreateTagBuilder(MM_Tags.BLOCK_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE);
+        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS).add(MM_Blocks.RUISIUM_BLOCK);
 
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_LOGS).add(MM_Blocks.MARCELIUM_LOG).add(MM_Blocks.MARCELIUM_WOOD).add(MM_Blocks.STRIPPED_MARCELIUM_LOG).add(MM_Blocks.STRIPPED_MARCELIUM_WOOD);
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_LEAVES).add(MM_Blocks.RED_MARCELIUM_LEAVES).add(MM_Blocks.GREEN_MARCELIUM_LEAVES).add(MM_Blocks.YELLOW_MARCELIUM_LEAVES);
@@ -61,22 +61,22 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(MM_Blocks.MARCELIUM_DOOR);
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(MM_Blocks.MARCELIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.SLABS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB);
-        getOrCreateTagBuilder(BlockTags.STAIRS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS);
 
-        getOrCreateTagBuilder(BlockTags.WALLS).add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(MM_Blocks.MARCELLO_BLOCK)
                 .add(MM_Blocks.MARK_BLOCK)
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES)
-                .addTag(MM_Tags.BLOCK_JUMPERITE_ORES)
-                .add(MM_Blocks.JUMPERITE_BLOCK)
-                .add(MM_Blocks.JUMPERITE_SHARD_BLOCK)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICKS)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
+                .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
+                .add(MM_Blocks.RUISIUM_BLOCK)
+                .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICKS)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(MM_Blocks.MARCELLO_BLOCK)
@@ -84,12 +84,12 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .addTag(MM_Tags.BLOCK_JUMPERITE_ORES)
-                .add(MM_Blocks.JUMPERITE_BLOCK)
-                .add(MM_Blocks.JUMPERITE_SHARD_BLOCK)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICKS)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_SLAB)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_STAIRS)
-                .add(MM_Blocks.JUMPERITE_SHARD_BRICK_WALL);
+                .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
+                .add(MM_Blocks.RUISIUM_BLOCK)
+                .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICKS)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS)
+                .add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
     }
 }

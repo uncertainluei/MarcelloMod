@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "marcellomod:ruisium_shard_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "marcellomod:ruisium_shard"
+  }
+}

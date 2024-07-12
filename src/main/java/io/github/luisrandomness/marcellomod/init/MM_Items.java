@@ -51,10 +51,10 @@ public class MM_Items {
 
     public static final Item MARCELLO_FRUIT =  registerItem("marcello_fruit", new Item(new Item.Properties().food(FOOD_MARCELLO_FRUIT)));
     public static final Item MOLDY_FRUIT =  registerItem("moldy_fruit", new Item(new Item.Properties().food(FOOD_MOLDY_FRUIT)));
-    public static final Item JUMPMAN_BALL =  registerItem("jumpman_ball", new SnowballItem(new Item.Properties().stacksTo(16)));
-    public static final Item JUMPERITE_SHARD = registerItem("jumperite_shard", new Item(new Item.Properties().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_INGOT = registerItem("jumperite_ingot", new Item(new Item.Properties().rarity(Rarity.EPIC)));
-    public static final Item JUMPERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("jumperite_upgrade_smithing_template", new JumperiteUpgradeTemplateItem());
+
+    public static final Item RUISIUM_SHARD = registerItem("ruisium_shard", new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final Item RUISIUM_INGOT = registerItem("ruisium_ingot", new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final Item RUISIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("ruisium_upgrade_smithing_template", new RuisiumUpgradeTemplateItem());
 
     public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new Item.Properties().stacksTo(1).durability(8)));
     public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new Item.Properties().stacksTo(1).durability(64).rarity(Rarity.RARE)));
@@ -66,20 +66,20 @@ public class MM_Items {
     public static final Item MARCELLO_AXE = registerItem ("marcello_axe", new MarcelloAxeItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(AxeItem.createAttributes(MM_ToolTier.MARCELLO, 6F, -3.1F))));
     public static final Item MARCELLO_HOE = registerItem ("marcello_hoe", new MarcelloHoeItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(HoeItem.createAttributes(MM_ToolTier.MARCELLO, -2F, -1F))));
 
-    public static final Item JUMPERITE_SWORD = registerItem ("jumperite_sword", new MarcelloSwordItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(SwordItem.createAttributes(MM_ToolTier.JUMPERITE, 3, -2.6F))));
-    public static final Item JUMPERITE_SHOVEL = registerItem ("jumperite_shovel", new MarcelloShovelItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(ShovelItem.createAttributes(MM_ToolTier.JUMPERITE, 1.5F, -3F))));
-    public static final Item JUMPERITE_PICKAXE = registerItem ("jumperite_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(PickaxeItem.createAttributes(MM_ToolTier.JUMPERITE, 1F, -2.8F))));
-    public static final Item JUMPERITE_AXE = registerItem ("jumperite_axe", new MarcelloAxeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MM_ToolTier.JUMPERITE, 5F, -3.1F))));
-    public static final Item JUMPERITE_HOE = registerItem ("jumperite_hoe", new MarcelloHoeItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC).attributes(HoeItem.createAttributes(MM_ToolTier.JUMPERITE, -5, -0F))));
+    public static final Item RUISIUM_SWORD = registerItem ("ruisium_sword", new MarcelloSwordItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC).attributes(SwordItem.createAttributes(MM_ToolTier.RUISIUM, 3, -2.6F))));
+    public static final Item RUISIUM_SHOVEL = registerItem ("ruisium_shovel", new MarcelloShovelItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC).attributes(ShovelItem.createAttributes(MM_ToolTier.RUISIUM, 1.5F, -3F))));
+    public static final Item RUISIUM_PICKAXE = registerItem ("ruisium_pickaxe", new MarcelloPickaxeItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC).attributes(PickaxeItem.createAttributes(MM_ToolTier.RUISIUM, 1F, -2.8F))));
+    public static final Item RUISIUM_AXE = registerItem ("ruisium_axe", new MarcelloAxeItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MM_ToolTier.RUISIUM, 5F, -3.1F))));
+    public static final Item RUISIUM_HOE = registerItem ("ruisium_hoe", new MarcelloHoeItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC).attributes(HoeItem.createAttributes(MM_ToolTier.RUISIUM, -5, -0F))));
 
-    public static final Item JUMPERITE_BOW = registerItem("jumperite_bow", new JumperiteBowItem(MM_ToolTier.JUMPERITE, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final Item RUISIUM_BOW = registerItem("ruisium_bow", new RuisiumBowItem(MM_ToolTier.RUISIUM, new Item.Properties().rarity(Rarity.EPIC)));
 
     public static final Item HAMMER_PENCIL = registerItem ("hammer_pencil", new Item(new Item.Properties().stacksTo(1).durability(64)));
 
-    public static final ArmorItem JUMPERITE_HELMET = (ArmorItem) registerItem("jumperite_helmet", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.HELMET, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.HELMET.getDurability(35))));
-    public static final ArmorItem JUMPERITE_CHESTPLATE = (ArmorItem) registerItem("jumperite_chestplate", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.CHESTPLATE.getDurability(35))));
-    public static final ArmorItem JUMPERITE_LEGGINGS = (ArmorItem) registerItem("jumperite_leggings", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.LEGGINGS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.LEGGINGS.getDurability(35))));
-    public static final ArmorItem JUMPERITE_BOOTS = (ArmorItem) registerItem("jumperite_boots", new ArmorItem(MM_ArmorTiers.JUMPERITE, ArmorItem.Type.BOOTS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.BOOTS.getDurability(35))));
+    public static final ArmorItem RUISIUM_HELMET = (ArmorItem) registerItem("ruisium_helmet", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.HELMET, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.HELMET.getDurability(35))));
+    public static final ArmorItem RUISIUM_CHESTPLATE = (ArmorItem) registerItem("ruisium_chestplate", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.CHESTPLATE.getDurability(35))));
+    public static final ArmorItem RUISIUM_LEGGINGS = (ArmorItem) registerItem("ruisium_leggings", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.LEGGINGS.getDurability(35))));
+    public static final ArmorItem RUISIUM_BOOTS = (ArmorItem) registerItem("ruisium_boots", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.BOOTS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.BOOTS.getDurability(35))));
 
     public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new Item.Properties()));
     public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new Item.Properties()));
@@ -151,7 +151,7 @@ public class MM_Items {
             content.addAfter(MM_Blocks.MARCELIUM_PRESSURE_PLATE, MM_Blocks.MARCELIUM_BUTTON);
             content.addBefore(Items.COAL_BLOCK, MM_Blocks.MARCELLO_BLOCK);
             content.addAfter(MM_Blocks.MARCELLO_BLOCK, MM_Blocks.MARK_BLOCK);
-            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.JUMPERITE_BLOCK);
+            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.RUISIUM_BLOCK);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(content -> {
@@ -165,7 +165,7 @@ public class MM_Items {
             content.addAfter(Items.DEEPSLATE_GOLD_ORE, MM_Blocks.MARCELLO_ORE);
             content.addAfter(MM_Blocks.MARCELLO_ORE, MM_Blocks.DEEPSLATE_MARCELLO_ORE);
             content.addAfter(Items.NETHER_GOLD_ORE, MM_Blocks.NETHER_MARCELLO_ORE);
-            content.addAfter(Items.ANCIENT_DEBRIS, MM_Blocks.JUMPERITE_ORE);
+            content.addAfter(Items.ANCIENT_DEBRIS, MM_Blocks.RUISIUM_ORE);
             content.addBefore(Items.OAK_LEAVES, MM_Blocks.MARCELIUM_LOG);
             content.addBefore(Items.OAK_SAPLING, MM_Blocks.RED_MARCELIUM_LEAVES);
             content.addAfter(MM_Blocks.RED_MARCELIUM_LEAVES, MM_Blocks.GREEN_MARCELIUM_LEAVES);
@@ -183,11 +183,9 @@ public class MM_Items {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
             content.addAfter(Items.RAW_GOLD, MARCELLO_FRUIT);
             content.addAfter(MARCELLO_FRUIT, PHONE);
-            content.addAfter(Items.ANCIENT_DEBRIS, JUMPERITE_SHARD);
-            content.addAfter(Items.NETHERITE_INGOT, JUMPERITE_INGOT);
-            content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, JUMPERITE_UPGRADE_SMITHING_TEMPLATE);
-
-            content.addAfter(Items.EGG, JUMPMAN_BALL);
+            content.addAfter(Items.ANCIENT_DEBRIS, RUISIUM_SHARD);
+            content.addAfter(Items.NETHERITE_INGOT, RUISIUM_INGOT);
+            content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, RUISIUM_UPGRADE_SMITHING_TEMPLATE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(content -> {
@@ -202,10 +200,10 @@ public class MM_Items {
             content.addAfter(MARCELLO_PICKAXE, MARCELLO_AXE);
             content.addAfter(MARCELLO_AXE, MARCELLO_HOE);
 
-            content.addAfter(Items.NETHERITE_HOE, JUMPERITE_SHOVEL);
-            content.addAfter(JUMPERITE_SHOVEL, JUMPERITE_PICKAXE);
-            content.addAfter(JUMPERITE_PICKAXE, JUMPERITE_AXE);
-            content.addAfter(JUMPERITE_AXE, JUMPERITE_HOE);
+            content.addAfter(Items.NETHERITE_HOE, RUISIUM_SHOVEL);
+            content.addAfter(RUISIUM_SHOVEL, RUISIUM_PICKAXE);
+            content.addAfter(RUISIUM_PICKAXE, RUISIUM_AXE);
+            content.addAfter(RUISIUM_AXE, RUISIUM_HOE);
 
             content.addAfter(Items.FLINT_AND_STEEL, PHONE);
             content.addAfter(PHONE, BLOCK_BUTTON);
@@ -215,15 +213,13 @@ public class MM_Items {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(content -> {
             content.addAfter(Items.GOLDEN_SWORD, MARCELLO_SWORD);
             content.addAfter(Items.GOLDEN_AXE, MARCELLO_AXE);
-            content.addAfter(Items.NETHERITE_SWORD, JUMPERITE_SWORD);
-            content.addAfter(Items.NETHERITE_AXE, JUMPERITE_AXE);
+            content.addAfter(Items.NETHERITE_SWORD, RUISIUM_SWORD);
+            content.addAfter(Items.NETHERITE_AXE, RUISIUM_AXE);
 
-            content.addAfter(Items.NETHERITE_BOOTS, JUMPERITE_HELMET);
-            content.addAfter(JUMPERITE_HELMET, JUMPERITE_CHESTPLATE);
-            content.addAfter(JUMPERITE_CHESTPLATE, JUMPERITE_LEGGINGS);
-            content.addAfter(JUMPERITE_LEGGINGS, JUMPERITE_BOOTS);
-
-            content.addAfter(Items.EGG, JUMPMAN_BALL);
+            content.addAfter(Items.NETHERITE_BOOTS, RUISIUM_HELMET);
+            content.addAfter(RUISIUM_HELMET, RUISIUM_CHESTPLATE);
+            content.addAfter(RUISIUM_CHESTPLATE, RUISIUM_LEGGINGS);
+            content.addAfter(RUISIUM_LEGGINGS, RUISIUM_BOOTS);
             content.addAfter(Items.TOTEM_OF_UNDYING, BLOCK_BUTTON);
 
         });

@@ -56,22 +56,22 @@ public class MM_Blocks {
     public static final DropExperienceBlock DEEPSLATE_MARCELLO_ORE = (DropExperienceBlock) registerBlock("deepslate_marcello_ore", new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_LAPIS_ORE)));
     public static final DropExperienceBlock NETHER_MARCELLO_ORE = (DropExperienceBlock) registerBlock("nether_marcello_ore", new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
 
-    public static final DropExperienceBlock JUMPERITE_ORE = (DropExperienceBlock) registerBlock("jumperite_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
+    public static final DropExperienceBlock RUISIUM_ORE = (DropExperienceBlock) registerBlock("ruisium_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
             .strength(8F,32F).requiresCorrectToolForDrops()));
 
-    public static final Block JUMPERITE_SHARD_BLOCK = registerBlock("jumperite_shard_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
+    public static final Block RUISIUM_SHARD_BLOCK = registerBlock("ruisium_shard_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
 
-    public static final Block JUMPERITE_SHARD_BRICKS = registerBlock("jumperite_shard_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
+    public static final Block RUISIUM_SHARD_BRICKS = registerBlock("ruisium_shard_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block JUMPERITE_SHARD_BRICK_SLAB = registerBlock("jumperite_shard_brick_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)
+    public static final Block RUISIUM_SHARD_BRICK_SLAB = registerBlock("ruisium_shard_brick_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block JUMPERITE_SHARD_BRICK_STAIRS = registerBlock("jumperite_shard_brick_stairs", new StairBlock(JUMPERITE_SHARD_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)
+    public static final Block RUISIUM_SHARD_BRICK_STAIRS = registerBlock("ruisium_shard_brick_stairs", new StairBlock(RUISIUM_SHARD_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block JUMPERITE_SHARD_BRICK_WALL = registerBlock("jumperite_shard_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)
+    public static final Block RUISIUM_SHARD_BRICK_WALL = registerBlock("ruisium_shard_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
 
-    public static final Block JUMPERITE_BLOCK = registerBlock("jumperite_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+    public static final Block RUISIUM_BLOCK = registerBlock("ruisium_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
             .strength(20F,32F).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     public static final BlockSetType BLOCKSET_MARCELIUM = new BlockSetType("marcellomod:marcelium");
@@ -127,11 +127,11 @@ public class MM_Blocks {
             .door(MARCELIUM_DOOR)
             .trapdoor(MARCELIUM_TRAPDOOR)
             .recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
-    public static final BlockFamily FAMILY_JUMPERITE_SHARD_BRICK = BlockFamilies.familyBuilder(JUMPERITE_SHARD_BRICKS)
-            .slab(JUMPERITE_SHARD_BRICK_SLAB)
-            .stairs(JUMPERITE_SHARD_BRICK_STAIRS)
-            .wall(JUMPERITE_SHARD_BRICK_WALL)
-            .recipeUnlockedBy("has_jumperite_shard").getFamily();
+    public static final BlockFamily FAMILY_RUISIUM_SHARD_BRICK = BlockFamilies.familyBuilder(RUISIUM_SHARD_BRICKS)
+            .slab(RUISIUM_SHARD_BRICK_SLAB)
+            .stairs(RUISIUM_SHARD_BRICK_STAIRS)
+            .wall(RUISIUM_SHARD_BRICK_WALL)
+            .recipeUnlockedBy("has_ruisium_shard").getFamily();
 
     public static void registerBlockEvents()
     {

@@ -1,0 +1,35 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "marcellomod:item/ruisium_bow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pulling": 1
+      },
+      "model": "marcellomod:item/ruisium_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.35
+      },
+      "model": "marcellomod:item/ruisium_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.45
+      },
+      "model": "marcellomod:item/ruisium_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.85
+      },
+      "model": "marcellomod:item/ruisium_bow_pulling_3"
+    }
+  ]
+}
