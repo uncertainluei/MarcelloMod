@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 public enum MM_ToolTier implements Tier {
    MARCELLO(1, 226, 5F, 2F, 11, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
-   JUMPERITE(4, 1999, 9.5F, 5F, 9, Ingredient.of(MM_Items.JUMPERITE_SHARD));
+   RUISIUM(4, 1999, 9.5F, 5F, 9, Ingredient.of(MM_Items.RUISIUM_SHARD));
 
    private final int level;
    private final int uses;

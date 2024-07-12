@@ -2,8 +2,8 @@
   "itemGroup.marcellomod.items": "MarcelloMod Items",
   "itemGroup.marcellomod.blocks": "MarcelloMod Blocks",
 
-  "tag.item.marcellomod.jumperite_armor": "Jumperite Armor",
-  "tag.item.marcellomod.jumperite_ores": "Jumperite Ores",
+  "tag.item.marcellomod.ruisium_armor": "Ruisium Armor",
+  "tag.item.marcellomod.ruisium_ores": "Ruisium Ores",
   "tag.item.marcellomod.marcelium_leaves": "Marcelium Leaves",
   "tag.item.marcellomod.marcelium_saplings": "Marcelium Saplings",
   "tag.item.marcellomod.marcelium_logs": "Marcelium Logs",
@@ -12,20 +12,20 @@
 
   "block.marcellomod.marcello_block": "Block of Marcello",
   "block.marcellomod.mark_block": "Block of Mark",
-  "block.marcellomod.jumperite_block": "Block of Jumperite",
+  "block.marcellomod.ruisium_block": "Block of Ruisium",
 
   "block.marcellomod.marcello_ore": "Marcello Ore",
   "block.marcellomod.deepslate_marcello_ore": "Deepslate Marcello Ore",
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
 
-  "block.marcellomod.jumperite_ore": "Jumperite Ore",
+  "block.marcellomod.ruisium_ore": "Ruisium Ore",
 
-  "block.marcellomod.jumperite_shard_block": "Block of Jumperite Shards",
+  "block.marcellomod.ruisium_shard_block": "Block of Ruisium Shards",
 
-  "block.marcellomod.jumperite_shard_bricks": "Jumperite Shard Bricks",
-  "block.marcellomod.jumperite_shard_brick_slab": "Jumperite Shard Brick Slab",
-  "block.marcellomod.jumperite_shard_brick_stairs": "Jumperite Shard Brick Stairs",
-  "block.marcellomod.jumperite_shard_brick_wall": "Jumperite Shard Brick Wall",
+  "block.marcellomod.ruisium_shard_bricks": "Ruisium Shard Bricks",
+  "block.marcellomod.ruisium_shard_brick_slab": "Ruisium Shard Brick Slab",
+  "block.marcellomod.ruisium_shard_brick_stairs": "Ruisium Shard Brick Stairs",
+  "block.marcellomod.ruisium_shard_brick_wall": "Ruisium Shard Brick Wall",
 
   "block.marcellomod.marcelium_log": "Marcelium Log",
   "block.marcellomod.marcelium_wood": "Marcelium Wood",
@@ -63,16 +63,14 @@
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
 
-  "item.marcellomod.jumpman_ball": "Jumpman25 Ball",
+  "item.marcellomod.ruisium_shard": "Ruisium Shard",
+  "item.marcellomod.ruisium_ingot": "Ruisium Ingot",
 
-  "item.marcellomod.jumperite_shard": "Jumperite Shard",
-  "item.marcellomod.jumperite_ingot": "Jumperite Ingot",
+  "item.marcellomod.ruisium_upgrade_smithing_template": "Smithing Template",
 
-  "item.marcellomod.jumperite_upgrade_smithing_template": "Smithing Template",
-
-  "item.marcellomod.smithing_template.jumperite_upgrade.additions_slot_description": "Add Jumperite Ingot",
-  "item.marcellomod.smithing_template.jumperite_upgrade.ingredients": "Jumperite Ingot",
-  "upgrade.marcellomod.jumperite_upgrade": "Jumperite Upgrade",
+  "item.marcellomod.smithing_template.ruisium_upgrade.additions_slot_description": "Add Ruisium Ingot",
+  "item.marcellomod.smithing_template.ruisium_upgrade.ingredients": "Ruisium Ingot",
+  "upgrade.marcellomod.ruisium_upgrade": "Ruisium Upgrade",
 
   "item.marcellomod.hammer_pencil": "Hammer Pencil",
 
@@ -82,24 +80,23 @@
   "item.marcellomod.marcello_axe": "Marcello Axe",
   "item.marcellomod.marcello_hoe": "Marcello Hoe",
 
-  "item.marcellomod.jumperite_sword": "Jumperite Sword",
-  "item.marcellomod.jumperite_shovel": "Jumperite Shovel",
-  "item.marcellomod.jumperite_pickaxe": "Jumperite Pickaxe",
-  "item.marcellomod.jumperite_axe": "Jumperite Axe",
-  "item.marcellomod.jumperite_hoe": "Jumperite Hoe",
+  "item.marcellomod.ruisium_sword": "Ruisium Sword",
+  "item.marcellomod.ruisium_shovel": "Ruisium Shovel",
+  "item.marcellomod.ruisium_pickaxe": "Ruisium Pickaxe",
+  "item.marcellomod.ruisium_axe": "Ruisium Axe",
+  "item.marcellomod.ruisium_hoe": "Ruisium Hoe",
 
-  "item.marcellomod.jumperite_bow": "Jumperite Bow",
+  "item.marcellomod.ruisium_bow": "Ruisium Bow",
 
-  "item.marcellomod.jumperite_helmet": "Jumperite Helmet",
-  "item.marcellomod.jumperite_chestplate": "Jumperite Chestplate",
-  "item.marcellomod.jumperite_leggings": "Jumperite Leggings",
-  "item.marcellomod.jumperite_boots": "Jumperite Boots",
+  "item.marcellomod.ruisium_helmet": "Ruisium Helmet",
+  "item.marcellomod.ruisium_chestplate": "Ruisium Chestplate",
+  "item.marcellomod.ruisium_leggings": "Ruisium Leggings",
+  "item.marcellomod.ruisium_boots": "Ruisium Boots",
 
   "entity.marcellomod.marcello": "Marcello",
   "entity.marcellomod.evil_marcello": "Evil Marcello's",
   "entity.marcellomod.moldy": "Moldy",
   "entity.marcellomod.tb": "TB",
-  "entity.marcellomod.jumpman": "Jumpman25",
   "entity.marcellomod.mark": "Mark",
   "entity.marcellomod.gotta_sweep": "Gotta Sweep",
 
@@ -107,7 +104,6 @@
   "item.marcellomod.evil_marcello_spawn_egg": "Evil Marcello's Spawn Egg",
   "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
   "item.marcellomod.tb_spawn_egg": "TB Spawn Egg",
-  "item.marcellomod.jumpman_spawn_egg": "Jumpman25 Spawn Egg",
   "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
   "item.marcellomod.gotta_sweep_spawn_egg": "Gotta Sweep Spawn Egg",
 

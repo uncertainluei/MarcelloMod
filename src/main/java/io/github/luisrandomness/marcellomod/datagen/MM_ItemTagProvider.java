@@ -21,7 +21,7 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         copy(MM_Tags.BLOCK_MARCELLO_ORES, MM_Tags.ITEM_MARCELLO_ORES);
-        copy(MM_Tags.BLOCK_JUMPERITE_ORES, MM_Tags.ITEM_JUMPERITE_ORES);
+        copy(MM_Tags.BLOCK_RUISIUM_ORES, MM_Tags.ITEM_RUISIUM_ORES);
         copy(MM_Tags.BLOCK_MARCELIUM_LOGS, MM_Tags.ITEM_MARCELIUM_LOGS);
         copy(MM_Tags.BLOCK_MARCELIUM_SAPLINGS, MM_Tags.ITEM_MARCELIUM_SAPLINGS);
         copy(MM_Tags.BLOCK_MARCELIUM_LEAVES, MM_Tags.ITEM_MARCELIUM_LEAVES);
@@ -43,26 +43,26 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES).addTag(MM_Tags.ITEM_MARCELLO_ORES).add(MM_Items.PHONE);
 
-        getOrCreateTagBuilder(MM_Tags.ITEM_JUMPERITE_ORES).add(MM_Blocks.JUMPERITE_ORE.asItem());
+        getOrCreateTagBuilder(MM_Tags.ITEM_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE.asItem());
 
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(MM_Items.MARCELLO_SWORD).add(MM_Items.JUMPERITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(MM_Items.MARCELLO_SHOVEL).add(MM_Items.JUMPERITE_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.PICKAXES).add(MM_Items.MARCELLO_PICKAXE).add(MM_Items.JUMPERITE_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.AXES).add(MM_Items.MARCELLO_AXE).add(MM_Items.JUMPERITE_AXE);
-        getOrCreateTagBuilder(ItemTags.HOES).add(MM_Items.MARCELLO_HOE).add(MM_Items.JUMPERITE_HOE);
+        getOrCreateTagBuilder(ItemTags.SWORDS).add(MM_Items.MARCELLO_SWORD).add(MM_Items.RUISIUM_SWORD);
+        getOrCreateTagBuilder(ItemTags.SHOVELS).add(MM_Items.MARCELLO_SHOVEL).add(MM_Items.RUISIUM_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.PICKAXES).add(MM_Items.MARCELLO_PICKAXE).add(MM_Items.RUISIUM_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.AXES).add(MM_Items.MARCELLO_AXE).add(MM_Items.RUISIUM_AXE);
+        getOrCreateTagBuilder(ItemTags.HOES).add(MM_Items.MARCELLO_HOE).add(MM_Items.RUISIUM_HOE);
 
-        getOrCreateTagBuilder(ConventionalItemTags.BOWS).add(MM_Items.JUMPERITE_BOW);
+        getOrCreateTagBuilder(ConventionalItemTags.BOWS).add(MM_Items.RUISIUM_BOW);
 
-        getOrCreateTagBuilder(MM_Tags.ITEM_JUMPERITE_ARMOR)
-                .add(MM_Items.JUMPERITE_HELMET)
-                .add(MM_Items.JUMPERITE_CHESTPLATE)
-                .add(MM_Items.JUMPERITE_LEGGINGS)
-                .add(MM_Items.JUMPERITE_BOOTS);
+        getOrCreateTagBuilder(MM_Tags.ITEM_RUISIUM_ARMOR)
+                .add(MM_Items.RUISIUM_HELMET)
+                .add(MM_Items.RUISIUM_CHESTPLATE)
+                .add(MM_Items.RUISIUM_LEGGINGS)
+                .add(MM_Items.RUISIUM_BOOTS);
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).addTag(MM_Tags.ITEM_JUMPERITE_ARMOR);
-        getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(MM_Items.JUMPERITE_INGOT);
-        getOrCreateTagBuilder(ConventionalItemTags.GEMS).add(MM_Items.JUMPERITE_SHARD);
-        getOrCreateTagBuilder(ConventionalItemTags.NUGGETS).add(MM_Items.JUMPERITE_SHARD);
-        getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS).add(MM_Items.JUMPERITE_INGOT);
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).addTag(MM_Tags.ITEM_RUISIUM_ARMOR);
+        getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(MM_Items.RUISIUM_INGOT);
+        getOrCreateTagBuilder(ConventionalItemTags.GEMS).add(MM_Items.RUISIUM_SHARD);
+        getOrCreateTagBuilder(ConventionalItemTags.NUGGETS).add(MM_Items.RUISIUM_SHARD);
+        getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS).add(MM_Items.RUISIUM_INGOT);
     }
 }

@@ -23,12 +23,12 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         dropSelf(MM_Blocks.MARCELLO_BLOCK);
         dropSelf(MM_Blocks.MARK_BLOCK);
-        dropSelf(MM_Blocks.JUMPERITE_BLOCK);
+        dropSelf(MM_Blocks.RUISIUM_BLOCK);
 
         add(MM_Blocks.MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.DEEPSLATE_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.NETHER_MARCELLO_ORE, this::marcelloOreDrops);
-        add(MM_Blocks.JUMPERITE_ORE, this::jumperiteOreDrops);
+        add(MM_Blocks.RUISIUM_ORE, this::ruisiumOreDrops);
         dropSelf(MM_Blocks.MARCELIUM_LOG);
         dropSelf(MM_Blocks.MARCELIUM_WOOD);
         dropSelf(MM_Blocks.STRIPPED_MARCELIUM_LOG);
@@ -65,7 +65,7 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
         return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.MARCELLO_FRUIT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 
-    public LootTable.Builder jumperiteOreDrops(Block drop) {
-        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.JUMPERITE_SHARD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+    public LootTable.Builder ruisiumOreDrops(Block drop) {
+        return createSilkTouchDispatchTable(drop, applyExplosionDecay(drop, LootItem.lootTableItem(MM_Items.RUISIUM_SHARD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 }

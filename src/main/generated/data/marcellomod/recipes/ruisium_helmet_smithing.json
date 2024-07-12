@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "marcellomod:ruisium_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_helmet"
+  },
+  "result": {
+    "item": "marcellomod:ruisium_helmet"
+  },
+  "template": {
+    "item": "marcellomod:ruisium_upgrade_smithing_template"
+  }
+}

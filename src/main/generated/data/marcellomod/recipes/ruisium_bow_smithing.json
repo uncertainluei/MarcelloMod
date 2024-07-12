@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "marcellomod:ruisium_ingot"
+  },
+  "base": {
+    "item": "minecraft:bow"
+  },
+  "result": {
+    "item": "marcellomod:ruisium_bow"
+  },
+  "template": {
+    "item": "marcellomod:ruisium_upgrade_smithing_template"
+  }
+}

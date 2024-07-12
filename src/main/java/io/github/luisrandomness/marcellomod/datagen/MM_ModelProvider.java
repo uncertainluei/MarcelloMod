@@ -28,12 +28,12 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(MM_Blocks.MARCELLO_ORE);
         gen.createTrivialCube(MM_Blocks.DEEPSLATE_MARCELLO_ORE);
         gen.createTrivialCube(MM_Blocks.NETHER_MARCELLO_ORE);
-        gen.createTrivialBlock(MM_Blocks.JUMPERITE_ORE, TexturedModel.CUBE_TOP_BOTTOM);
-        gen.createTrivialCube(MM_Blocks.JUMPERITE_BLOCK);
-        gen.createTrivialCube(MM_Blocks.JUMPERITE_SHARD_BLOCK);
+        gen.createTrivialBlock(MM_Blocks.RUISIUM_ORE, TexturedModel.CUBE_TOP_BOTTOM);
+        gen.createTrivialCube(MM_Blocks.RUISIUM_BLOCK);
+        gen.createTrivialCube(MM_Blocks.RUISIUM_SHARD_BLOCK);
 
         gen.family(MM_Blocks.MARCELIUM_PLANKS).generateFor(MM_Blocks.FAMILY_MARCELIUM);
-        gen.family(MM_Blocks.JUMPERITE_SHARD_BRICKS).generateFor(MM_Blocks.FAMILY_JUMPERITE_SHARD_BRICK);
+        gen.family(MM_Blocks.RUISIUM_SHARD_BRICKS).generateFor(MM_Blocks.FAMILY_RUISIUM_SHARD_BRICK);
 
         gen.woodProvider(MM_Blocks.MARCELIUM_LOG).log(MM_Blocks.MARCELIUM_LOG).wood(MM_Blocks.MARCELIUM_WOOD);
         gen.woodProvider(MM_Blocks.STRIPPED_MARCELIUM_LOG).log(MM_Blocks.STRIPPED_MARCELIUM_LOG).wood(MM_Blocks.STRIPPED_MARCELIUM_WOOD);
@@ -52,16 +52,15 @@ public class MM_ModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators gen) {
         gen.generateFlatItem(MM_Items.MARCELLO_FRUIT, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.MOLDY_FRUIT, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPMAN_BALL, ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(MM_Items.PHONE, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.OTHERWORLDLY_PHONE, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.BLOCK_BUTTON, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.HAMMER_PENCIL, ModelTemplates.FLAT_ITEM);
 
-        gen.generateFlatItem(MM_Items.JUMPERITE_SHARD, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_INGOT, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_SHARD, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_INGOT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(MM_Items.MARCELIUM_BOAT_ITEM, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.MARCELIUM_CHEST_BOAT_ITEM, ModelTemplates.FLAT_ITEM);
@@ -74,16 +73,16 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.generateFlatItem(MM_Items.MARCELLO_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         gen.generateFlatItem(MM_Items.MARCELLO_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        gen.generateFlatItem(MM_Items.JUMPERITE_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(MM_Items.JUMPERITE_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        gen.generateFlatItem(MM_Items.RUISIUM_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        gen.generateArmorTrims(MM_Items.JUMPERITE_HELMET);
-        gen.generateArmorTrims(MM_Items.JUMPERITE_CHESTPLATE);
-        gen.generateArmorTrims(MM_Items.JUMPERITE_LEGGINGS);
-        gen.generateArmorTrims(MM_Items.JUMPERITE_BOOTS);
+        gen.generateArmorTrims(MM_Items.RUISIUM_HELMET);
+        gen.generateArmorTrims(MM_Items.RUISIUM_CHESTPLATE);
+        gen.generateArmorTrims(MM_Items.RUISIUM_LEGGINGS);
+        gen.generateArmorTrims(MM_Items.RUISIUM_BOOTS);
 
         ResourceLocation spawnEggTemplate = new ResourceLocation("item/template_spawn_egg");
         for (Item item : MM_Items.ALL_ITEMS)

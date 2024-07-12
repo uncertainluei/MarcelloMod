@@ -12,10 +12,5 @@ public class MarcelloModClient implements ClientModInitializer {
 		MM_BlockRendering.initialize();
 		MM_ItemRendering.initialize();
 		MM_EntityRendering.initialize();
-
-		FabricLoader.getInstance().getModContainer("marcellomod").ifPresent(modContainer -> {
-					ResourceManagerHelper.registerBuiltinResourcePack(MarcelloMod.modIdentifier("legacy"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
-		}
-		);
 	}
 }

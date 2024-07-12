@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "marcellomod:block/ruisium_shard_bricks"
+  }
+}

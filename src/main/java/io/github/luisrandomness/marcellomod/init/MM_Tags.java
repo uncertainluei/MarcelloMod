@@ -15,15 +15,15 @@ public class MM_Tags {
     public static final TagKey<Block> BLOCK_MARCELLO_EFFICIENT = blockTag("marcello_tool_efficient");
 
     public static final TagKey<Block> BLOCK_MARCELLO_ORES = blockTag("marcello_ores");
-    public static final TagKey<Block> BLOCK_JUMPERITE_ORES = blockTag("jumperite_ores");
+    public static final TagKey<Block> BLOCK_RUISIUM_ORES = blockTag("ruisium_ores");
     public static final TagKey<Block> BLOCK_MARCELIUM_LOGS = blockTag("marcelium_logs");
     public static final TagKey<Block> BLOCK_MARCELIUM_LEAVES = blockTag("marcelium_leaves");
     public static final TagKey<Block> BLOCK_MARCELIUM_SAPLINGS = blockTag("marcelium_saplings");
 
     public static final TagKey<Item> ITEM_MARCELLO_ORES = itemTag("marcello_ores");
     public static final TagKey<Item> ITEM_MARCELLO_BLOCK_SMELTABLES = itemTag("marcello_block_smeltables");
-    public static final TagKey<Item> ITEM_JUMPERITE_ORES = itemTag("jumperite_ores");
-    public static final TagKey<Item> ITEM_JUMPERITE_ARMOR = itemTag("jumperite_armor");
+    public static final TagKey<Item> ITEM_RUISIUM_ORES = itemTag("ruisium_ores");
+    public static final TagKey<Item> ITEM_RUISIUM_ARMOR = itemTag("ruisium_armor");
     public static final TagKey<Item> ITEM_MARCELIUM_LOGS = itemTag("marcelium_logs");
     public static final TagKey<Item> ITEM_MARCELIUM_LEAVES = itemTag("marcelium_leaves");
     public static final TagKey<Item> ITEM_MARCELIUM_SAPLINGS = itemTag("marcelium_saplings");
