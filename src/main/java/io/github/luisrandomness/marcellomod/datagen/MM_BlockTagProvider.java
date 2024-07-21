@@ -61,10 +61,10 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(MM_Blocks.MARCELIUM_DOOR);
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(MM_Blocks.MARCELIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.SLABS).add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB);
-        getOrCreateTagBuilder(BlockTags.STAIRS).add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(MM_Blocks.RUISIUM_BRICK_SLAB);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(MM_Blocks.RUISIUM_BRICK_STAIRS);
 
-        getOrCreateTagBuilder(BlockTags.WALLS).add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(MM_Blocks.RUISIUM_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(MM_Blocks.MARCELLO_BLOCK)
@@ -73,10 +73,11 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
                 .add(MM_Blocks.RUISIUM_BLOCK)
                 .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICKS)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
+                .add(MM_Blocks.RUISIUM_BRICKS)
+                .add(MM_Blocks.RUISIUM_BRICK_SLAB)
+                .add(MM_Blocks.RUISIUM_BRICK_STAIRS)
+                .add(MM_Blocks.RUISIUM_BRICK_WALL)
+                .add(MM_Blocks.CHISELED_RUISIUM_BRICKS);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(MM_Blocks.MARCELLO_BLOCK)
@@ -87,9 +88,10 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
                 .add(MM_Blocks.RUISIUM_BLOCK)
                 .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICKS)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_SLAB)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_STAIRS)
-                .add(MM_Blocks.RUISIUM_SHARD_BRICK_WALL);
+                .add(MM_Blocks.RUISIUM_BRICKS)
+                .add(MM_Blocks.RUISIUM_BRICK_SLAB)
+                .add(MM_Blocks.RUISIUM_BRICK_STAIRS)
+                .add(MM_Blocks.RUISIUM_BRICK_WALL)
+                .add(MM_Blocks.CHISELED_RUISIUM_BRICKS);
     }
 }

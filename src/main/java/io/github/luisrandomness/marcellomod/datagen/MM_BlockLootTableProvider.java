@@ -7,12 +7,17 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.LimitCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -28,11 +33,20 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
         dropSelf(MM_Blocks.MARCELLO_BLOCK);
-        dropSelf(MM_Blocks.MARK_BLOCK);
+        this.add(MM_Blocks.MARK_BLOCK, (block) -> {
+            return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(MM_Blocks.MARCELLO_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 8.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(0, 3)))));
+        });
         dropSelf(MM_Blocks.RUISIUM_BLOCK);
 
-        enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        dropSelf(MM_Blocks.RUISIUM_BRICKS);
+        dropSelf(MM_Blocks.RUISIUM_BRICK_SLAB);
+        dropSelf(MM_Blocks.RUISIUM_BRICK_STAIRS);
+        dropSelf(MM_Blocks.RUISIUM_BRICK_WALL);
+        dropSelf(MM_Blocks.CHISELED_RUISIUM_BRICKS);
+
         add(MM_Blocks.MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.DEEPSLATE_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.NETHER_MARCELLO_ORE, this::marcelloOreDrops);

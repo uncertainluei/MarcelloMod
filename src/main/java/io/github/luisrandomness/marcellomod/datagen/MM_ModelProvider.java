@@ -12,6 +12,7 @@ import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.Optional;
 
@@ -33,7 +34,9 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(MM_Blocks.RUISIUM_SHARD_BLOCK);
 
         gen.family(MM_Blocks.MARCELIUM_PLANKS).generateFor(MM_Blocks.FAMILY_MARCELIUM);
-        gen.family(MM_Blocks.RUISIUM_SHARD_BRICKS).generateFor(MM_Blocks.FAMILY_RUISIUM_SHARD_BRICK);
+        gen.family(MM_Blocks.RUISIUM_BRICKS).generateFor(MM_Blocks.FAMILY_RUISIUM_BRICK);
+
+        gen.createTrivialBlock(MM_Blocks.CHISELED_RUISIUM_BRICKS, TexturedModel.COLUMN);
 
         gen.woodProvider(MM_Blocks.MARCELIUM_LOG).log(MM_Blocks.MARCELIUM_LOG).wood(MM_Blocks.MARCELIUM_WOOD);
         gen.woodProvider(MM_Blocks.STRIPPED_MARCELIUM_LOG).log(MM_Blocks.STRIPPED_MARCELIUM_LOG).wood(MM_Blocks.STRIPPED_MARCELIUM_WOOD);
@@ -52,6 +55,7 @@ public class MM_ModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators gen) {
         gen.generateFlatItem(MM_Items.MARCELLO_FRUIT, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.MOLDY_FRUIT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(MM_Items.MARK_FRUIT, ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(MM_Items.PHONE, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(MM_Items.OTHERWORLDLY_PHONE, ModelTemplates.FLAT_ITEM);

@@ -6,9 +6,10 @@
     "#marcellomod:ruisium_ores",
     "marcellomod:ruisium_block",
     "marcellomod:ruisium_shard_block",
-    "marcellomod:ruisium_shard_bricks",
-    "marcellomod:ruisium_shard_brick_slab",
-    "marcellomod:ruisium_shard_brick_stairs",
-    "marcellomod:ruisium_shard_brick_wall"
+    "marcellomod:ruisium_bricks",
+    "marcellomod:ruisium_brick_slab",
+    "marcellomod:ruisium_brick_stairs",
+    "marcellomod:ruisium_brick_wall",
+    "marcellomod:chiseled_ruisium_bricks"
   ]
 }

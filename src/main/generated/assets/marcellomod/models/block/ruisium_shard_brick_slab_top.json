@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "marcellomod:block/ruisium_shard_bricks",
-    "side": "marcellomod:block/ruisium_shard_bricks",
-    "top": "marcellomod:block/ruisium_shard_bricks"
-  }
-}

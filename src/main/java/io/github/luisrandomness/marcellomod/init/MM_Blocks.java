@@ -5,6 +5,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.luisrandomness.marcellomod.MarcelloMod;
+import io.github.luisrandomness.marcellomod.world.MM_ConfiguredFeatures;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.core.Registry;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class MM_Blocks {
 
@@ -62,14 +64,16 @@ public class MM_Blocks {
     public static final Block RUISIUM_SHARD_BLOCK = registerBlock("ruisium_shard_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
 
-    public static final Block RUISIUM_SHARD_BRICKS = registerBlock("ruisium_shard_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
+    public static final Block RUISIUM_BRICKS = registerBlock("ruisium_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block RUISIUM_SHARD_BRICK_SLAB = registerBlock("ruisium_shard_brick_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)
+    public static final Block RUISIUM_BRICK_SLAB = registerBlock("ruisium_brick_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block RUISIUM_SHARD_BRICK_STAIRS = registerBlock("ruisium_shard_brick_stairs", new StairBlock(RUISIUM_SHARD_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)
+    public static final Block RUISIUM_BRICK_STAIRS = registerBlock("ruisium_brick_stairs", new StairBlock(RUISIUM_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
-    public static final Block RUISIUM_SHARD_BRICK_WALL = registerBlock("ruisium_shard_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)
+    public static final Block RUISIUM_BRICK_WALL = registerBlock("ruisium_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+
+    public static final Block CHISELED_RUISIUM_BRICKS = registerBlock("chiseled_ruisium_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(MM_Blocks.RUISIUM_SHARD_BLOCK)));
 
     public static final Block RUISIUM_BLOCK = registerBlock("ruisium_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
             .strength(20F,32F).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
@@ -105,9 +109,14 @@ public class MM_Blocks {
     public static final Block RED_MARCELIUM_LEAVES = registerBlock("red_marcelium_leaves", new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final Block GREEN_MARCELIUM_LEAVES = registerBlock("green_marcelium_leaves", new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final Block YELLOW_MARCELIUM_LEAVES = registerBlock("yellow_marcelium_leaves", new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final Block RED_MARCELIUM_SAPLING = registerBlock("red_marcelium_sapling", new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final Block GREEN_MARCELIUM_SAPLING = registerBlock("green_marcelium_sapling", new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final Block YELLOW_MARCELIUM_SAPLING = registerBlock("yellow_marcelium_sapling", new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final TreeGrower TREE_MARCELIUM_RED = new TreeGrower("marcellomod:marcelium_red", Optional.empty(), Optional.of(MM_ConfiguredFeatures.MARCELIUM_RED), Optional.empty());
+    public static final TreeGrower TREE_MARCELIUM_GREEN = new TreeGrower("marcellomod:marcelium_green", Optional.empty(), Optional.of(MM_ConfiguredFeatures.MARCELIUM_GREEN), Optional.empty());
+    public static final TreeGrower TREE_MARCELIUM_YELLOW = new TreeGrower("marcellomod:marcelium_yellow", Optional.empty(), Optional.of(MM_ConfiguredFeatures.MARCELIUM_YELLOW), Optional.empty());
+
+    public static final Block RED_MARCELIUM_SAPLING = registerBlock("red_marcelium_sapling", new SaplingBlock(TREE_MARCELIUM_RED, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final Block GREEN_MARCELIUM_SAPLING = registerBlock("green_marcelium_sapling", new SaplingBlock(TREE_MARCELIUM_GREEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final Block YELLOW_MARCELIUM_SAPLING = registerBlock("yellow_marcelium_sapling", new SaplingBlock(TREE_MARCELIUM_YELLOW, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final Block POTTED_RED_MARCELIUM_SAPLING = registerBlock("potted_red_marcelium_sapling", new FlowerPotBlock(RED_MARCELIUM_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)), false);
     public static final Block POTTED_YELLOW_MARCELIUM_SAPLING = registerBlock("potted_yellow_marcelium_sapling", new FlowerPotBlock(YELLOW_MARCELIUM_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)), false);
     public static final Block POTTED_GREEN_MARCELIUM_SAPLING = registerBlock("potted_green_marcelium_sapling", new FlowerPotBlock(GREEN_MARCELIUM_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)), false);
@@ -127,10 +136,10 @@ public class MM_Blocks {
             .door(MARCELIUM_DOOR)
             .trapdoor(MARCELIUM_TRAPDOOR)
             .recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
-    public static final BlockFamily FAMILY_RUISIUM_SHARD_BRICK = BlockFamilies.familyBuilder(RUISIUM_SHARD_BRICKS)
-            .slab(RUISIUM_SHARD_BRICK_SLAB)
-            .stairs(RUISIUM_SHARD_BRICK_STAIRS)
-            .wall(RUISIUM_SHARD_BRICK_WALL)
+    public static final BlockFamily FAMILY_RUISIUM_BRICK = BlockFamilies.familyBuilder(RUISIUM_BRICKS)
+            .slab(RUISIUM_BRICK_SLAB)
+            .stairs(RUISIUM_BRICK_STAIRS)
+            .wall(RUISIUM_BRICK_WALL)
             .recipeUnlockedBy("has_ruisium_shard").getFamily();
 
     public static void registerBlockEvents()

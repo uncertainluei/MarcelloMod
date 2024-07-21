@@ -19,13 +19,16 @@
   "block.marcellomod.nether_marcello_ore": "Nether Marcello Ore",
 
   "block.marcellomod.ruisium_ore": "Ruisium Ore",
+  "block.marcellomod.end_ruisium_ore": "End Ruisium Ore",
 
   "block.marcellomod.ruisium_shard_block": "Block of Ruisium Shards",
 
-  "block.marcellomod.ruisium_shard_bricks": "Ruisium Shard Bricks",
-  "block.marcellomod.ruisium_shard_brick_slab": "Ruisium Shard Brick Slab",
-  "block.marcellomod.ruisium_shard_brick_stairs": "Ruisium Shard Brick Stairs",
-  "block.marcellomod.ruisium_shard_brick_wall": "Ruisium Shard Brick Wall",
+  "block.marcellomod.ruisium_bricks": "Ruisium Bricks",
+  "block.marcellomod.ruisium_brick_slab": "Ruisium Brick Slab",
+  "block.marcellomod.ruisium_brick_stairs": "Ruisium Brick Stairs",
+  "block.marcellomod.ruisium_brick_wall": "Ruisium Brick Wall",
+
+  "block.marcellomod.chiseled_ruisium_bricks": "Chiseled Ruisium Bricks",
 
   "block.marcellomod.marcelium_log": "Marcelium Log",
   "block.marcellomod.marcelium_wood": "Marcelium Wood",
@@ -64,6 +67,7 @@
 
   "item.marcellomod.marcello_fruit": "Marcello Fruit",
   "item.marcellomod.moldy_fruit": "Moldy Fruit",
+  "item.marcellomod.mark_fruit": "Mark Fruit",
 
   "item.marcellomod.ruisium_shard": "Ruisium Shard",
   "item.marcellomod.ruisium_ingot": "Ruisium Ingot",
@@ -135,5 +139,11 @@
 
   "subtitles.entity.marcellomod.marcello.ambient": "Marcello speaks",
   "subtitles.entity.marcellomod.marcello.hurt": "Marcello hurts",
-  "subtitles.entity.marcellomod.marcello.death": "Marcello dies"
+  "subtitles.entity.marcellomod.marcello.death": "Marcello dies",
+
+  "advancements.marcellomod.root.title": "MarcelloMod",
+  "advancements.marcellomod.root.description": "A wacky, meta adventure",
+
+  "advancements.marcellomod.door_2_wall.title": "Easy Camouflage!",
+  "advancements.marcellomod.door_2_wall.description": "Craft a Door 2 Wall from spare Quartz Bricks"
 }

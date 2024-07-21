@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "marcellomod:block/chiseled_ruisium_bricks_top",
+    "side": "marcellomod:block/chiseled_ruisium_bricks_side"
+  }
+}

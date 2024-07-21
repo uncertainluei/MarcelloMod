@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "marcellomod:block/ruisium_shard_bricks"
-  }
-}

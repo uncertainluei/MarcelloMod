@@ -29,12 +29,18 @@ public class MarcelloModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(MM_BlockLootTableProvider::new);
 		pack.addProvider(MM_RecipeProvider::new);
 		pack.addProvider(MM_WorldGenerationProvider::new);
+		pack.addProvider(MM_AdvancementProvider::new);
 	}
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.PAINTING_VARIANT, MM_Paintings::bootstrap);
+
+		// TODO: Split these into different categories
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, MM_ConfiguredFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, MM_PlacedFeatures::bootstrap);
+
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, MM_ConfiguredFeatures::bootstrapPost);
+		registryBuilder.add(Registries.PLACED_FEATURE, MM_PlacedFeatures::bootstrapPost);
 	}
 }

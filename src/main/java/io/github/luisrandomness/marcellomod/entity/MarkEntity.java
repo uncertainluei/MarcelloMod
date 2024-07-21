@@ -71,11 +71,11 @@ public class MarkEntity extends Monster {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, true, (livingEntity) -> {
-            return !livingEntity.getType().is(MM_Tags.ENTITY_MARCELLO_TYPE) && !(livingEntity instanceof MarkEntity);
+            return !(livingEntity instanceof MarkEntity);
         }));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers(this.getClass()));
+        this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(7, new FloatGoal(this));

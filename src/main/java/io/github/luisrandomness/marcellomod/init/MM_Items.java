@@ -22,9 +22,16 @@ public class MM_Items {
             .effect(new MobEffectInstance(MobEffects.HUNGER,480,0), 0.75F)
             .effect(new MobEffectInstance(MobEffects.POISON,480,0),0.5F)
             .build();
-    public static final FoodProperties FOOD_MOLDY_FRUIT = new FoodProperties.Builder().nutrition(6).saturationModifier(0.4F)
+    public static final FoodProperties FOOD_MOLDY_FRUIT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4F)
             .effect(new MobEffectInstance(MobEffects.REGENERATION,120,0), 0.5F)
             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,480,0),0.25F)
+            .build();
+
+    public static final FoodProperties FOOD_MARK_FRUIT =  new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION,480,0),0.75F)
+            .effect(new MobEffectInstance(MM_MobEffects.BLOCKED,480,0), 0.5F)
+            .effect(new MobEffectInstance(MobEffects.POISON,240,2), 0.5F)
+            .effect(new MobEffectInstance(MobEffects.WITHER,120,1), 0.1F)
             .build();
 
     public static final ArrayList<Item> ALL_ITEMS = new ArrayList<>();
@@ -51,6 +58,7 @@ public class MM_Items {
 
     public static final Item MARCELLO_FRUIT =  registerItem("marcello_fruit", new Item(new Item.Properties().food(FOOD_MARCELLO_FRUIT)));
     public static final Item MOLDY_FRUIT =  registerItem("moldy_fruit", new Item(new Item.Properties().food(FOOD_MOLDY_FRUIT)));
+    public static final Item MARK_FRUIT =  registerItem("mark_fruit", new Item(new Item.Properties().food(FOOD_MARK_FRUIT)));
 
     public static final Item RUISIUM_SHARD = registerItem("ruisium_shard", new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final Item RUISIUM_INGOT = registerItem("ruisium_ingot", new Item(new Item.Properties().rarity(Rarity.EPIC)));
@@ -151,7 +159,17 @@ public class MM_Items {
             content.addAfter(MM_Blocks.MARCELIUM_PRESSURE_PLATE, MM_Blocks.MARCELIUM_BUTTON);
             content.addBefore(Items.COAL_BLOCK, MM_Blocks.MARCELLO_BLOCK);
             content.addAfter(MM_Blocks.MARCELLO_BLOCK, MM_Blocks.MARK_BLOCK);
-            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.RUISIUM_BLOCK);
+
+            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.RUISIUM_SHARD_BLOCK);
+            content.addAfter(MM_Blocks.RUISIUM_SHARD_BLOCK, MM_Blocks.RUISIUM_BLOCK);
+            content.addAfter(MM_Blocks.RUISIUM_BLOCK, MM_Blocks.RUISIUM_BRICKS);
+            content.addAfter(MM_Blocks.RUISIUM_BRICKS, MM_Blocks.RUISIUM_BRICK_STAIRS);
+            content.addAfter(MM_Blocks.RUISIUM_BRICK_STAIRS, MM_Blocks.RUISIUM_BRICK_SLAB);
+            content.addAfter(MM_Blocks.RUISIUM_BRICK_SLAB, MM_Blocks.RUISIUM_BRICK_WALL);
+            content.addAfter(MM_Blocks.RUISIUM_BRICK_WALL, MM_Blocks.CHISELED_RUISIUM_BRICKS);
+
+            content.addAfter(Items.QUARTZ_BRICKS, MM_Blocks.DOOR_2_WALL);
+
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(content -> {
@@ -178,13 +196,14 @@ public class MM_Items {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(content -> {
             content.addAfter(Items.CHORUS_FRUIT, MARCELLO_FRUIT);
             content.addAfter(MARCELLO_FRUIT, MOLDY_FRUIT);
+            content.addAfter(MOLDY_FRUIT, MARK_FRUIT);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
             content.addAfter(Items.RAW_GOLD, MARCELLO_FRUIT);
             content.addAfter(MARCELLO_FRUIT, PHONE);
-            content.addAfter(Items.ANCIENT_DEBRIS, RUISIUM_SHARD);
-            content.addAfter(Items.NETHERITE_INGOT, RUISIUM_INGOT);
+            content.addAfter(Items.NETHERITE_INGOT, RUISIUM_SHARD);
+            content.addAfter(RUISIUM_SHARD, RUISIUM_INGOT);
             content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, RUISIUM_UPGRADE_SMITHING_TEMPLATE);
         });
 
@@ -206,8 +225,12 @@ public class MM_Items {
             content.addAfter(RUISIUM_AXE, RUISIUM_HOE);
 
             content.addAfter(Items.FLINT_AND_STEEL, PHONE);
-            content.addAfter(PHONE, BLOCK_BUTTON);
-            content.addAfter(BLOCK_BUTTON, OTHERWORLDLY_PHONE);
+            content.addAfter(PHONE, OTHERWORLDLY_PHONE);
+            content.addAfter(OTHERWORLDLY_PHONE, BLOCK_BUTTON);
+            content.addAfter(BLOCK_BUTTON, HAMMER_PENCIL);
+
+            content.addAfter(Items.BAMBOO_CHEST_RAFT, MARCELIUM_BOAT_ITEM);
+            content.addAfter(MARCELIUM_BOAT_ITEM, MARCELIUM_CHEST_BOAT_ITEM);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(content -> {
@@ -222,6 +245,8 @@ public class MM_Items {
             content.addAfter(RUISIUM_LEGGINGS, RUISIUM_BOOTS);
             content.addAfter(Items.TOTEM_OF_UNDYING, BLOCK_BUTTON);
 
+            content.addAfter(Items.BOW, RUISIUM_BOW);
+            content.addAfter(Items.MACE, HAMMER_PENCIL);
         });
     }
 }

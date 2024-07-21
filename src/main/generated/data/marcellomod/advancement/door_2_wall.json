@@ -1,0 +1,33 @@
+{
+  "parent": "marcellomod:root",
+  "criteria": {
+    "door_2_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "marcellomod:door_2_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.marcellomod.door_2_wall.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "marcellomod:door_2_wall"
+    },
+    "title": {
+      "translate": "advancements.marcellomod.door_2_wall.title"
+    }
+  },
+  "requirements": [
+    [
+      "door_2_wall"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

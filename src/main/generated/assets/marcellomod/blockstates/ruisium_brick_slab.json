@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "marcellomod:block/ruisium_brick_slab"
+    },
+    "type=double": {
+      "model": "marcellomod:block/ruisium_bricks"
+    },
+    "type=top": {
+      "model": "marcellomod:block/ruisium_brick_slab_top"
+    }
+  }
+}

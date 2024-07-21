@@ -6,7 +6,7 @@ import io.github.luisrandomness.marcellomod.init.MM_Items;
 import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 
@@ -56,7 +56,7 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.AXES).add(MM_Items.MARCELLO_AXE).add(MM_Items.RUISIUM_AXE);
         getOrCreateTagBuilder(ItemTags.HOES).add(MM_Items.MARCELLO_HOE).add(MM_Items.RUISIUM_HOE);
 
-        getOrCreateTagBuilder(ConventionalItemTags.BOWS).add(MM_Items.RUISIUM_BOW);
+        getOrCreateTagBuilder(ConventionalItemTags.BOW_TOOLS).add(MM_Items.RUISIUM_BOW);
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(MM_Items.RUISIUM_BOW);
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(MM_Items.RUISIUM_BOW);

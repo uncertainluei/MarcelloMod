@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_ruisium_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "marcellomod:chiseled_ruisium_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ruisium_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "marcellomod:ruisium_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ruisium_shard_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "marcellomod:ruisium_shard_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "marcellomod:chiseled_ruisium_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_ruisium_bricks",
+      "has_ruisium_bricks",
+      "has_ruisium_shard_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "marcellomod:chiseled_ruisium_bricks"
+    ]
+  }
+}

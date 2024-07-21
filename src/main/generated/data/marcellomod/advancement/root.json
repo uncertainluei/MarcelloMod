@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "marcello_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "marcellomod:marcello_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "marcellomod:textures/gui/advancement_background.png",
+    "description": {
+      "translate": "advancements.marcellomod.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "marcellomod:marcello_fruit"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.marcellomod.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "marcello_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
