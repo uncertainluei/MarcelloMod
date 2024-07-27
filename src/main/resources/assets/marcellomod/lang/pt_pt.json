@@ -1,0 +1,138 @@
+{
+  "itemGroup.marcellomod.items": "Itens de MarcelloMod",
+  "itemGroup.marcellomod.blocks": "Blocos de MarcelloMod",
+
+  "tag.item.marcellomod.ruisium_armor": "Armadura de ruísio",
+  "tag.item.marcellomod.ruisium_ores": "Minérios de ruísio",
+  "tag.item.marcellomod.marcelium_leaves": "Folhas de marcélia",
+  "tag.item.marcellomod.marcelium_saplings": "Rebentos de marcélia",
+  "tag.item.marcellomod.marcelium_logs": "Troncos de marcélia",
+  "tag.item.marcellomod.marcello_block_smeltables": "Fundível num bloco de Marcello",
+  "tag.item.marcellomod.marcello_ores": "Minérios de Marcello",
+
+  "block.marcellomod.marcello_block": "Bloco de Marcello",
+  "block.marcellomod.mark_block": "Bloco de Mark",
+  "block.marcellomod.ruisium_block": "Bloco de ruísio",
+
+  "block.marcellomod.marcello_ore": "Minério de Marcello",
+  "block.marcellomod.deepslate_marcello_ore": "Minério de Marcello de ardósia",
+  "block.marcellomod.nether_marcello_ore": "Minério de Marcello do Nether",
+
+  "block.marcellomod.ruisium_ore": "Minério de ruísia",
+  "block.marcellomod.end_ruisium_ore": "Minério de ruísia do End",
+
+  "block.marcellomod.ruisium_shard_block": "Bloco de fragmentos de ruísio",
+
+  "block.marcellomod.ruisium_bricks": "Tijolos de ruísio",
+  "block.marcellomod.ruisium_brick_slab": "Degrau de tijolos de ruísio",
+  "block.marcellomod.ruisium_brick_stairs": "Escadas de tijolos de ruísio",
+  "block.marcellomod.ruisium_brick_wall": "Muro de tijolos de ruísio",
+
+  "block.marcellomod.chiseled_ruisium_bricks": "Tijolos de ruísio esculpidos",
+
+  "block.marcellomod.marcelium_log": "Tronco de marcélia",
+  "block.marcellomod.marcelium_wood": "Madeira de marcélia",
+  "block.marcellomod.stripped_marcelium_log": "Tronco de marcélia descascado",
+  "block.marcellomod.stripped_marcelium_wood": "Madeira de marcélia descascada",
+  "block.marcellomod.marcelium_planks": "Tábuas de marcélia",
+  "block.marcellomod.marcelium_slab": "Degrau de marcélia",
+  "block.marcellomod.marcelium_stairs": "Escadas de marcélia",
+  "block.marcellomod.marcelium_door": "Porta de marcélia",
+  "block.marcellomod.marcelium_trapdoor": "Alçapão de marcélia",
+  "block.marcellomod.marcelium_fence": "Cerca de marcélia",
+  "block.marcellomod.marcelium_fence_gate": "Portão de marcélia",
+  "block.marcellomod.marcelium_button": "Botão de marcélia",
+  "block.marcellomod.marcelium_pressure_plate": "Placa de pressão de marcélia",
+  "block.marcellomod.marcelium_sign": "Tabuleta de marcélia",
+  "block.marcellomod.marcelium_wall_sign": "Tabuleta de marcélia de parede",
+  "block.marcellomod.marcelium_hanging_sign": "Tabuleta pendurada de marcélia",
+  "block.marcellomod.marcelium_wall_hanging_sign": "Tabuleta pendurada de marcélia de parede",
+
+  "item.marcellomod.marcelium_boat": "Barco de marcélia",
+  "item.marcellomod.marcelium_chest_boat": "Barco de marcélia com baú",
+
+  "block.marcellomod.red_marcelium_leaves": "Folhas de marcélia vermelha",
+  "block.marcellomod.green_marcelium_leaves": "Folhas de marcélia verde",
+  "block.marcellomod.yellow_marcelium_leaves": "Folhas de marcélia amarela",
+
+  "block.marcellomod.red_marcelium_sapling": "Rebento de marcélia vermelha",
+  "block.marcellomod.green_marcelium_sapling": "Rebento de marcélia verde",
+  "block.marcellomod.yellow_marcelium_sapling": "Rebento de marcélia amarela",
+
+  "block.marcellomod.potted_red_marcelium_sapling": "Rebento de marcélia vermelha num vaso",
+  "block.marcellomod.potted_green_marcelium_sapling": "Rebento de marcélia verde num vaso",
+  "block.marcellomod.potted_yellow_marcelium_sapling": "Rebento de marcélia amarela num vaso",
+
+  "block.marcellomod.door_2_wall": "Porta-para-parade",
+
+  "item.marcellomod.marcello_fruit": "Fruta Marcello",
+  "item.marcellomod.moldy_fruit": "Fruta Moldy",
+  "item.marcellomod.mark_fruit": "Fruta Mark",
+
+  "item.marcellomod.ruisium_shard": "Fragmento de ruísio",
+  "item.marcellomod.ruisium_ingot": "Barra de ruísio",
+
+  "item.marcellomod.ruisium_upgrade_smithing_template": "Molde de ferraria",
+
+  "item.marcellomod.smithing_template.ruisium_upgrade.additions_slot_description": "Adiciona uma barra de ruísio",
+  "item.marcellomod.smithing_template.ruisium_upgrade.ingredients": "Barra de ruísio",
+  "upgrade.marcellomod.ruisium_upgrade": "Melhoria de ruísio",
+
+  "item.marcellomod.hammer_pencil": "Lápis-martelo",
+
+  "item.marcellomod.marcello_sword": "Espada de Marcello",
+  "item.marcellomod.marcello_shovel": "Pá de Marcello",
+  "item.marcellomod.marcello_pickaxe": "Picareta de Marcello",
+  "item.marcellomod.marcello_axe": "Machado de Marcello",
+  "item.marcellomod.marcello_hoe": "Enchada de Marcello",
+
+  "item.marcellomod.ruisium_sword": "Espada de ruísio",
+  "item.marcellomod.ruisium_shovel": "Pá de ruísio",
+  "item.marcellomod.ruisium_pickaxe": "Picareta de ruísio",
+  "item.marcellomod.ruisium_axe": "Machado de ruísio",
+  "item.marcellomod.ruisium_hoe": "Enxada de ruísio",
+
+  "item.marcellomod.ruisium_bow": "Arco de ruísio",
+
+  "item.marcellomod.ruisium_helmet": "Capacete de ruísio",
+  "item.marcellomod.ruisium_chestplate": "Peitoral de ruísio",
+  "item.marcellomod.ruisium_leggings": "Perneiras de ruísio",
+  "item.marcellomod.ruisium_boots": "Botas de ruísio",
+
+  "entity.marcellomod.evil_marcello": "Marcello's Malvado",
+
+  "item.marcellomod.marcello_spawn_egg": "Ovo de invocação do Marcello",
+  "item.marcellomod.evil_marcello_spawn_egg": "Ovo de invocação do Marcello's Malvado",
+  "item.marcellomod.moldy_spawn_egg": "Ovo de invocação do Moldy",
+  "item.marcellomod.tb_spawn_egg": "Ovo de invocação do TB",
+  "item.marcellomod.mark_spawn_egg": "Ovo de invocação do Mark",
+  "item.marcellomod.gotta_sweep_spawn_egg": "Ovo de invocação de Gotta Sweep",
+
+  "item.marcellomod.phone": "Telemóvel do Marcello",
+  "item.marcellomod.phone.call": "Não me ligues, senão chamo a polícia!!",
+
+  "item.marcellomod.otherworldly_phone": "Telemóvel de outro mundo",
+  "item.marcellomod.block_button": "Botão de bloqueio",
+
+  "enchantment.marcellomod.marking": "Marcar",
+
+  "effect.marcellomod.blocked" : "Bloqueado",
+  "effect.marcellomod.whoosh" : "Uau",
+
+  "misc.marcellomod.blocked_chat" : "Sua mensagem não pôde ser enviada. Normalmente isso acontece quando você não compartilha um servidor com o destinatário ou o destinatário aceita apenas mensagem diretas de amigos. Você pode ver a lista de todos os motivos aqui: https://support.discord.com/hc/pt-br/articles/360060145013",
+
+  "subtitles.item.marcellomod.block_button.press": "Botão de bloqueio pressionado",
+  "subtitles.item.marcellomod.block_button.failure": "Entidade incapaz de bloquear",
+  "subtitles.item.marcellomod.block_button.block": "Entidade bloqueada",
+
+  "subtitles.entity.marcellomod.gotta_sweep.yell": "Gotta Sweep varre",
+
+  "subtitles.entity.marcellomod.mark.ambient": "Mark insulta",
+  "subtitles.entity.marcellomod.mark.hurt": "Mark aleija-se",
+  "subtitles.entity.marcellomod.mark.block": "Mark bloqueia uma entidade",
+  "subtitles.entity.marcellomod.mark.death": "Mark morre graciosamente",
+
+  "subtitles.entity.marcellomod.marcello.ambient": "Marcello fala",
+  "subtitles.entity.marcellomod.marcello.hurt": "Marcello aleija-se",
+  "subtitles.entity.marcellomod.marcello.death": "Marcello morre"
+}
