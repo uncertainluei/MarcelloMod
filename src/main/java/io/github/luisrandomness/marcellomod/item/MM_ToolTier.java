@@ -2,6 +2,7 @@ package io.github.luisrandomness.marcellomod.item;
 
 import io.github.luisrandomness.marcellomod.init.MM_Blocks;
 import io.github.luisrandomness.marcellomod.init.MM_Items;
+import io.github.luisrandomness.marcellomod.init.MM_Tags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
@@ -11,8 +12,8 @@ import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 public enum MM_ToolTier implements Tier {
-   MARCELLO(BlockTags.INCORRECT_FOR_STONE_TOOL, 226, 5F, 2F, 11, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
-   RUISIUM(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1923, 9.5F, 5F, 9, Ingredient.of(MM_Items.RUISIUM_SHARD));
+   MARCELLO(MM_Tags.INCORRECT_FOR_MARCELLO_TOOL, 226, 5F, 2F, 11, Ingredient.of(MM_Blocks.MARCELLO_BLOCK)),
+   RUISIUM(MM_Tags.INCORRECT_FOR_RUISIUM_TOOL, 1923, 9.5F, 5F, 9, Ingredient.of(MM_Items.RUISIUM_SHARD));
 
    private final TagKey incompatibleBlockTag;
    private final int uses;

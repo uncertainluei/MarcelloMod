@@ -25,8 +25,8 @@ public class MM_WorldGeneration {
         BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(),
                 GenerationStep.Decoration.UNDERGROUND_ORES, MM_PlacedFeatures.ORE_MARCELLO_NETHER);
 
-        BiomeModifications.addSpawn(BiomeSelectors.all(), MobCategory.CREATURE, MM_EntityTypes.MARCELLO, 4, 1, 3);
-        BiomeModifications.addSpawn(BiomeSelectors.all(), MobCategory.CREATURE, MM_EntityTypes.MOLDY, 4, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.all(), MobCategory.MISC, MM_EntityTypes.MARCELLO, 4, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.all(), MobCategory.MISC, MM_EntityTypes.MOLDY, 4, 1, 3);
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST), GenerationStep.Decoration.VEGETAL_DECORATION, MM_PlacedFeatures.MARCELIUM_FOREIGN);
     }

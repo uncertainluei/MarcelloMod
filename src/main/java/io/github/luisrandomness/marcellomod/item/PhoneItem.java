@@ -26,6 +26,7 @@ public class PhoneItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
             ItemStack phone = player.getItemInHand(usedHand);
+
             if (level.isClientSide() || !(level instanceof ServerLevel serverWorld) || summoningEntity == null)
                 return super.use(level, player, usedHand);
 

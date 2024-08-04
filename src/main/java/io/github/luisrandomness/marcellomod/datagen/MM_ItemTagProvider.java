@@ -43,7 +43,9 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES).addTag(MM_Tags.ITEM_MARCELLO_ORES).add(MM_Items.PHONE);
 
-        getOrCreateTagBuilder(MM_Tags.ITEM_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE.asItem());
+        getOrCreateTagBuilder(MM_Tags.ITEM_RUISIUM_ORES)
+                .add(MM_Blocks.RUISIUM_ORE.asItem())
+                .add(MM_Blocks.END_RUISIUM_ORE.asItem());
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(MM_Items.RUISIUM_HELMET);
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(MM_Items.RUISIUM_CHESTPLATE);

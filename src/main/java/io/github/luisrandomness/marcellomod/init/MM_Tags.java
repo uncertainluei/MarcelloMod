@@ -15,6 +15,12 @@ public class MM_Tags {
     public static final TagKey<PaintingVariant> PAINTINGS = TagKey.create(Registries.PAINTING_VARIANT, modIdentifier("paintings"));
     public static final TagKey<Block> BLOCK_MARCELLO_EFFICIENT = blockTag("marcello_tool_efficient");
 
+    public static final TagKey<Block> NEEDS_MARCELLO_TOOL = blockTag("needs_marcello_tool");
+    public static final TagKey<Block> INCORRECT_FOR_MARCELLO_TOOL = blockTag("incorrect_for_marcello_tool");
+
+    public static final TagKey<Block> NEEDS_RUISIUM_TOOL = blockTag("needs_ruisium_tool");
+    public static final TagKey<Block> INCORRECT_FOR_RUISIUM_TOOL = blockTag("incorrect_for_ruisium_tool");
+
     public static final TagKey<Block> BLOCK_MARCELLO_ORES = blockTag("marcello_ores");
     public static final TagKey<Block> BLOCK_RUISIUM_ORES = blockTag("ruisium_ores");
     public static final TagKey<Block> BLOCK_MARCELIUM_LOGS = blockTag("marcelium_logs");

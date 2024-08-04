@@ -22,7 +22,17 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(MM_Blocks.DEEPSLATE_MARCELLO_ORE)
                 .add(MM_Blocks.NETHER_MARCELLO_ORE);
 
-        getOrCreateTagBuilder(MM_Tags.BLOCK_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE);
+        getOrCreateTagBuilder(MM_Tags.BLOCK_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE).add(MM_Blocks.END_RUISIUM_ORE);
+
+        getOrCreateTagBuilder(MM_Tags.INCORRECT_FOR_RUISIUM_TOOL);
+        getOrCreateTagBuilder(MM_Tags.NEEDS_RUISIUM_TOOL);
+
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_NETHERITE_TOOL).addOptionalTag(MM_Tags.NEEDS_RUISIUM_TOOL);
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).addOptionalTag(MM_Tags.NEEDS_RUISIUM_TOOL);
+
+        getOrCreateTagBuilder(MM_Tags.NEEDS_MARCELLO_TOOL);
+        getOrCreateTagBuilder(MM_Tags.INCORRECT_FOR_MARCELLO_TOOL).addOptionalTag(BlockTags.NEEDS_DIAMOND_TOOL).addOptionalTag(BlockTags.NEEDS_IRON_TOOL);
+
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS).add(MM_Blocks.RUISIUM_BLOCK);
 
         getOrCreateTagBuilder(MM_Tags.BLOCK_MARCELIUM_LOGS).add(MM_Blocks.MARCELIUM_LOG).add(MM_Blocks.MARCELIUM_WOOD).add(MM_Blocks.STRIPPED_MARCELIUM_LOG).add(MM_Blocks.STRIPPED_MARCELIUM_WOOD);

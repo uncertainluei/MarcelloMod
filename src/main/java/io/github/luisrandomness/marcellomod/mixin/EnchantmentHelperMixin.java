@@ -23,6 +23,4 @@ public abstract class EnchantmentHelperMixin {
 		float bonus = entity.getType().is(MM_Tags.ENTITY_SENSITIVE_TO_MARCELLO_WEAPON) && item instanceof MarcelloEffectiveWeapon ? ((MarcelloEffectiveWeapon) item).getMarcelloDamageBonus() : 0F;
 		cir.setReturnValue(cir.getReturnValue() + bonus);
 	}
-
-
 }

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class MM_ArmorTiers {
-    public static final Holder<ArmorMaterial> RUISIUM = register("ruisium", armorToEnum(4,9,7,3), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 1F, 0F, () -> Ingredient.of(MM_Items.RUISIUM_INGOT));
+    public static final Holder<ArmorMaterial> RUISIUM = register("ruisium", armorToEnum(4,9,7,3), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2F, 0F, () -> Ingredient.of(MM_Items.RUISIUM_INGOT));
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> defense, int enchantmentValue, Holder<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         EnumMap<ArmorItem.Type, Integer> enumMap = new EnumMap(ArmorItem.Type.class);

@@ -1,7 +1,6 @@
 package io.github.luisrandomness.marcellomod;
 
 import io.github.luisrandomness.marcellomod.datagen.*;
-import io.github.luisrandomness.marcellomod.init.MM_ArmorTiers;
 import io.github.luisrandomness.marcellomod.init.MM_Paintings;
 import io.github.luisrandomness.marcellomod.world.MM_ConfiguredFeatures;
 import io.github.luisrandomness.marcellomod.world.MM_PlacedFeatures;
@@ -9,8 +8,6 @@ import net.fabricmc.fabric.api.datagen.v1.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.OreFeatures;
 
 public class MarcelloModDataGenerator implements DataGeneratorEntrypoint {
 	public static FabricTagProvider.BlockTagProvider blockTags;
@@ -26,7 +23,7 @@ public class MarcelloModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(MM_EntityTagProvider::new);
 		pack.addProvider(MM_PaintingProvider::new);
 		pack.addProvider(MM_PaintingTagProvider::new);
-		pack.addProvider(MM_BlockLootTableProvider::new);
+		pack.addProvider(MM_BlockLootProvider::new);
 		pack.addProvider(MM_RecipeProvider::new);
 		pack.addProvider(MM_WorldGenerationProvider::new);
 		pack.addProvider(MM_AdvancementProvider::new);

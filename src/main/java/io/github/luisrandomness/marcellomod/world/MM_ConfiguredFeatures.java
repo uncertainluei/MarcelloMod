@@ -41,13 +41,13 @@ public class MM_ConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> ORE_MARCELLO_SMALL = registerKey("ore_marcello_small");
     public static final ResourceKey<ConfiguredFeature<?,?>> ORE_MARCELLO_NETHER = registerKey("ore_marcello_nether");
 
+    public static final ResourceKey<ConfiguredFeature<?,?>> ORE_RUISIUM_END = registerKey("ore_ruisium_end");
+
     public static final ResourceKey<ConfiguredFeature<?,?>> MARCELIUM_RED = registerKey("marcelium_red");
     public static final ResourceKey<ConfiguredFeature<?,?>> MARCELIUM_GREEN = registerKey("marcelium_green");
     public static final ResourceKey<ConfiguredFeature<?,?>> MARCELIUM_YELLOW = registerKey("marcelium_yellow");
 
     public static final ResourceKey<ConfiguredFeature<?,?>> MARCELIUM_VARIED = registerKey("trees_marcelium_varied");
-
-
 
     public static ResourceKey<ConfiguredFeature<?,?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, MarcelloMod.modIdentifier(name));
@@ -67,6 +67,9 @@ public class MM_ConfiguredFeatures {
         register(context, ORE_MARCELLO_SMALL, Feature.ORE, new OreConfiguration(marcelloOreBlocks, 5));
 
         register(context, ORE_MARCELLO_NETHER, Feature.ORE, new OreConfiguration(new BlockMatchTest(Blocks.NETHERRACK), MM_Blocks.NETHER_MARCELLO_ORE.defaultBlockState(), 5));
+
+        register(context, ORE_RUISIUM_END, Feature.ORE, new OreConfiguration(new BlockMatchTest(Blocks.END_STONE), MM_Blocks.END_RUISIUM_ORE.defaultBlockState(), 1, 1F));
+
 
         BlockStateProvider log = BlockStateProvider.simple(MM_Blocks.MARCELIUM_LOG);
         FoliagePlacer foliagePlacer = new FancyFoliagePlacer(ConstantInt.of(2), UniformInt.of(3,4), 4);

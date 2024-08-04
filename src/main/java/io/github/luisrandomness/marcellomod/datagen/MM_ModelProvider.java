@@ -30,6 +30,7 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(MM_Blocks.DEEPSLATE_MARCELLO_ORE);
         gen.createTrivialCube(MM_Blocks.NETHER_MARCELLO_ORE);
         gen.createTrivialBlock(MM_Blocks.RUISIUM_ORE, TexturedModel.CUBE_TOP_BOTTOM);
+        gen.createTrivialCube(MM_Blocks.END_RUISIUM_ORE);
         gen.createTrivialCube(MM_Blocks.RUISIUM_BLOCK);
         gen.createTrivialCube(MM_Blocks.RUISIUM_SHARD_BLOCK);
 

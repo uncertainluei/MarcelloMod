@@ -6,12 +6,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.loot.packs.VanillaBlockLoot;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -23,9 +20,9 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.concurrent.CompletableFuture;
 
-public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
+public class MM_BlockLootProvider extends FabricBlockLootTableProvider {
 
-    public MM_BlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public MM_BlockLootProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -50,7 +47,9 @@ public class MM_BlockLootTableProvider extends FabricBlockLootTableProvider {
         add(MM_Blocks.MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.DEEPSLATE_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.NETHER_MARCELLO_ORE, this::marcelloOreDrops);
+
         add(MM_Blocks.RUISIUM_ORE, this::ruisiumOreDrops);
+        add(MM_Blocks.END_RUISIUM_ORE, this::ruisiumOreDrops);
 
         dropSelf(MM_Blocks.MARCELIUM_LOG);
         dropSelf(MM_Blocks.MARCELIUM_WOOD);

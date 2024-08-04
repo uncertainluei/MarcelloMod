@@ -6,14 +6,18 @@ import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import io.github.luisrandomness.marcellomod.item.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.*;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 import static io.github.luisrandomness.marcellomod.MarcelloMod.modIdentifier;
 
@@ -92,14 +96,6 @@ public class MM_Items {
     public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new Item.Properties()));
     public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new Item.Properties()));
     public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new Item.Properties()));
-
-    // TODO: Replace with original, possibly commissioned music
-//    public static final Item MUSIC_DISC_LR1999_RAP = registerItem("music_disc_lr1999_rap", new PlaceholderMusicDiscItem(1, MM_SoundEvents.MUSIC_DISC_LR1999_RAP, 234));
-//    public static final Item MUSIC_DISC_CALL_COPS = registerItem("music_disc_call_cops", new PlaceholderMusicDiscItem(2, MM_SoundEvents.MUSIC_DISC_CALL_COPS, 117));
-//    public static final Item MUSIC_DISC_STOP_CALL = registerItem("music_disc_stop_call", new PlaceholderMusicDiscItem(3, MM_SoundEvents.MUSIC_DISC_STOP_CALL, 64));
-//    public static final Item MUSIC_DISC_T5_FACE = registerItem("music_disc_t5_face", new PlaceholderMusicDiscItem(4, MM_SoundEvents.MUSIC_DISC_T5_FACE, 145));
-//    public static final Item MUSIC_DISC_LOKSY = registerItem("music_disc_loksy", new PlaceholderMusicDiscItem(5, MM_SoundEvents.MUSIC_DISC_LOKSY, 82));
-//    public static final Item MUSIC_DISC_FOREST_FUNK = registerItem("music_disc_forest_funk", new PlaceholderMusicDiscItem(6, MM_SoundEvents.MUSIC_DISC_FOREST_FUNK, 120));
 
     public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new Item.Properties().stacksTo(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
     public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new Item.Properties().stacksTo(16)));
@@ -184,6 +180,7 @@ public class MM_Items {
             content.addAfter(MM_Blocks.MARCELLO_ORE, MM_Blocks.DEEPSLATE_MARCELLO_ORE);
             content.addAfter(Items.NETHER_GOLD_ORE, MM_Blocks.NETHER_MARCELLO_ORE);
             content.addAfter(Items.ANCIENT_DEBRIS, MM_Blocks.RUISIUM_ORE);
+            content.addAfter(MM_Blocks.RUISIUM_ORE, MM_Blocks.END_RUISIUM_ORE);
             content.addBefore(Items.OAK_LEAVES, MM_Blocks.MARCELIUM_LOG);
             content.addBefore(Items.OAK_SAPLING, MM_Blocks.RED_MARCELIUM_LEAVES);
             content.addAfter(MM_Blocks.RED_MARCELIUM_LEAVES, MM_Blocks.GREEN_MARCELIUM_LEAVES);

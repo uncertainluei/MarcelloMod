@@ -60,6 +60,8 @@ public class MM_Blocks {
 
     public static final DropExperienceBlock RUISIUM_ORE = (DropExperienceBlock) registerBlock("ruisium_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
             .strength(8F,32F).requiresCorrectToolForDrops()));
+    public static final DropExperienceBlock END_RUISIUM_ORE = (DropExperienceBlock) registerBlock("end_ruisium_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
+            .strength(8F,32F).requiresCorrectToolForDrops()));
 
     public static final Block RUISIUM_SHARD_BLOCK = registerBlock("ruisium_shard_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
