@@ -4,6 +4,8 @@ import io.github.luisrandomness.marcellomod.init.*;
 import io.github.luisrandomness.marcellomod.world.generation.MM_WorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.minecraft.data.worldgen.DimensionTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;

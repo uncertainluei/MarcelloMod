@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -25,6 +25,9 @@ repositories {
 		name = 'ParchmentMC'
 		url = 'https://maven.parchmentmc.org'
 	}
+
+	// Temporary repo until kryptonaught actually updates his maven :yawn:
+	maven {url = 'https://maven.raeven.fr/releases/'}
 }
 
 loom {
@@ -71,10 +74,8 @@ dependencies {
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${terraform_wood_version}"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${terraform_wood_version}"
 
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
-	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
-
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	modImplementation "net.kyrptonaught:customportalapi:${portalapi_version}"
+	include "net.kyrptonaught:customportalapi:${portalapi_version}"
 }
 
 processResources {

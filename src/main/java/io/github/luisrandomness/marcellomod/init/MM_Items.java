@@ -69,7 +69,7 @@ public class MM_Items {
     public static final Item RUISIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("ruisium_upgrade_smithing_template", new RuisiumUpgradeTemplateItem());
 
     public static final Item PHONE = registerItem ("phone", new PhoneItem(MM_EntityTypes.MARCELLO, new Item.Properties().stacksTo(1).durability(8)));
-    public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new FlintAndSteelItem(new Item.Properties().stacksTo(1).durability(64).rarity(Rarity.RARE)));
+    public static final Item OTHERWORLDLY_PHONE = registerItem ("otherworldly_phone", new Item(new Item.Properties().stacksTo(1).durability(64).rarity(Rarity.RARE)));
     public static final Item BLOCK_BUTTON = registerItem ("block_button", new BlockButtonItem(new Item.Properties().stacksTo(1).durability(8)));
 
     public static final Item MARCELLO_SWORD = registerItem ("marcello_sword", new MarcelloSwordItem(MM_ToolTier.MARCELLO, new Item.Properties().attributes(SwordItem.createAttributes(MM_ToolTier.MARCELLO, 3, -2.4F))));
