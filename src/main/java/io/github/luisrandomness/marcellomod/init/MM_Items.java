@@ -7,14 +7,25 @@ import io.github.luisrandomness.marcellomod.item.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
+import net.minecraft.core.dispenser.BlockSource;
+import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.core.registries.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.gameevent.GameEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -245,5 +256,28 @@ public class MM_Items {
             content.addAfter(Items.BOW, RUISIUM_BOW);
             content.addAfter(Items.MACE, HAMMER_PENCIL);
         });
+
+        // Spawn Egg Dispenser behavior
+        DefaultDispenseItemBehavior spawnEggDispenseBehavior = new DefaultDispenseItemBehavior() {
+            public ItemStack execute(BlockSource blockSource, ItemStack item) {
+                Direction direction = (Direction)blockSource.state().getValue(DispenserBlock.FACING);
+                EntityType<?> entityType = ((SpawnEggItem)item.getItem()).getType(item);
+
+                try {
+                    entityType.spawn(blockSource.level(), item, (Player)null, blockSource.pos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
+                } catch (Exception var6) {
+                    LOGGER.error("Error while dispensing spawn egg from dispenser at {}", blockSource.pos(), var6);
+                    return ItemStack.EMPTY;
+                }
+
+                item.shrink(1);
+                blockSource.level().gameEvent((Entity)null, GameEvent.ENTITY_PLACE, blockSource.pos());
+                return item;
+            }
+        };
+
+        DispenserBlock.registerBehavior(MARCELLO_SPAWN_EGG, spawnEggDispenseBehavior);
+        DispenserBlock.registerBehavior(MOLDY_SPAWN_EGG, spawnEggDispenseBehavior);
+        DispenserBlock.registerBehavior(MARK_SPAWN_EGG, spawnEggDispenseBehavior);
     }
 }
