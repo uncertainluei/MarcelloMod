@@ -128,11 +128,11 @@
   "subtitles.entity.marcellomod.gotta_sweep.yell": "Gotta Sweep varre",
 
   "subtitles.entity.marcellomod.mark.ambient": "Mark insulta",
-  "subtitles.entity.marcellomod.mark.hurt": "Mark aleija-se",
+  "subtitles.entity.marcellomod.mark.hurt": "Mark ferido",
   "subtitles.entity.marcellomod.mark.block": "Mark bloqueia uma entidade",
   "subtitles.entity.marcellomod.mark.death": "Mark morre graciosamente",
 
   "subtitles.entity.marcellomod.marcello.ambient": "Marcello fala",
-  "subtitles.entity.marcellomod.marcello.hurt": "Marcello aleija-se",
+  "subtitles.entity.marcellomod.marcello.hurt": "Marcello ferido",
   "subtitles.entity.marcellomod.marcello.death": "Marcello morre"
 }
