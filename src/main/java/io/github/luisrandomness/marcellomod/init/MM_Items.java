@@ -22,6 +22,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -99,9 +100,9 @@ public class MM_Items {
     public static final ArmorItem RUISIUM_LEGGINGS = (ArmorItem) registerItem("ruisium_leggings", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.LEGGINGS.getDurability(35))));
     public static final ArmorItem RUISIUM_BOOTS = (ArmorItem) registerItem("ruisium_boots", new ArmorItem(MM_ArmorTiers.RUISIUM, ArmorItem.Type.BOOTS, new Item.Properties().rarity(Rarity.EPIC).durability(ArmorItem.Type.BOOTS.getDurability(35))));
 
-    public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001, new Item.Properties()));
-    public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286, new Item.Properties()));
-    public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488, new Item.Properties()));
+    public static final Item MARCELLO_SPAWN_EGG = registerItem ("marcello_spawn_egg", new MM_SpawnEggItem(MM_EntityTypes.MARCELLO, -1037769, -12183001));
+    public static final Item MARK_SPAWN_EGG = registerItem ("mark_spawn_egg", new MM_SpawnEggItem(MM_EntityTypes.MARK, -6286, -9625286));
+    public static final Item MOLDY_SPAWN_EGG = registerItem ("moldy_spawn_egg", new MM_SpawnEggItem(MM_EntityTypes.MOLDY, -16737793, -10079488));
 
     public static final Item MARCELIUM_SIGN = registerItem("marcelium_sign", new SignItem(new Item.Properties().stacksTo(16), MM_Blocks.MARCELIUM_SIGN, MM_Blocks.MARCELIUM_WALL_SIGN));
     public static final Item MARCELIUM_HANGING_SIGN = registerItem("marcelium_hanging_sign", new HangingSignItem(MM_Blocks.MARCELIUM_HANGING_SIGN, MM_Blocks.MARCELIUM_WALL_HANGING_SIGN, new Item.Properties().stacksTo(16)));
@@ -251,28 +252,28 @@ public class MM_Items {
             content.addAfter(Items.BOW, RUISIUM_BOW);
             content.addAfter(Items.MACE, HAMMER_PENCIL);
         });
-
-        // Spawn Egg Dispenser behavior
-        DefaultDispenseItemBehavior spawnEggDispenseBehavior = new DefaultDispenseItemBehavior() {
-            public ItemStack execute(BlockSource blockSource, ItemStack item) {
-                Direction direction = (Direction)blockSource.state().getValue(DispenserBlock.FACING);
-                EntityType<?> entityType = ((SpawnEggItem)item.getItem()).getType(item);
-
-                try {
-                    entityType.spawn(blockSource.level(), item, (Player)null, blockSource.pos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
-                } catch (Exception var6) {
-                    LOGGER.error("Error while dispensing spawn egg from dispenser at {}", blockSource.pos(), var6);
-                    return ItemStack.EMPTY;
-                }
-
-                item.shrink(1);
-                blockSource.level().gameEvent((Entity)null, GameEvent.ENTITY_PLACE, blockSource.pos());
-                return item;
-            }
-        };
-
-        DispenserBlock.registerBehavior(MARCELLO_SPAWN_EGG, spawnEggDispenseBehavior);
-        DispenserBlock.registerBehavior(MOLDY_SPAWN_EGG, spawnEggDispenseBehavior);
-        DispenserBlock.registerBehavior(MARK_SPAWN_EGG, spawnEggDispenseBehavior);
+//
+//        // Spawn Egg Dispenser behavior
+//        DefaultDispenseItemBehavior spawnEggDispenseBehavior = new DefaultDispenseItemBehavior() {
+//            public @NotNull ItemStack execute(BlockSource blockSource, ItemStack item) {
+//                Direction direction = (Direction)blockSource.state().getValue(DispenserBlock.FACING);
+//                EntityType<?> entityType = ((SpawnEggItem)item.getItem()).getType(item);
+//
+//                try {
+//                    entityType.spawn(blockSource.level(), item, (Player)null, blockSource.pos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
+//                } catch (Exception var6) {
+//                    LOGGER.error("Error while dispensing spawn egg from dispenser at {}", blockSource.pos(), var6);
+//                    return ItemStack.EMPTY;
+//                }
+//
+//                item.shrink(1);
+//                blockSource.level().gameEvent((Entity)null, GameEvent.ENTITY_PLACE, blockSource.pos());
+//                return item;
+//            }
+//        };
+//
+//        DispenserBlock.registerBehavior(MARCELLO_SPAWN_EGG, spawnEggDispenseBehavior);
+//        DispenserBlock.registerBehavior(MOLDY_SPAWN_EGG, spawnEggDispenseBehavior);
+//        DispenserBlock.registerBehavior(MARK_SPAWN_EGG, spawnEggDispenseBehavior);
     }
 }

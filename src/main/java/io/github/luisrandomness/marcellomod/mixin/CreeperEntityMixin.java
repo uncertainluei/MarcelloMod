@@ -12,8 +12,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Creeper.class)
-public abstract class BlockedCreeperCloudMixin extends Monster {
-	private BlockedCreeperCloudMixin(EntityType<? extends Monster> entityType, Level world) {
+public abstract class CreeperEntityMixin extends Monster {
+	private CreeperEntityMixin(EntityType<? extends Monster> entityType, Level world) {
 		super(entityType, world);
 	}
 

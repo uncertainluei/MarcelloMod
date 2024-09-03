@@ -34,7 +34,7 @@ public class MM_BlockLootProvider extends FabricBlockLootTableProvider {
 
         dropSelf(MM_Blocks.MARCELLO_BLOCK);
         this.add(MM_Blocks.MARK_BLOCK, (block) -> {
-            return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(MM_Blocks.MARCELLO_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 8.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(0, 3)))));
+            return this.createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(MM_Blocks.MARCELLO_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 8.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(0, 3)))));
         });
         dropSelf(MM_Blocks.RUISIUM_BLOCK);
 
