@@ -6,9 +6,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -30,7 +28,11 @@ public class PhoneItem extends Item {
             if (level.isClientSide() || !(level instanceof ServerLevel serverWorld) || summoningEntity == null)
                 return super.use(level, player, usedHand);
 
-            summoningEntity.spawn(serverWorld, player.blockPosition(), MobSpawnType.REINFORCEMENT);
+            Entity newEntity = summoningEntity.spawn(serverWorld, player.blockPosition(), MobSpawnType.REINFORCEMENT);
+            if (newEntity instanceof PathfinderMob mob) {
+                mob.setTarget(player);
+                mob.setAggressive(true);
+            }
             player.sendSystemMessage(callMessage);
 
             player.getCooldowns().addCooldown(this, 30);
