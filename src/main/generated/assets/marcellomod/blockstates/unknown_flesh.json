@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "marcellomod:block/unknown_flesh"
+      },
+      {
+        "model": "marcellomod:block/unknown_flesh",
+        "y": 90
+      },
+      {
+        "model": "marcellomod:block/unknown_flesh",
+        "y": 180
+      },
+      {
+        "model": "marcellomod:block/unknown_flesh",
+        "y": 270
+      }
+    ]
+  }
+}

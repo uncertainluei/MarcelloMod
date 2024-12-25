@@ -17,18 +17,6 @@
     ],
     "subtitle": "subtitles.item.marcellomod.block_button.block"
   },
-  "entity.gotta_sweep.intro": {
-    "sounds": [
-      "marcellomod:entity/gotta_sweep/intro"
-    ],
-    "subtitle": "subtitles.entity.marcellomod.gotta_sweep.yell"
-  },
-  "entity.gotta_sweep.sweep": {
-    "sounds": [
-      "marcellomod:entity/gotta_sweep/sweep"
-    ],
-    "subtitle": "subtitles.entity.marcellomod.gotta_sweep.yell"
-  },
   "entity.mark.ambient": {
     "sounds": [
       "marcellomod:entity/mark/ambient"

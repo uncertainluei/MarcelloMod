@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "marcellomod:block/skimeli_slab"
+    },
+    "type=double": {
+      "model": "marcellomod:block/skimeli_planks"
+    },
+    "type=top": {
+      "model": "marcellomod:block/skimeli_slab_top"
+    }
+  }
+}

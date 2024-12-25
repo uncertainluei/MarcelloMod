@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "marcellomod:block/skimeli_planks",
+    "side": "marcellomod:block/skimeli_planks",
+    "top": "marcellomod:block/skimeli_planks"
+  }
+}

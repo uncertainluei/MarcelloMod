@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "marcellomod:block/skimeli_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "marcellomod:block/skimeli_log"
+    },
+    "axis=z": {
+      "model": "marcellomod:block/skimeli_log",
+      "x": 90
+    }
+  }
+}

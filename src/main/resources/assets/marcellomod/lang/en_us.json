@@ -3,6 +3,7 @@
   "itemGroup.marcellomod.blocks": "MarcelloMod Blocks",
 
   "tag.item.marcellomod.ruisium_armor": "Ruisium Armor",
+  "tag.item.marcellomod.armor_breach_weapons": "Breaches through Armor",
   "tag.item.marcellomod.ruisium_ores": "Ruisium Ores",
   "tag.item.marcellomod.marcelium_leaves": "Marcelium Leaves",
   "tag.item.marcellomod.marcelium_saplings": "Marcelium Saplings",
@@ -104,14 +105,12 @@
   "entity.marcellomod.moldy": "Moldy",
   "entity.marcellomod.tb": "TB",
   "entity.marcellomod.mark": "Mark",
-  "entity.marcellomod.gotta_sweep": "Gotta Sweep",
 
   "item.marcellomod.marcello_spawn_egg": "Marcello Spawn Egg",
   "item.marcellomod.evil_marcello_spawn_egg": "Evil Marcello's Spawn Egg",
   "item.marcellomod.moldy_spawn_egg": "Moldy Spawn Egg",
   "item.marcellomod.tb_spawn_egg": "TB Spawn Egg",
   "item.marcellomod.mark_spawn_egg": "Mark Spawn Egg",
-  "item.marcellomod.gotta_sweep_spawn_egg": "Gotta Sweep Spawn Egg",
 
   "item.marcellomod.phone": "Marcello's Phone",
   "item.marcellomod.phone.call": "Don't call me, or else I call cops!!",
@@ -129,8 +128,6 @@
   "subtitles.item.marcellomod.block_button.press": "Block Button pressed",
   "subtitles.item.marcellomod.block_button.failure": "Entity unable to block",
   "subtitles.item.marcellomod.block_button.block": "Entity blocked",
-
-  "subtitles.entity.marcellomod.gotta_sweep.yell": "Gotta Sweep sweeps",
 
   "subtitles.entity.marcellomod.mark.ambient": "Mark cusses",
   "subtitles.entity.marcellomod.mark.hurt": "Mark hurts",

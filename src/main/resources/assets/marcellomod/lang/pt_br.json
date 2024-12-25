@@ -106,7 +106,6 @@
   "item.marcellomod.moldy_spawn_egg": "Ovo gerador de Moldy",
   "item.marcellomod.tb_spawn_egg": "Ovo gerador de TB",
   "item.marcellomod.mark_spawn_egg": "Ovo gerador de Mark",
-  "item.marcellomod.gotta_sweep_spawn_egg": "Ovo gerador de Gotta Sweep",
 
   "item.marcellomod.phone": "Telemóvel do Marcello",
   "item.marcellomod.phone.call": "Não me liguem, senão chamo a polícia!!",
@@ -124,8 +123,6 @@
   "subtitles.item.marcellomod.block_button.press": "Botão de bloqueio pressionado",
   "subtitles.item.marcellomod.block_button.failure": "Entidade incapaz de bloquear",
   "subtitles.item.marcellomod.block_button.block": "Entidade bloqueada",
-
-  "subtitles.entity.marcellomod.gotta_sweep.yell": "Gotta Sweep varre",
 
   "subtitles.entity.marcellomod.mark.ambient": "Mark insulta",
   "subtitles.entity.marcellomod.mark.hurt": "Mark ferido",
