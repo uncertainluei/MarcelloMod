@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "marcellomod:block/small_ruisium_bud"
+  }
+}

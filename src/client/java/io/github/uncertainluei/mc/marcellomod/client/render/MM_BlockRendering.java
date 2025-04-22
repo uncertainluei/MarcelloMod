@@ -18,5 +18,11 @@ public class MM_BlockRendering {
         BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.POTTED_RED_MARCELIUM_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.POTTED_GREEN_MARCELIUM_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.POTTED_YELLOW_MARCELIUM_SAPLING, RenderType.cutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.RUISIUM_CLUSTER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.LARGE_RUISIUM_BUD, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.MEDIUM_RUISIUM_BUD, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MM_Blocks.SMALL_RUISIUM_BUD, RenderType.cutout());
     }
 }
+    

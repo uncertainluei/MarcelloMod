@@ -21,6 +21,9 @@ public abstract class ItemRendererMixin {
                 && displayContext != ItemDisplayContext.FIXED
                 && displayContext != ItemDisplayContext.GROUND)
             return ((ItemRendererAccessor) this).marcellomod$getModels().getModelManager().getModel(MM_ItemRendering.HAMMER_PENCIL_HANDHELD_MODEL);
+        if (itemStack.is(MM_Items.RUISIUM_SWORD)
+                && displayContext != ItemDisplayContext.GUI)
+            return ((ItemRendererAccessor) this).marcellomod$getModels().getModelManager().getModel(MM_ItemRendering.RUISIUM_SWORD_HANDHELD_MODEL);
         return value;
     }
 }

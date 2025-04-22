@@ -27,15 +27,14 @@ public class MM_RecipeProvider extends FabricRecipeProvider {
         nineBlockStorageRecipes(output, RecipeCategory.MISC, MM_Items.RUISIUM_INGOT, RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_BLOCK);
         nineBlockStorageRecipes(output, RecipeCategory.FOOD, MM_Items.MARK_FRUIT, RecipeCategory.BUILDING_BLOCKS, MM_Blocks.MARK_BLOCK);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_SHARD_BLOCK).define('#', MM_Items.RUISIUM_SHARD).pattern("##").pattern("##").unlockedBy("has_ruisium_shard", has(MM_Items.RUISIUM_SHARD)).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MM_Items.RUISIUM_SHARD, 4).requires(MM_Blocks.RUISIUM_SHARD_BLOCK).group("ruisium_shard").unlockedBy("has_ruisium_shard_block", has(MM_Blocks.RUISIUM_SHARD_BLOCK)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_CRYSTAL_BLOCK).define('#', MM_Items.RUISIUM_SHARD).pattern("##").pattern("##").unlockedBy("has_ruisium_shard", has(MM_Items.RUISIUM_SHARD)).save(output);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_BRICKS, 8).define('#', MM_Blocks.RUISIUM_SHARD_BLOCK).pattern("##").pattern("##").unlockedBy("has_ruisium_shard", has(MM_Items.RUISIUM_SHARD)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_BRICKS, 8).define('#', MM_Blocks.RUISIUM_CRYSTAL_BLOCK).pattern("##").pattern("##").unlockedBy("has_ruisium_shard", has(MM_Items.RUISIUM_SHARD)).save(output);
         slab(output, RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_BRICK_SLAB, MM_Blocks.RUISIUM_BRICKS);
         wall(output, RecipeCategory.BUILDING_BLOCKS, MM_Blocks.RUISIUM_BRICK_WALL, MM_Blocks.RUISIUM_BRICKS);
         stairBuilder(MM_Blocks.RUISIUM_BRICK_STAIRS, Ingredient.of(MM_Blocks.RUISIUM_BRICKS)).unlockedBy("has_ruisium_bricks", has(MM_Blocks.RUISIUM_BRICKS)).save(output);
 
-        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.CHISELED_RUISIUM_BRICKS, Ingredient.of(new ItemLike[]{MM_Blocks.RUISIUM_BRICK_SLAB})).unlockedBy("has_chiseled_ruisium_bricks", has(MM_Blocks.CHISELED_RUISIUM_BRICKS)).unlockedBy("has_ruisium_bricks", has(MM_Blocks.RUISIUM_BRICKS)).unlockedBy("has_ruisium_shard_block", has(MM_Blocks.RUISIUM_SHARD_BLOCK)).save(output);
+        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, MM_Blocks.CHISELED_RUISIUM_BRICKS, Ingredient.of(MM_Blocks.RUISIUM_BRICK_SLAB)).unlockedBy("has_chiseled_ruisium_bricks", has(MM_Blocks.CHISELED_RUISIUM_BRICKS)).unlockedBy("has_ruisium_bricks", has(MM_Blocks.RUISIUM_BRICKS)).unlockedBy("has_ruisium_crystal_block", has(MM_Blocks.RUISIUM_CRYSTAL_BLOCK)).save(output);
 
         woodFromLogs(output, MM_Blocks.MARCELIUM_WOOD, MM_Blocks.MARCELIUM_LOG);
         woodFromLogs(output, MM_Blocks.STRIPPED_MARCELIUM_WOOD, MM_Blocks.STRIPPED_MARCELIUM_LOG);
@@ -53,9 +52,6 @@ public class MM_RecipeProvider extends FabricRecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES), RecipeCategory.BUILDING_BLOCKS, MM_Blocks.MARCELLO_BLOCK, 0.6F, 200).group("marcello_block").unlockedBy("has_marcello_smeltables", has(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES)).save(output, MarcelloMod.modIdentifier("marcello_block_from_smelting"));
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES), RecipeCategory.BUILDING_BLOCKS, MM_Blocks.MARCELLO_BLOCK, 0.6F, 100).group("marcello_block").unlockedBy("has_marcello_smeltables", has(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES)).save(output, MarcelloMod.modIdentifier("marcello_block_from_blasting"));
 
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(MM_Blocks.RUISIUM_ORE), RecipeCategory.MISC, MM_Items.RUISIUM_SHARD, 0.8F, 100).group("ruisium_shard").unlockedBy("has_ruisium_ores", has(MM_Tags.ITEM_RUISIUM_ORES)).save(output, MarcelloMod.modIdentifier("ruisium_shard_from_smelting"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MM_Blocks.RUISIUM_ORE), RecipeCategory.MISC, MM_Items.RUISIUM_SHARD, 0.8F, 200).group("ruisium_shard").unlockedBy("has_ruisium_ores", has(MM_Tags.ITEM_RUISIUM_ORES)).save(output, MarcelloMod.modIdentifier("ruisium_shard_from_blasting"));
-
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MM_Items.MARCELLO_SWORD).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("X").pattern("X").pattern("#").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.MARCELLO_SHOVEL).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("X").pattern("#").pattern("#").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MM_Items.MARCELLO_PICKAXE).define('#', Items.STICK).define('X', MM_Blocks.MARCELLO_BLOCK).pattern("XXX").pattern(" # ").pattern(" # ").unlockedBy("has_marcello_block", has(MM_Blocks.MARCELLO_BLOCK)).save(output);
@@ -65,7 +61,7 @@ public class MM_RecipeProvider extends FabricRecipeProvider {
         woodenBoat(output, MM_Items.MARCELIUM_BOAT_ITEM, MM_Blocks.MARCELIUM_PLANKS);
         chestBoat(output, MM_Items.MARCELIUM_CHEST_BOAT_ITEM, MM_Items.MARCELIUM_BOAT_ITEM);
 
-        copySmithingTemplate(output, MM_Items.RUISIUM_UPGRADE_SMITHING_TEMPLATE, MM_Blocks.MARK_BLOCK);
+        copySmithingTemplate(output, MM_Items.RUISIUM_UPGRADE_SMITHING_TEMPLATE, MM_Blocks.UNKNOWN_FLESH);
 
         ruisiumSmithing(output, Items.DIAMOND_SWORD, RecipeCategory.COMBAT, MM_Items.RUISIUM_SWORD);
         ruisiumSmithing(output, Items.DIAMOND_SHOVEL, RecipeCategory.TOOLS, MM_Items.RUISIUM_SHOVEL);

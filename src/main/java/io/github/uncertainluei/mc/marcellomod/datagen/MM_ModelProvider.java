@@ -7,11 +7,16 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.data.models.model.ModelTemplate;
 import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.Optional;
 
@@ -28,10 +33,15 @@ public class MM_ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(MM_Blocks.MARCELLO_ORE);
         gen.createTrivialCube(MM_Blocks.DEEPSLATE_MARCELLO_ORE);
         gen.createTrivialCube(MM_Blocks.NETHER_MARCELLO_ORE);
-        gen.createTrivialBlock(MM_Blocks.RUISIUM_ORE, TexturedModel.CUBE_TOP_BOTTOM);
-        gen.createTrivialCube(MM_Blocks.END_RUISIUM_ORE);
         gen.createTrivialCube(MM_Blocks.RUISIUM_BLOCK);
-        gen.createTrivialCube(MM_Blocks.RUISIUM_SHARD_BLOCK);
+        gen.createTrivialCube(MM_Blocks.RUISIUM_CRYSTAL_BLOCK);
+        gen.createTrivialCube(MM_Blocks.BUDDING_RUISIUM_CRYSTAL);
+
+        gen.createAmethystCluster(MM_Blocks.RUISIUM_CLUSTER);
+        gen.createAmethystCluster(MM_Blocks.LARGE_RUISIUM_BUD);
+        gen.createAmethystCluster(MM_Blocks.MEDIUM_RUISIUM_BUD);
+        gen.createAmethystCluster(MM_Blocks.SMALL_RUISIUM_BUD);
+
         gen.createRotatedVariantBlock(MM_Blocks.UNKNOWN_FLESH);
 
         gen.family(MM_Blocks.MARCELIUM_PLANKS).generateFor(MM_Blocks.FAMILY_MARCELIUM);

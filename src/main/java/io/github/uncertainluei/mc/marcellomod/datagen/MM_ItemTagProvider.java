@@ -21,7 +21,6 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         copy(MM_Tags.BLOCK_MARCELLO_ORES, MM_Tags.ITEM_MARCELLO_ORES);
-        copy(MM_Tags.BLOCK_RUISIUM_ORES, MM_Tags.ITEM_RUISIUM_ORES);
         copy(MM_Tags.BLOCK_MARCELIUM_LOGS, MM_Tags.ITEM_MARCELIUM_LOGS);
         copy(MM_Tags.BLOCK_MARCELIUM_SAPLINGS, MM_Tags.ITEM_MARCELIUM_SAPLINGS);
         copy(MM_Tags.BLOCK_MARCELIUM_LEAVES, MM_Tags.ITEM_MARCELIUM_LEAVES);
@@ -42,10 +41,6 @@ public class MM_ItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.PLANKS).add(MM_Blocks.MARCELIUM_PLANKS.asItem());
 
         getOrCreateTagBuilder(MM_Tags.ITEM_MARCELLO_BLOCK_SMELTABLES).addTag(MM_Tags.ITEM_MARCELLO_ORES).add(MM_Items.PHONE);
-
-        getOrCreateTagBuilder(MM_Tags.ITEM_RUISIUM_ORES)
-                .add(MM_Blocks.RUISIUM_ORE.asItem())
-                .add(MM_Blocks.END_RUISIUM_ORE.asItem());
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(MM_Items.RUISIUM_HELMET);
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(MM_Items.RUISIUM_CHESTPLATE);

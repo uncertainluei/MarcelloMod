@@ -47,9 +47,6 @@ public class MM_BlockLootProvider extends FabricBlockLootTableProvider {
         add(MM_Blocks.DEEPSLATE_MARCELLO_ORE, this::marcelloOreDrops);
         add(MM_Blocks.NETHER_MARCELLO_ORE, this::marcelloOreDrops);
 
-        add(MM_Blocks.RUISIUM_ORE, this::ruisiumOreDrops);
-        add(MM_Blocks.END_RUISIUM_ORE, this::ruisiumOreDrops);
-
         dropSelf(MM_Blocks.MARCELIUM_LOG);
         dropSelf(MM_Blocks.MARCELIUM_WOOD);
         dropSelf(MM_Blocks.STRIPPED_MARCELIUM_LOG);

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "marcellomod:block/small_ruisium_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "marcellomod:block/small_ruisium_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "marcellomod:block/small_ruisium_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "marcellomod:block/small_ruisium_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "marcellomod:block/small_ruisium_bud"
+    },
+    "facing=west": {
+      "model": "marcellomod:block/small_ruisium_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -19,7 +19,8 @@ public abstract class ModelBakeryMixin {
     protected abstract void loadSpecialItemModelAndDependencies(ModelResourceLocation modelId);
 
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/model/ModelBakery;loadSpecialItemModelAndDependencies(Lnet/minecraft/client/resources/model/ModelResourceLocation;)V", ordinal = 1, shift = At.Shift.AFTER))
-    public void marcellomod$addHammerPencil(BlockColors blockColors, ProfilerFiller profilerFiller, Map modelResources, Map blockStateResources, CallbackInfo ci) {
+    public void marcellomod$addHandheldModels(BlockColors blockColors, ProfilerFiller profilerFiller, Map modelResources, Map blockStateResources, CallbackInfo ci) {
         this.loadSpecialItemModelAndDependencies(MM_ItemRendering.HAMMER_PENCIL_HANDHELD_MODEL);
+        this.loadSpecialItemModelAndDependencies(MM_ItemRendering.RUISIUM_SWORD_HANDHELD_MODEL);
     }
 }

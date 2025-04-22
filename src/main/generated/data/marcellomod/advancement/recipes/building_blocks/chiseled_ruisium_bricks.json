@@ -21,11 +21,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_ruisium_shard_block": {
+    "has_ruisium_crystal_block": {
       "conditions": {
         "items": [
           {
-            "items": "marcellomod:ruisium_shard_block"
+            "items": "marcellomod:ruisium_crystal_block"
           }
         ]
       },
@@ -43,7 +43,7 @@
       "has_the_recipe",
       "has_chiseled_ruisium_bricks",
       "has_ruisium_bricks",
-      "has_ruisium_shard_block"
+      "has_ruisium_crystal_block"
     ]
   ],
   "rewards": {

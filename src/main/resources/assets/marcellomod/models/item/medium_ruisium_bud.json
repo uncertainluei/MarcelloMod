@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "marcellomod:block/medium_ruisium_bud"
+  }
+}

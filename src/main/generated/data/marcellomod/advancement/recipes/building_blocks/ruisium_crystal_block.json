@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ruisium_ores": {
+    "has_ruisium_shard": {
       "conditions": {
         "items": [
           {
-            "items": "#marcellomod:ruisium_ores"
+            "items": "marcellomod:ruisium_shard"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "marcellomod:ruisium_shard_from_smelting"
+        "recipe": "marcellomod:ruisium_crystal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ruisium_ores"
+      "has_ruisium_shard"
     ]
   ],
   "rewards": {
     "recipes": [
-      "marcellomod:ruisium_shard_from_smelting"
+      "marcellomod:ruisium_crystal_block"
     ]
   }
 }

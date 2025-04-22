@@ -59,13 +59,15 @@ public class MM_Blocks {
     public static final DropExperienceBlock DEEPSLATE_MARCELLO_ORE = (DropExperienceBlock) registerBlock("deepslate_marcello_ore", new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_LAPIS_ORE)));
     public static final DropExperienceBlock NETHER_MARCELLO_ORE = (DropExperienceBlock) registerBlock("nether_marcello_ore", new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
 
-    public static final DropExperienceBlock RUISIUM_ORE = (DropExperienceBlock) registerBlock("ruisium_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
-            .strength(8F,32F).requiresCorrectToolForDrops()));
-    public static final DropExperienceBlock END_RUISIUM_ORE = (DropExperienceBlock) registerBlock("end_ruisium_ore", new DropExperienceBlock(UniformInt.of(4, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS)
-            .strength(8F,32F).requiresCorrectToolForDrops()));
+    public static final Block RUISIUM_CRYSTAL_BLOCK = registerBlock("ruisium_crystal_block", new AmethystBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
+            .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final Block BUDDING_RUISIUM_CRYSTAL = registerBlock("budding_ruisium_crystal", new BuddingAmethystBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
+            .strength(16F,48F).sound(SoundType.AMETHYST).noLootTable().randomTicks()));
 
-    public static final Block RUISIUM_SHARD_BLOCK = registerBlock("ruisium_shard_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)
-            .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+    public static final Block RUISIUM_CLUSTER = registerBlock("ruisium_cluster", new AmethystClusterBlock(7.0F, 3.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER)));
+    public static final Block LARGE_RUISIUM_BUD = registerBlock("large_ruisium_bud", new AmethystClusterBlock(5.0F, 3.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.LARGE_AMETHYST_BUD)));
+    public static final Block MEDIUM_RUISIUM_BUD = registerBlock("medium_ruisium_bud", new AmethystClusterBlock(4.0F, 3.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.MEDIUM_AMETHYST_BUD)));
+    public static final Block SMALL_RUISIUM_BUD = registerBlock("small_ruisium_bud", new AmethystClusterBlock(3.0F, 4.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.SMALL_AMETHYST_BUD)));
 
     public static final Block RUISIUM_BRICKS = registerBlock("ruisium_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
@@ -76,7 +78,7 @@ public class MM_Blocks {
     public static final Block RUISIUM_BRICK_WALL = registerBlock("ruisium_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)
             .strength(12F,32F).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
 
-    public static final Block CHISELED_RUISIUM_BRICKS = registerBlock("chiseled_ruisium_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(MM_Blocks.RUISIUM_SHARD_BLOCK)));
+    public static final Block CHISELED_RUISIUM_BRICKS = registerBlock("chiseled_ruisium_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(MM_Blocks.RUISIUM_CRYSTAL_BLOCK)));
 
     public static final Block RUISIUM_BLOCK = registerBlock("ruisium_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
             .strength(20F,32F).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));

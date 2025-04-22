@@ -167,8 +167,8 @@ public class MM_Items {
             content.addBefore(Items.COAL_BLOCK, MM_Blocks.MARCELLO_BLOCK);
             content.addAfter(MM_Blocks.MARCELLO_BLOCK, MM_Blocks.MARK_BLOCK);
 
-            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.RUISIUM_SHARD_BLOCK);
-            content.addAfter(MM_Blocks.RUISIUM_SHARD_BLOCK, MM_Blocks.RUISIUM_BLOCK);
+            content.addAfter(Items.NETHERITE_BLOCK, MM_Blocks.RUISIUM_CRYSTAL_BLOCK);
+            content.addAfter(MM_Blocks.RUISIUM_CRYSTAL_BLOCK, MM_Blocks.RUISIUM_BLOCK);
             content.addAfter(MM_Blocks.RUISIUM_BLOCK, MM_Blocks.RUISIUM_BRICKS);
             content.addAfter(MM_Blocks.RUISIUM_BRICKS, MM_Blocks.RUISIUM_BRICK_STAIRS);
             content.addAfter(MM_Blocks.RUISIUM_BRICK_STAIRS, MM_Blocks.RUISIUM_BRICK_SLAB);
@@ -190,8 +190,6 @@ public class MM_Items {
             content.addAfter(Items.DEEPSLATE_GOLD_ORE, MM_Blocks.MARCELLO_ORE);
             content.addAfter(MM_Blocks.MARCELLO_ORE, MM_Blocks.DEEPSLATE_MARCELLO_ORE);
             content.addAfter(Items.NETHER_GOLD_ORE, MM_Blocks.NETHER_MARCELLO_ORE);
-            content.addAfter(Items.ANCIENT_DEBRIS, MM_Blocks.RUISIUM_ORE);
-            content.addAfter(MM_Blocks.RUISIUM_ORE, MM_Blocks.END_RUISIUM_ORE);
             content.addBefore(Items.OAK_LEAVES, MM_Blocks.MARCELIUM_LOG);
             content.addBefore(Items.OAK_SAPLING, MM_Blocks.RED_MARCELIUM_LEAVES);
             content.addAfter(MM_Blocks.RED_MARCELIUM_LEAVES, MM_Blocks.GREEN_MARCELIUM_LEAVES);

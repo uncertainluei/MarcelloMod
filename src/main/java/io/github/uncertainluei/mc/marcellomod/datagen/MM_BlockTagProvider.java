@@ -22,8 +22,6 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(MM_Blocks.DEEPSLATE_MARCELLO_ORE)
                 .add(MM_Blocks.NETHER_MARCELLO_ORE);
 
-        getOrCreateTagBuilder(MM_Tags.BLOCK_RUISIUM_ORES).add(MM_Blocks.RUISIUM_ORE).add(MM_Blocks.END_RUISIUM_ORE);
-
         getOrCreateTagBuilder(MM_Tags.INCORRECT_FOR_RUISIUM_TOOL);
         getOrCreateTagBuilder(MM_Tags.NEEDS_RUISIUM_TOOL);
 
@@ -80,9 +78,9 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(MM_Blocks.MARCELLO_BLOCK)
                 .add(MM_Blocks.MARK_BLOCK)
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES)
-                .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
                 .add(MM_Blocks.RUISIUM_BLOCK)
-                .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
+                .add(MM_Blocks.RUISIUM_CRYSTAL_BLOCK)
+                .add(MM_Blocks.BUDDING_RUISIUM_CRYSTAL)
                 .add(MM_Blocks.RUISIUM_BRICKS)
                 .add(MM_Blocks.RUISIUM_BRICK_SLAB)
                 .add(MM_Blocks.RUISIUM_BRICK_STAIRS)
@@ -95,9 +93,9 @@ public class MM_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(MM_Tags.BLOCK_MARCELLO_ORES);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .addTag(MM_Tags.BLOCK_RUISIUM_ORES)
                 .add(MM_Blocks.RUISIUM_BLOCK)
-                .add(MM_Blocks.RUISIUM_SHARD_BLOCK)
+                .add(MM_Blocks.RUISIUM_CRYSTAL_BLOCK)
+                .add(MM_Blocks.BUDDING_RUISIUM_CRYSTAL)
                 .add(MM_Blocks.RUISIUM_BRICKS)
                 .add(MM_Blocks.RUISIUM_BRICK_SLAB)
                 .add(MM_Blocks.RUISIUM_BRICK_STAIRS)

@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MM_ItemRendering {
     public static final ModelResourceLocation HAMMER_PENCIL_HANDHELD_MODEL = ModelResourceLocation.inventory(MarcelloMod.modIdentifier("hammer_pencil_in_hand"));
+    public static final ModelResourceLocation RUISIUM_SWORD_HANDHELD_MODEL = ModelResourceLocation.inventory(MarcelloMod.modIdentifier("ruisium_sword_in_hand"));
     public static void initialize()
     {
         ItemProperties.register(MM_Items.RUISIUM_BOW, ResourceLocation.withDefaultNamespace("pulling"), (itemStack, clientLevel, livingEntity, i) -> {

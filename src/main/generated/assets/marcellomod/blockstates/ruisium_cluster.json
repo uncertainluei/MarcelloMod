@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "marcellomod:block/ruisium_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "marcellomod:block/ruisium_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "marcellomod:block/ruisium_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "marcellomod:block/ruisium_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "marcellomod:block/ruisium_cluster"
+    },
+    "facing=west": {
+      "model": "marcellomod:block/ruisium_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
