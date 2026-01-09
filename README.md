@@ -14,7 +14,6 @@ If you do want to play the original Minecraft mod this is based on (and is playa
 - `entity/marcello/hurt*.ogg`, `entity/marcello/death1.ogg` - Recordings in "Marcello's Worse Than I Thought".
 - `entity/marcello/ambient*.ogg` - 2020-2021 Marcello Discord/Twitter videos
 - `entity/mark/*`, `entity/marcello/death2.ogg`, `entity/marcello/death3.ogg` - "MARK_ELLO", recorded by 'Jumpman'.
-- `entity/mark/*`  - "MARK_ELLO", recorded by 'Jumpman'.
 
 
 - `item/block_button/failure.ogg` - Wrong by Raclure -- https://freesound.org/s/483598/ -- License: Creative Commons 0
