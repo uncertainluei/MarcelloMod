@@ -55,8 +55,7 @@
       "marcellomod:entity/marcello/hurt1",
       "marcellomod:entity/marcello/hurt2",
       "marcellomod:entity/marcello/hurt3",
-      "marcellomod:entity/marcello/hurt4",
-      "marcellomod:entity/marcello/hurt5"
+      "marcellomod:entity/marcello/hurt4"
     ],
     "subtitle": "subtitles.entity.marcellomod.marcello.hurt"
   },
